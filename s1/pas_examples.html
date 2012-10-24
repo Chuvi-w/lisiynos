@@ -137,10 +137,10 @@ end.
 <pre class="sh_pascal">{$APPTYPE CONSOLE}
 uses SysUtils;
 
-var A,B,C : int64; // 64-битное целое
+var A,B,C : int64; { 64-битное целое }
   N,i : integer;
 begin
-  Write('N = '); Readln(N);
+  Write('N = '); Readln(N); { До какого числа (по номеру) вывести }
   A := 0;
   B := 1;
   Write(A,' ',B,' ');
