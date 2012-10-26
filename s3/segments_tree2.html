@@ -63,13 +63,13 @@
 Рассмотрим, как можно решать эту задачу, не используя различные структуры данных.
 <ul>
 <li> Наиболее простым в идее и реализации является линейный подсчет суммы чисел в массиве
-при запросе $get$ за время $O(N)$ и изменение за $O(1)$.
+  при запросе $get$ за время $O(N)$ и изменение за $O(1)$.</li>
 
 <li> Также можно предподсчитать суммы для всех возможных отрезков в матрицу $sum$ 
 и запрос $get$ обрабатывать за $O(1)$, непосредственно обращаясь к нужному элементу 
 матрицы. Однако при изменении числа изменяется сумма на порядка $N^2$ отрезках.
 Соответственно, для корректной работы необходимо их все обновить, что требует $O(N^2)$
-времени.
+  времени.</li>
 
 <li> Значительно более полезным на практике является метод "частичных сумм".
 Заключается он в следующем: для каждой позиции $i$, $1 \le i \le N$, вычисляется 
@@ -77,7 +77,7 @@ $s(i)$ - сумма элементов от $1$ до $i$-го включител
 по-прежнему обрабатывать за $O(1)$: $get(l, r) = s(r) - s(l - 1)$, при этом $s(0)$ 
 считается равной $0$. Однако запрос изменения числа по-прежнему обрабатывается
 долго: каждое число может участвовать в $O(N)$ частичных суммах, поэтому 
-запрос изменения числа требует $O(N)$ времени на выполнение.
+  запрос изменения числа требует $O(N)$ времени на выполнение.</li>
 </ul>
 
 <h2>Дерево отрезков</h2>
@@ -177,8 +177,7 @@ $v_l$ и $v_r$ - границы отрезка, который ей соотве
 
 <p>Наконец, покажем, как построить над массивом дерево отрезков. За $O(N \log N$ это можно
 сделать следующим образом: построить дерево отрезков на массиве из нулей (тогда в каждой
-вершине будет храниться 0) и для каждого элемент массива произвести $set(i, a[i])$, где $a[i]$~---
-исходный массив.</p>
+вершине будет храниться 0) и для каждого элемент массива произвести $set(i, a[i])$, где $a[i]$ - исходный массив.</p>
 
 <p>Однако построить дерево отрезков можно быстрее - за $O(N)$, используя один линейный проход по нему.
 Сначала заполним самый нижний уровень. В нем хранятся суммы на отрезках с $i$ по $i$, т.е. элементы
@@ -218,12 +217,12 @@ public class SegTree {
 
     public SegTree(int numberOfValues) throws IOException {
       this.size = 1;
-      while (this.size < numberOfValues) {
+      while (this.size &lt; numberOfValues) {
         this.size *= 2;
       }
       this.tree = new long[this.size * 2];
       Arrays.fill(tree, inf);
-      for (int i = 0; i < numberOfValues; i++)
+      for (int i = 0; i &lt; numberOfValues; i++)
         tree[i + size] = nextLong();
       for (int i = size - 1; i > 0; i--)
         update(i);
@@ -242,7 +241,7 @@ public class SegTree {
       left += this.size;
       right += this.size;
       long answer = this.inf;
-      while (left <= right) {
+      while (left &lt;= right) {
         if (left % 2 == 1) {
           answer = calc(answer, this.tree[left]);
           left++;
@@ -281,13 +280,13 @@ public class SegTree {
 
     public SegTree(int numberOfElements) throws IOException {
       size = 1;
-      while (size < numberOfElements)
+      while (size &lt; numberOfElements)
         size *= 2;
       tree = new Vertex[size * 2];
-      for (int i = 0; i < numberOfElements; i++) {
+      for (int i = 0; i &lt; numberOfElements; i++) {
         tree[i + size] = new Vertex(i, i, nextLong());
       }
-      for (int i = numberOfElements; i < size; i++)
+      for (int i = numberOfElements; i &lt; size; i++)
         tree[i + size] = new Vertex(i, i, inf);
       for (int i = size - 1; i > 0; i--) {
         tree[i] = new Vertex(tree[i * 2].left, tree[i * 2 + 1].right,
