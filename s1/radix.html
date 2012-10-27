@@ -183,6 +183,37 @@ end.
         </tr>
     </table>
 
+<pre class="sh_pascal">
+{$APPTYPE CONSOLE}
+
+{ Функция для перевода из десятичной системы в римскую }
+function to_roman( n : integer ):string;
+const D : array [1..13] of integer = (1,4,5,9,10,40,50,90,100,400,500,900,1000);
+      S : array [1..13] of string = ('I','IV','V','IX','X','XL','L','XC','C','CD','D','CM','M');
+var k : integer;
+begin
+  result := '';
+  for k := high(D) downto low(D) do { Идём от старших разрядов к младшим }
+    while D[k] &lt;= n do begin
+      dec(n, D[k]);                    
+      result := result + S[k];
+    end;
+end;
+
+var N,Tests,Test : integer;
+begin
+  assign(input,'roman.in'); reset(input);
+  assign(output,'roman.out'); rewrite(output);
+  readln(Tests); { Количество тестов }
+  for Test := 1 to Tests do begin { Цикл по тестам }
+    readln(N);
+    writeLn(to_roman(N));
+  end;
+end.
+</pre>
+
+
+
 
     <p>&nbsp;</p>
 
