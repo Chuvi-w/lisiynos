@@ -212,7 +212,31 @@ begin
 end.
 </pre>
 
+<b>Реализация через массив с записями</b>
 
+<pre class="sh_pascal">
+const
+  T : array [1..13] of record D:integer; S:string; end = (
+    (D:1000; S:'M'), (D:900; S:'CM'), 
+    (D:500;  S:'D'), (D:400; S:'CD'), 
+    (D:100;  S:'C'), (D:90;  S:'XC'), 
+    (D:50;   S:'L'), (D:40;  S:'XL'), 
+    (D:10;   S:'X'), (D:9;   S:'IX'), 
+    (D:5;    S:'V'), (D:4;   S:'IV'), 
+    (D:1;    S:'I'));
+
+{ Функция для перевода из десятичной системы в римскую }
+function to_roman( N : integer ):string;
+var i : integer;
+begin
+  result := '';
+  for i := 1 to 13 do 
+    while T[i].D <= n do begin
+      dec(N, T[i].D);                    
+      result := result + T[i].S;
+    end;
+end;
+</pre>
 
 
     <p>&nbsp;</p>
