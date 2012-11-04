@@ -337,55 +337,57 @@ int main(){
 
 using namespace std;
 
-const int N = 80;
+const int N = 100000; // Количество элементов в массиве
 
-int A[N];
+int A[N]; // Сортируемый массив
 int T[N]; // Временный массив - буфер
 
+// left - левая граница сортируемого участка
+// right - правая граница
 void MergeSort( int left, int right ){
-	// Если в массиве один элемент - сортировать нечего =&gt сразу выходим
-	if(left &gt= right) return;
+  // Если в массиве один элемент - сортировать нечего =&gt сразу выходим
+  if(left &gt= right) return;
 
-	// Делим массив на 2 равные половинки
-	int m = (left + right) / 2; // Среднее арифметическое 
+  // Делим массив на 2 равные половинки
+  int m = (left + right) / 2; // Среднее арифметическое 
 
-	MergeSort(left,m); // Сортируем левую половину
-	MergeSort(m+1,right); // Сортируем правую половину
+  MergeSort(left,m); // Сортируем левую половину
+  MergeSort(m+1,right); // Сортируем правую половину
 
-	// Объединяем результаты
-	int l = left, r = m+1;
-	for(int i=left;i&lt=right;i++){
-		if(l &gt m) // Если левая половинка кончилась, то берём только из правой
-			T[i] = A[r++];
-		else if(r &gt right) // Если правая половинка кончилась, то берём только из правой
-			T[i] = A[l++];
-		else if(A[l] &lt A[r]) // Если обе не кончились, то берём минимальный элемент
-			T[i] = A[l++];
-		else 
-			T[i] = A[r++];
-	}
+  // Объединяем результаты - операция Merge (слияние)
+  int l = left, r = m+1;
+  for(int i = left; i&lt = right; i++){
+    if(l &gt m) // Если левая половинка кончилась, то берём только из правой
+      T[i] = A[r++];
+    else if(r &gt right) // Если правая половинка кончилась, то берём только из правой
+      T[i] = A[l++];
+    else if(A[l] &lt A[r]) // Если обе не кончились, то берём минимальный элемент
+      T[i] = A[l++];
+	else 
+      T[i] = A[r++];
+  }
 
-	// Копируем обратно из временно буфера в A
-	for(int i=left;i&lt=right;i++)
-		A[i] = T[i];
+  // Копируем обратно из временно буфера в A
+  for(int i = left; i&lt=right; i++) 
+    A[i] = T[i];
 
-	// Проверка, что всё верно отсортировано
-	for(int i=left;i&lt=right-1;i++)
-		assert( A[i] &lt= A[i+1] );
+  // Проверка, что всё верно отсортировано
+  for(int i = left; i&lt = right-1; i++)
+    assert( A[i] &lt= A[i+1] );
 }
 
-int _tmain(int argc, _TCHAR* argv[])
-{
-	// Заполняем случайным числами массив A
-	for(int i=0;i&ltN;i++) A[i] = rand() % 1000;
+int main() {
+  // Заполняем случайным числами массив A
+  for(int i=0;i&ltN;i++) A[i] = rand() % 1000;
 
-	MergeSort(0,N-1);
+  // Вызов сортировки всех элементов
+  MergeSort(0,N-1);
 
-	// Вывод отсортированного массива
-	for(int i=0;i&ltN;i++) cout &lt&lt A[i] &lt&lt " ";
-	cout &lt&lt endl;
+  // Вывод отсортированного массива
+  for(int i=0;i&ltN;i++) cout &lt&lt A[i] &lt&lt " ";
+  cout &lt&lt endl;
 
-	return 0;
+  return 0;
 }
 </pre>
 
