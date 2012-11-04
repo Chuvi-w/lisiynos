@@ -226,7 +226,7 @@ begin
 end.
 </pre>
 
-<p>Для поиска ошибок используйте директивы</p>
+<p>Для поиска RE в программе на Delphi используйте директивы:</p>
 
 <pre class="sh_pascal">
 {$O Off} { Выключаем оптимизацию }
@@ -234,7 +234,42 @@ end.
 {$Q+} { Включаем проверку переполнений }
 </pre>
 
+<h3>Time Limit (TL)</h3>
 
+<pre class="sh_pascal">
+{$APPTYPE CONSOLE}
+var 
+  A,B : Int64;
+  I,K : Integer;  
+begin  
+  Assign(Input,'aplusb.in'); Reset(Input);
+  Assign(Output,'aplusb.out'); Rewrite(Output);
+  Read(A,B);
+  { Цикл выполняется слишком долго!!! }
+  for I:=Low(Integer) to High(Integer) do 
+    K := I;           
+  Write(A+B);  
+end.
+</pre>
+
+<h3>Memory Limit (ML)</h3>
+
+<pre class="sh_pascal">
+{$APPTYPE CONSOLE}
+var 
+  A,B : Int64;
+  T : array [1..100000000] of Integer; { Слишком большой массив!!! }
+  I : Integer;
+begin
+  Assign(Input,'aplusb.in'); Reset(Input);
+  Assign(Output,'aplusb.out'); Rewrite(Output);
+  for I:=Low(T) to High(T) do T[I]:=2135;
+  Read(A,B);
+  Write(A+B);  
+end.
+</pre>
+
+</div>
 </div>
 </body>
 
