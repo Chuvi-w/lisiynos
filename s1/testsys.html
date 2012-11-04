@@ -92,13 +92,13 @@ int main() {
 
     <h2>Сообщения тестирующей системы</h2>
 
-    <ul>
+<ul>
         <li><strong>Accepted</strong><strong> - </strong> Все в порядке! Ваша программа принята! Она откомпилировалась без ошибок и прошла все тесты.</li>
-        <li><strong>Presentation</strong><strong> Error (PE)</strong> - неправильный формат вывода, проверяющая
+        <li><strong>Presentation Error (PE)</strong> - неправильный формат вывода, проверяющая
             программа не
             смогла прочитать ваш выходной файл или ваша программа вообще не создала выходной файл.
         </li>
-        <li><strong>Wrong</strong><strong> Answer (WA)</strong>- неправильный ответ на тест. </li>
+        <li><strong>Wrong Answer (WA)</strong>- неправильный ответ на тест. </li>
         <li><strong>Compile Error (CE)</strong> - ошибки компиляции программы. Посмотрите что вы отправляете (нажмите view в отправках).</li>
         <li><strong>Runtime Error (RE)</strong> - ошибка времени выполнения (выход за границы массива, переполнение
             переменной, деление на ноль, корень из отрицательного числа, ошибка в имени входного файла).
@@ -111,16 +111,130 @@ int main() {
         </li>
     </ul>
 
-    <p>&nbsp;</p>
 
-    <p>&nbsp;</p>
+<h2>Компиляторы</h2>
+<ul>
+  <li>Pascal: Borland Delphi 7.0, Free Pascal 2.6.0;</li>
+  <li>C/C++: Visual C++ 2010 Express Edition, GNU C++ 4.6.1 (MinGW), Code::Blocks 10.05;</li>
+  <li>C#: Visual C# 2010 Express Edition;</li>
+  <li>Java: Sun JDK 7 update 9, Eclipse 4.2.</li>
+  <li>Python: Python 3.3.0, Wing IDE 101 4.1.9.</li>
+</ul>
 
-    <p>&nbsp;</p>
+<h1>Примеры ошибок в решениях:</h1>
 
-    <p>&nbsp;</p>
+<h2>Presentation Error (PE)</h2>
 
-    <p style='margin-bottom:6.0pt;text-align:justify;text-indent:
-20pt'>&nbsp;  </p>
+<p>Неправильное имя выходного файла:</p>
+
+<pre class="sh_pascal">
+{$APPTYPE CONSOLE}
+var A,B : Int64;
+begin
+  Assign(Input,'aplusb.in'); Reset(Input);
+  Assign(Output,'YA_NE_POMNU.out'); Rewrite(Output);
+  Read(A,B);
+  Write(A+B);  
+end.
+</pre>
+
+<p>Программа выводит на экран вместо файла:</p>
+
+<pre class="sh_pascal">
+{$APPTYPE CONSOLE}
+var A,B : Int64;
+begin
+  Assign(Input,'aplusb.in'); Reset(Input);
+  { Assign(Output,'aplusb.out'); Rewrite(Output); }
+  Read(A,B);
+  Write(A+B);  
+end.
+</pre>
+
+<h2>Wrong Answer (WA)</h2>
+
+<p>Неверное решение:</p>
+<pre class="sh_pascal">
+{$APPTYPE CONSOLE}
+var A,B : Int64;
+begin
+  Assign(Input,'aplusb.in'); Reset(Input);
+  Assign(Output,'aplusb.out'); Rewrite(Output);
+  Read(A,B);
+  Write(A-B);  
+end.
+</pre>
+
+<p>Точности/разрядности типов данных не хватает:</p>
+<pre class="sh_pascal">
+{$APPTYPE CONSOLE}
+var A,B : Extended;
+begin
+  Assign(Input,'aplusb.in'); Reset(Input);
+  Assign(Output,'aplusb.out'); Rewrite(Output);
+  Read(A,B);
+  Write((A+B):0:0);  
+end.
+</pre>
+
+<h2>Compile Error (CE)</h2>
+
+<pre class="sh_pascal">
+{$APPTYPE CONSOLE}
+var A,B : Int64;
+begin
+  ЯВНО НЕВЕРНАЯ СТРОКА!!!
+  Assign(Input,'aplusb.in'); Reset(Input);
+  Assign(Output,'aplusb.out'); Rewrite(Output);
+  Read(A,B);
+  Write(A+B);  
+end.
+</pre>
+
+<p>Комментарий тестирующей системы:</p>
+
+<pre>
+Borland Delphi Version 15.0 
+Copyright (c) 1983,2002 Borland Software Corporation 
+a.dpr(4) Error: Illegal character in input file: 'Я' ($DF) 
+a.dpr(4) Error: Illegal character in input file: 'А' ($C0) 
+a.dpr(4) Error: Illegal character in input file: '!' ($21) 
+a.dpr(9) 
+</pre>
+
+<h2>Runtime Error (RE)</h2>
+
+<pre class="sh_pascal">
+{$APPTYPE CONSOLE}
+var A,B : Integer; { Integer переполняется на больших числах }
+begin
+  Assign(Input,'aplusb.in'); Reset(Input);
+  Assign(Output,'aplusb.out'); Rewrite(Output);
+  Read(A,B);
+  Write(A+B);  
+end.
+</pre>
+
+<pre class="sh_pascal">
+{$APPTYPE CONSOLE}
+var A,B : Int64; 
+begin
+  Assign(Input,'aplusb.in'); Reset(Input);
+  Assign(Output,'aplusb.out'); Rewrite(Output);
+  Read(A,B);
+  Write(A div B); { Когда B равно 0, тут будет деление на ноль! }
+end.
+</pre>
+
+<p>Для поиска ошибок используйте директивы</p>
+
+<pre class="sh_pascal">
+{$O Off} { Выключаем оптимизацию }
+{$R+} { Включаем проверку границ массивов }
+{$Q+} { Включаем проверку переполнений }
+</pre>
+
+
 </div>
 </body>
 
