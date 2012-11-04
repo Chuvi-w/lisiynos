@@ -104,12 +104,9 @@ begin
   fillchar(was,sizeof(was),0); wasn:=0;
   fillchar(res,sizeof(res),0);
   { Основная часть решения - вызываем обход в глубину }
-  totx:=dfs(0);
-  { Выводим ответ }
-  if(totx<>0)then begin 
-    { Если дизбаланс не равен 0 после обхода всего графа, то невозможно сбалансировать }
+  if dfs(1)<>0 then begin { Если сумма всех втекающих не равна сумме вытекающих => невозможно сбалансировать }
      writeln('Impossible');
-  end else begin
+  end else begin { Если сумма равна 0, выводим сколько и куда течёт }
     reset(input);
     for i:=1 to n+2 do readln;
     for i:=1 to m do begin
