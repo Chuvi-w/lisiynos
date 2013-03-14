@@ -1,0 +1,106 @@
+<html>
+<head>
+    <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    <title>Пример модульных тестов на Java</title>
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <script type="text/javascript" src="../syntax/sh_main.min.js"></script>
+    <script type="text/javascript" src="../syntax/sh_java.js"></script>
+    <link type="text/css" rel="stylesheet" href="../style/sh_nedit.css">
+</head>
+<body onLoad="sh_highlightDocument();">
+<div style="width:80%;">
+    <div style="float:right;">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+                width="100"
+                height="50">
+            <param name="movie" value="../audio/a_smsqulh3n.swf">
+            <param name="bgcolor" value="fff">
+            <param name="FlashVars" value="src=../audio/6016574696f60301------------ffffff">
+            <param name="autoplay" value="false">
+            <embed src="../audio/a_smsqulh3n.swf" bgcolor="fff" width="100" height="70"
+                   type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
+                   FlashVars="src=../audio/6016574696f60301------------ffffff"></embed>
+        </object>
+    </div>
+</div>
+<div id="content">
+<h1>Пример модульных тестов на Java</h1>
+
+<p>TDD (Test-driven development), разработка через тестирование - 
+техника разработки программного обеспечения, которая основывается на 
+повторении очень коротких циклов разработки: </p>
+<ul>
+<li>сначала пишется тест, покрывающий желаемое изменение,</li> 
+<li>затем пишется код, который позволит пройти тест,</li> 
+<li>и под конец проводится рефакторинг нового кода к соответствующим стандартам.</li> 
+</ul>
+
+<p>Конечный результат:</p>
+
+<pre class="sh_java">
+/**
+ * Реализация функций
+ */
+public class A {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static int fact(int N) throws Exception {
+        if (N < 0)
+            throw new Exception("Факториал от отрицательного числа не существует");
+        if (N == 0)
+            return 1;
+        if (N >= 2)
+            return fact(N - 1) * N;
+        return N;
+    }
+}
+</pre>
+
+<p>Модульные тесты:</p>
+
+<pre class="sh_java">
+import org.junit.Assert;
+import org.junit.Test;
+
+import static junit.framework.Assert.assertEquals;
+
+/**
+ *
+ */
+public class ATest {
+
+    @Test
+    public void add() {
+        assertEquals(7, A.add(2, 5));
+        assertEquals(12, A.add(3, 9));
+    }
+
+    @Test
+    public void fact() throws Exception {
+        assertEquals(1, A.fact(1));
+        assertEquals(1 * 2, A.fact(2));
+        assertEquals(1 * 2 * 3, A.fact(3));
+        assertEquals(1 * 2 * 3 * 4, A.fact(4));
+        assertEquals(1 * 2 * 3 * 4 * 5, A.fact(5));
+        assertEquals(1 * 2 * 3 * 4 * 5 * 6, A.fact(6));
+        assertEquals(1 * 2 * 3 * 4 * 5 * 6 * 7, A.fact(7));
+        assertEquals(1, A.fact(0));
+        try {
+            A.fact(-1);
+            Assert.fail("Не должно работать!");
+        } catch (Exception ex) {
+            assertEquals("Факториал от отрицательного числа не существует",
+                    ex.getMessage());
+        }
+    }
+}
+</pre>
+
+
+
+</div>
+</body>
+</html>
