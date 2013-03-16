@@ -371,7 +371,7 @@ public class A {
             A.fact(-1);
             Assert.fail("Не должно работать!");
         } catch (Exception ex) {
-            assertEquals("Факториал от отрицательных чисел не существует",
+            assertEquals("Факториал от отрицательного числа не существует!",
                     ex.getMessage());
         }
     }
@@ -380,7 +380,7 @@ public class A {
 <pre class="sh_java">
     public static int fact(int N) throws Exception {
         if (N < 0)
-            throw new Exception("Факториал от отрицательного числа не существует");
+            throw new Exception("Факториал от отрицательного числа не существует!");
         if (N == 0)
             return 1;
         if (N >= 2)
