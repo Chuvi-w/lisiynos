@@ -1,12 +1,12 @@
 uses sysUntils;
 var a:array[1..2000] of longint;
-i,j,k,h,n,s:longint; com:string;
+  i,j,k,h,n,s:longint; 
+  com:string;
 begin
         assign(input, 'queue.in'); reset(input);
         assign(output, 'queue.out'); rewrite(output);
         readln(n); s:=1;
-        for i:=1 to n do
-         begin
+        for i:=1 to n do begin
                 read(com);
                 if (com='PUT') then
                  begin
