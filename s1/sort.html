@@ -196,7 +196,6 @@ begin
       Write(Ai,' ');
 end.</pre>
 
-<div class="lesson">Сессия 3</div>
 <h2>"Быстрая сортировка" QuickSort</h2>
 
 <p>Один из быстрых известных универсальных алгоритмов сортировки массивов (в среднем $O(n \log n)$ обменов при
@@ -505,8 +504,7 @@ end;
 <pre class="sh_pascal">
 {$APPTYPE CONSOLE}
 
-uses
-  SysUtils;
+uses SysUtils;
 
 var
   N : integer; { Размер кучи }
@@ -525,8 +523,8 @@ end;
 procedure Heapify( i:integer );
 var r,l : integer;
 begin
-  l := i*2;
-  r := i*2+1;
+  l := i*2; { Левый потомок }
+  r := i*2+1; { Правый потомок }
   if l &lt;= N then
     if A[l] > A[i] then begin
       Swap(l,i);
