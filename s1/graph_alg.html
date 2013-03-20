@@ -2,11 +2,11 @@
 <head>
     <meta http-equiv=Content-Type content="text/html; charset=utf-8">
     <title>Алгоритмы на графах</title>
-    <link rel="stylesheet" type="text/css" href="../../style/style.css">
-    <script type="text/javascript" src="../../syntax/sh_main.min.js"></script>
-    <script type="text/javascript" src="../../syntax/sh_pascal.min.js"></script>
-    <script type="text/javascript" src="../../syntax/sh_python.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="../../style/sh_nedit.css">
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <script type="text/javascript" src="../syntax/sh_main.min.js"></script>
+    <script type="text/javascript" src="../syntax/sh_pascal.min.js"></script>
+    <script type="text/javascript" src="../syntax/sh_python.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../style/sh_nedit.css">
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
@@ -18,20 +18,16 @@
 <div style="width:80%;">
     <div style="float:right;">
         <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
-                codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swfla
-sh.cab#version=6,0,0,0" width="100" height="50">
-            <param name="movie"
-                   value="../../audio/a_smsqulh3n.swf">
-            <param name="bgcolor"
-                   value="fff">
-            <param name="FlashVars"
-                   value="src=../audio/8016574696f613132301------------ffffff">
-            <param
-                    name="autoplay" value="false">
-            <embed src="../../audio/a_smsqulh3n.swf"
-                   bgcolor="fff" width="100" height="70" type="application/x-shockwave-
-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
-                   FlashVars="src=../audio/8016574696f613132301------------ffffff"></embed>
+                codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+                width="100" height="50">
+            <param name="movie" value="../audio/a_smsqulh3n.swf">
+            <param name="bgcolor" value="fff">
+            <param name="FlashVars" value="src=9094e666f613f513f50301------------ffffff">
+            <param name="autoplay" value="false">
+            <embed src="../audio/a_smsqulh3n.swf" bgcolor="fff"
+                   width="100" height="70" type="application/x-shockwave-flash"
+                   pluginspage="http://www.macromedia.com/go/getflashplayer"
+                   FlashVars="src=9094e666f613f513f50301------------ffffff"></embed>
         </object>
     </div>
 </div>
@@ -48,7 +44,7 @@ flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
 
 <p align="center">Порядок обхода вершин при поиске в глубину</p>
 
-<p align="center"><img src="img/depth-first-tree.png" width="390" height="250" alt="Порядок обхода графа в DFS"></p>
+<p align="center"><img src="graph_alg/depth-first-tree.png" width="390" height="250" alt="Порядок обхода графа в DFS"></p>
 
 <pre class="sh_pascal">
 const MaxN = 100; { Максимальное количество верщин }
@@ -79,23 +75,9 @@ end.</pre>
 
 <p align="center">Порядок обхода вершин при поиске в ширину</p>
 
-<p align="center"><img src="img/breadth-first-tree.png" width="390" height="250" alt="Обход при поиске в ширину"></p>
+<p align="center"><img src="graph_alg/breadth-first-tree.png" width="390" height="250" alt="Обход при поиске в ширину"></p>
 
 <p>&nbsp;</p>
-
-<h2>Поиск особых путей в графах</h2>
-
-<h3>Поиск эйлерова цикла в графе</h3>
-
-<p>&nbsp;</p>
-
-<h3>Поиск гамильтонова цикла в графе</h3>
-
-<h2>&nbsp;</h2>
-
-<h2>Топологическая сортировка</h2>
-
-<p>Реализация через DFS.</p>
 
 <h2>Поиск кратчайших путей в графах (объединение разделов по Дейкстре и Флойду)</h2>
 
@@ -116,7 +98,7 @@ end.</pre>
     для каждого известна стоимость. Стоимость перелёта из A в B может быть не равна стоимости перелёта из B в A.
     Найти маршрут минимальной стоимости (возможно, с пересадками) от Копенгагена до Барнаула.</p>
 
-<p><img src="img/dijksta_anim.gif" alt=""></p>
+<p><img src="graph_alg/dijksta_anim.gif" alt=""></p>
 
 <p><strong>Идея алгоритма Дейкстры</strong></p>
 
@@ -257,7 +239,7 @@ begin
 '>&nbsp;</span><span
         ><img
         width=27 height=28 id="Рисунок 2"
-        src="img/image002.gif" alt="d_{i j}^{k}"></span><span
+        src="graph_alg/image002.gif" alt="d_{i j}^{k}"></span><span
         >&nbsp;</span><span
         >для длины
     кратчайшего пути от</span><span style='
@@ -271,32 +253,32 @@ begin
 '>&nbsp;</span><span
         ><img
         width=29 height=18 id="Рисунок 3"
-        src="img/image003.gif" alt="i,\; j"></span><span
+        src="graph_alg/image003.gif" alt="i,\; j"></span><span
         >&nbsp;</span><span
         >проходит
       только через вершины</span><span style='
 '>&nbsp;</span><span style='
 '><img width=49 height=15 id="Рисунок 4"
-       src="img/image004.gif" alt="1 \ldots k"></span><span
+       src="graph_alg/image004.gif" alt="1 \ldots k"></span><span
         >.
         Очевидно, что</span><span style='
 '>&nbsp;</span><span style='
 '><img width=27 height=28 id="Рисунок 5"
-       src="img/image005.gif" alt="d_{i j}^{0}"></span><span
+       src="graph_alg/image005.gif" alt="d_{i j}^{0}"></span><span
         >&nbsp;-
           длина (вес) ребра</span><span style='
 '>&nbsp;</span><span style='
 '><img width=48 height=23 id="Рисунок 6"
-       src="img/image006.gif" alt="(i,\;j)"></span><span
+       src="graph_alg/image006.gif" alt="(i,\;j)"></span><span
         >, если
             таковое существует (в противном случае его длина может быть обозначена как</span><span
         >&nbsp;</span><span
         ><img
         width=18 height=10 id="Рисунок 7"
-        src="img/image007.gif" alt="\infty"></span><span
+        src="graph_alg/image007.gif" alt="\infty"></span><span
         >)</span></p>
 
-<p>Существует два варианта значения <img id="Рисунок 8" src="img/image008.gif"
+<p>Существует два варианта значения <img id="Рисунок 8" src="graph_alg/image008.gif"
                                          alt="d_{i j}^{k},\;k \in \mathbb (1,\;\ldots,\;n)">:</p>
 
 <p style='margin-bottom:1.2pt;margin-left:38.4pt;text-indent:
@@ -306,7 +288,7 @@ begin
 путь между</span><span style='
 '>&nbsp;</span><span style='
 '><img width=29 height=18 id="Рисунок 9"
-       src="img/image003.gif" alt="i,\;j"></span><span
+       src="graph_alg/image003.gif" alt="i,\;j"></span><span
         >&nbsp;</span><span
         >не
 проходит через вершину</span><span style='
@@ -315,7 +297,7 @@ begin
 '>, тогда</span><span style='
 '>&nbsp;</span><span style='
 '><img width=83 height=27 id="Рисунок 10"
-       src="img/image009.gif" alt="d_{i j}^{k}=d_{i j}^{k-1}"></span></p>
+       src="graph_alg/image009.gif" alt="d_{i j}^{k}=d_{i j}^{k-1}"></span></p>
 
 <p style='margin-bottom:1.2pt;margin-left:38.4pt;text-indent:
 -18.0pt;line-height:18.0pt'><span style='
@@ -324,8 +306,7 @@ begin
 более короткий путь между</span><span style='
 '>&nbsp;</span><span style='
 '><img width=29 height=18 id="Рисунок 11"
-       src="img/image003.gif" alt="i,\;j"></span><span
-        >,
+       src="graph_alg/image003.gif" alt="i,\;j"></span><span>,
 проходящий через</span><span style='
 '>&nbsp;</span><i><span style='
 '>k</span></i><span style='
@@ -348,7 +329,7 @@ begin
 '>&nbsp;</span><span
         ><img
         width=144 height=27 id="Рисунок 12"
-        src="img/image010.gif"
+        src="graph_alg/image010.gif"
         alt="d_{i j}^{k}=d_{i k}^{k-1} + d_{k j}^{k-1}"></span></p>
 
 <p>Таким образом, для нахождения значения
@@ -364,7 +345,7 @@ begin
 для</span><span style='
 '>&nbsp;</span><span style='
 '><img border=0 width=21 height=27 id="Рисунок 13"
-       src="img/image011.gif" alt="d_{i j}^k"></span><span
+       src="graph_alg/image011.gif" alt="d_{i j}^k"></span><span
         >&nbsp;</span><span
         >имеет
 вид:</span></p>
@@ -372,16 +353,16 @@ begin
 <p style='
 '><span style='font-family:
 "Arial","sans-serif";'><img border=0 width=21 height=26
-                            id="Рисунок 14" src="img/image012.gif" alt="d_{i j}^0"></span><span
+                            id="Рисунок 14" src="graph_alg/image012.gif" alt="d_{i j}^0"></span><span
         >&nbsp;-
 длина ребра</span><span style='
 '>&nbsp;</span><span style='
 '><img border=0 width=48 height=23 id="Рисунок 15"
-       src="img/image006.gif" alt="(i,\;j)"></span></p>
+       src="graph_alg/image006.gif" alt="(i,\;j)"></span></p>
 
 <p style='
 '><img border=0 width=243 height=27
-       id="Рисунок 16" src="img/image013.gif"
+       id="Рисунок 16" src="graph_alg/image013.gif"
        alt="d_{i j}^{k} = \min (d_{i j}^{k-1},\; d_{i k}^{k-1} + d_{k j}^{k-1})"></span></p>
 
 <p style='
@@ -390,12 +371,12 @@ begin
 '>&nbsp;</span><span
             ><img
             border=0 width=27 height=28 id="Рисунок 17"
-            src="img/image002.gif" alt="d_{i j}^{k}"></span><span
+            src="graph_alg/image002.gif" alt="d_{i j}^{k}"></span><span
             >,</span><span
             >&nbsp;</span><span
             ><img
             border=0 width=40 height=19 id="Рисунок 18"
-            src="img/image014.gif" alt="\forall i,\; j"></span><span
+            src="graph_alg/image014.gif" alt="\forall i,\; j"></span><span
             >&nbsp;</span><span
             >для</span><span
             >&nbsp;</span><i><span
@@ -407,14 +388,14 @@ begin
             >.
 Полученные значения</span><span>&nbsp;</span><span style='
 '><img border=0 width=21 height=23 id="Рисунок 19"
-       src="img/image015.gif" alt="d_{i j}^{n}"></span><span
+       src="graph_alg/image015.gif" alt="d_{i j}^{n}"></span><span
             >&nbsp;</span><span
             >являются
 длинами кратчайших путей между вершинами</span><span style='
 '>&nbsp;</span><span
             ><img
             border=0 width=29 height=18 id="Рисунок 20"
-            src="img/image003.gif" alt="i,\; j"></span><span
+            src="graph_alg/image003.gif" alt="i,\; j"></span><span
             >.</span></p>
 <pre class="sh_pascal">
 for k := 1 to n do { k - промежуточная вершина } 
@@ -479,23 +460,20 @@ for k := 1 to n do { k - промежуточная вершина }
 </div>
 </p>
 
+<h2>Поиск особых путей в графах</h2>
 
-<p>$V$ - вершины графа.
+<h3>Поиск эйлерова цикла в графе</h3>
 
-</p>
+<p>&nbsp;</p>
 
-<p>$Q = V$
+<h3>Поиск гамильтонова цикла в графе</h3>
 
-</p>
+<h2>&nbsp;</h2>
 
-<p>for u&lt;-Q do key[u]=$\inf$
-</p>
+<h2>Топологическая сортировка</h2>
 
-<p> key[r] = 0
-    $\pi$[r] = nil
-    while Q\ne0
-    do u=Extract-Min(Q)
-    for $v{\in}Adj[u]$ </p>
+<p>Реализация через DFS.</p>
+
 
 </div>
 </body>
