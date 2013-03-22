@@ -14,27 +14,23 @@
 <div style="width:80%;">
     <div style="float:right;">
         <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
-                codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swfla
-sh.cab#version=6,0,0,0" width="100" height="50">
-            <param name="movie"
-                   value="../audio/a_smsqulh3n.swf">
-            <param name="bgcolor"
-                   value="fff">
-            <param name="FlashVars"
-                   value="src=../audio/8016574696f643430301------------ffffff">
-            <param
-                    name="autoplay" value="false">
-            <embed src="../audio/a_smsqulh3n.swf"
-                   bgcolor="fff" width="100" height="70" type="application/x-shockwave-
-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
-                   FlashVars="src=../audio/8016574696f643430301------------ffffff"></embed>
+                codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+                width="100"
+                height="50">
+            <param name="movie" value="../audio/a_smsqulh3n.swf">
+            <param name="bgcolor" value="fff">
+            <param name="FlashVars" value="src=9094e666f613f513f50301------------ffffff">
+            <param name="autoplay" value="false">
+            <embed src="../audio/a_smsqulh3n.swf" bgcolor="fff"
+                   width="100" height="70" type="application/x-shockwave-flash"
+                   pluginspage="http://www.macromedia.com/go/getflashplayer"
+                   FlashVars="src=9094e666f613f513f50301------------ffffff"></embed>
         </object>
     </div>
 </div>
 
-
 <div id="content" style="width:80%;">
-<h1>4.4. Задачи с использованием геометрических понятий</h1>
+<h1>4. Задачи с использованием геометрических понятий</h1>
 
 <p>При решении
     геометрических задач скалярное произведение векторов используется для
@@ -52,76 +48,39 @@ flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
     часовой
     стрелке или против часовой).</p>
 
-<h3>4.4.1. Примеры решений</h3>
+<h2>Примеры задач</h2>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><strong>Задача
+<p><strong>Задача
     1</strong>. Мэрия решила выделить деньги на постройку кольцевой автодороги
     вокруг
     города. Координаты всех домов в городе заданы парой целых чисел на
     плоскости.</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><strong><i>Уровень
-    1.</i></strong> Описать алгоритм построения дороги минимальной длины в
-    виде
-    отрезков, соединяющих точки-дома, вдоль которых должна пройти дорога
-    при
-    условии, что внутри дороги окажутся все остальные дома города.</p>
+<p><strong><i>Уровень 1.</i></strong> Описать алгоритм построения дороги минимальной длины в
+    виде отрезков, соединяющих точки-дома, вдоль которых должна пройти дорога
+    при условии, что внутри дороги окажутся все остальные дома города.</p>
 
-<p style='text-indent:17.0pt'>&nbsp;</p>
+<p>Можно использовать <b>алгоритм Джарвиса</b> построения выпуклой оболочки:</p>
 
-<p style='text-indent:17.0pt'>Можно
-    использовать алгоритм Джарвиса построения выпуклой оболочки:</p>
+<ol>
+<li>Найти точку с минимальной координатой по оси $OX$.
+    Запомнить ее.</li>
 
-<p style='margin-top:0cm;margin-right:-.25pt;margin-bottom:
-0cm;margin-left:54.0pt;margin-bottom:.0001pt;text-indent:
--18.0pt'>1.<span style='font:7.0pt "Times New 
-Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Найти точку с минимальной координатой по оси <span lang=EN-
-                                                          US>OX</span>.
-    Запомнить ее.</p>
+<li>Построить вектор, задающий первоначальное вертикальное направление (за
+    начало вектора можно взять найденную точку).</li>
 
-<p style='margin-top:0cm;margin-right:-.25pt;margin-bottom:
-0cm;margin-left:54.0pt;margin-bottom:.0001pt;text-indent:
--18.0pt'>2.<span style='font:7.0pt "Times New 
-Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Построить вектор,
-    задающий первоначальное вертикальное направление (за
-    начало вектора можно взять найденную точку).</p>
+<li>В цикле перебирая все остальные точки, чтобы найти такую, чтобы вектор с концом в этой точке, а началом в исходной образовал с первоначальным
+вектором минимальный угол (минимальному углу соответствует максимальный косинус, который определяется из формулы скалярного произведения). 
+Найденная таким образом точка будет точкой из выпуклой оболочки.</li>
 
-<p style='margin-top:0cm;margin-right:-.25pt;margin-bottom:
-0cm;margin-left:54.0pt;margin-bottom:.0001pt;text-indent:
--18.0pt'>3.<span style='font:7.0pt "Times New 
-Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>В цикле перебирая все
-    остальные точки, найти такую, чтобы вектор с
-    концом в этой точке, а  началом в исходной образовал с первоначальным
-    вектором
-    минимальный угол (минимальному углу соответствует максимальный
-    косинус, который
-    определяется из формулы скалярного произведения). Найденная таким
-    образом точка
-    будет точкой из выпуклой оболочки.</p>
-
-<p style='margin-top:0cm;margin-right:-.25pt;margin-bottom:
-0cm;margin-left:54.0pt;margin-bottom:.0001pt;text-indent:
--18.0pt'>4.<span style='font:7.0pt "Times New 
-Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Найденную точку
-    принять за исходную, новый построенный вектор принять за
-    исходное направление и из оставшихся <span>N</span>-2
-    точек искать
+<li>Найденную точку принять за исходную, новый построенный вектор принять за
+    исходное направление и из оставшихся $N-2$ точек искать
     следующую точку по принципу, изложенному в предыдущем пункте.</p>
 
-<p style='margin-top:0cm;margin-right:-.25pt;margin-bottom:
-0cm;margin-left:54.0pt;margin-bottom:.0001pt;text-indent:
--18.0pt'>5.<span style='font:7.0pt "Times New 
-Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Процесс прекратить,
-    когда дойдем до первой выбранной точки или
-    переберем  по количеству <span>N</span> точек
-    (предотвращение
-    зацикливания).</p>
+<li>Процесс прекратить, когда дойдем до первой выбранной точки или переберем по количеству $N$ точек (предотвращение зацикливания).</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><strong><i>Уровень
-    2.</i></strong> Написать программу, которая выводит в файл координаты
-    домов, вдоль
-    которых должна пройти кольцевая автодорога.</p>
+<p><strong><i>Уровень 2.</i></strong> Написать программу, которая выводит в файл координаты
+    домов, вдоль которых должна пройти кольцевая автодорога.</p>
 
 <p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
     ввода</u>: </p>

@@ -2,10 +2,18 @@
 <head>
     <meta http-equiv=Content-Type content="text/html; charset=utf-8">
     <title>Язык программирования Pascal</title>
-    <link rel="stylesheet" type="text/css" href="../../style/style.css">
-    <script type="text/javascript" src="../../syntax/sh_main.min.js"></script>
-    <script type="text/javascript" src="../../syntax/sh_pascal.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="../../style/sh_nedit.css">
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <script type="text/javascript" src="../syntax/sh_main.min.js"></script>
+    <script type="text/javascript" src="../syntax/sh_pascal.min.js"></script>
+    <script type="text/javascript" src="../syntax/sh_cpp.min.js"></script>
+    <script type="text/javascript" src="../syntax/sh_python.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../style/sh_nedit.css">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 </head>
 <body onLoad="sh_highlightDocument();">
 <div style="width:80%;">
@@ -163,11 +171,11 @@ end.
 
 <h3>Целые типы данных</h3>
 
-<p>integer -2^31..2^31-1</p>
+<p>integer $-2^{31}..2^{31}-1$</p>
 
-<p>int64 -2^63..2^63-1</p>
+<p>int64 $-2^{63}..2^{63}-1$</p>
 
-<p>byte 0..255 </p>
+<p>byte $0..255$</p>
 
 <h3>Вещественные типы данных</h3>
 
@@ -278,15 +286,18 @@ end.
 
 <p>Выполняет тело цикла указанное количество раз.</p>
 
-<p>for i := 1 to 10 do writeln(i); </p>
+<pre class="sh_pascal">
+for i := 1 to 10 do writeln(i);
+</pre>
 
 <p>Выведет на экран 10 чисел от 1 до 10. переменная i перебирает все целые числа от первого аргумента до второго,оба
     включительно.
-    i должна быть типа integer.Int64 нельзя использовать в for </p>
+    i должна быть типа integer.
+    Int64 нельзя использовать в for (как переменную цикла).</p>
 
 <h3>Цикл с предусловием (инструкция </a>WHILE) </h3>
 
-<p>while ( пока тут правда) он делает что-то</p>
+<p>while (пока тут правда) он делает что-то</p>
 <pre class="sh_pascal">
 begin
   a := 1;
