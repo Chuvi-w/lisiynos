@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="../style/style.css">
     <script type="text/javascript" src="../syntax/sh_main.min.js"></script>
     <script type="text/javascript" src="../syntax/sh_pascal.min.js"></script>
+    <script type="text/javascript" src="../syntax/sh_cpp.min.js"></script>
     <link type="text/css" rel="stylesheet" href="../style/sh_nedit.css">
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
@@ -35,9 +36,59 @@ rsion=6,0,0,0" width="100"
     </div>
 </div>
 
-
 <div id="content" style="width:80%;">
+
 <h1> Рекурсивные алгоритмы и их построение</h1>
+
+    <h2>Простейшая рекурсия (замена цикла)</h2>
+
+    <p><strong>Факториал. Рекурсивный и итеративный способы вычисления.</strong></p>
+
+<p>Рекурсивный способ:</p>
+
+<pre class="sh_pascal">
+function fact(n : integer) : longint;
+begin
+  if n <= 1 then
+    fact := 1
+  else
+    fact := n * fact(n - 1);
+end;
+</pre>
+
+<pre class="sh_cpp">
+long fact(int N) {
+  if(N < 0) // если пользователь ввел отрицательное число
+    return 0; // возвращаем ноль
+  if (N == 0) // если пользователь ввел ноль,
+    return 1; // возвращаем факториал от нуля - не удивляетесь, но это 1 =)
+  else // Во всех остальных случаях
+    return N * fact(N - 1); // делаем рекурсию.
+}
+</pre>    
+
+<pre class="sh_cpp">
+int factorial(int n) {
+  return !n ? 1 : n * factorial(n - 1);
+}
+</pre>    
+
+    <h2>Рекурсивные функции</h2>
+
+    <p><b>Рекурсивная функция</b> (лат. recursio — возвращение) — функция, которая в своей записи содержит вызов себя же.</p>
+
+    <h2>Рекуррентные отношения</h2>
+
+    <p>&nbsp;</p>
+
+    <h2>Фракталы и фрактальные множества</h2>
+
+    <h2>&nbsp;</h2>
+
+    <p>&nbsp;</p>
+
+    <p>&nbsp;</p>
+
 
 <p>Помните детское стихотворение-считалку про 10 негритят? Оно может служить эпиграфом к любой работе на тему &quot;Рекурсия&quot;.</p>
 
