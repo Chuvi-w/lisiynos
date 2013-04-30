@@ -277,34 +277,18 @@ end.
 Procedure REV;
 var c:char;
 begin
-   read(c);
+  read(c);
+  if c&lt;&gt;' ' then begin
+    REV; write(c) 
+  end
+end;
+
+BEGIN
+  REV
+END.
 </pre>
-<p STYLE="text-indent: 2.57cm;"><strong>If</strong></SPAN>
-    c&lt;&gt;' '</SPAN></p>
 
-<p STYLE="text-indent: 2.57cm;"><strong>Then
-    begin</strong></SPAN>
-    REV; write(c) </SPAN><strong>end</strong></SPAN></p>
-
-<p STYLE="text-indent: 1.35cm;"><strong>End</strong></SPAN>;</p>
-
-<p><strong>BEGIN</strong></SPAN>
-    REV</SPAN></p>
-
-<p><strong>END</strong></SPAN>.</p>
-
-<p><BR>
-</p>
-
-<p style="text-indent:1.25cm;">
-    Теперь переходим к более сложным
-    задачам.</p>
-
-<p><BR>
-</p>
-
-<p><I>Пример
-    3.</I></p>
+<h3>Фракталы</h3>
 
 <p style="text-indent:1.25cm;">
     <strong>Фракталами</strong>
