@@ -34,7 +34,7 @@
     </div>
 </div>
 
-<div id="content" style="width:80%;">
+<div id="content">
 
     <h1>Язык программирования Pascal (Delphi)</h1>
 
@@ -68,7 +68,7 @@ begin
 end.
 </pre>
 
-<p>Использование with:</p>
+    <p>Использование with:</p>
 
 <pre class="sh_pascal">
 { Обьявление записи - тип "Персонаж в игре" }
@@ -102,57 +102,7 @@ end;
 
     <img src="../s1/img/stack.png">
 
-<pre class="sh_pascal">
-const StackSize = 10000; { Размер стека (сколько в него можно положить элементов) }
-
-{ === Хранение стека === }
-var
-  Stack : array [1..StackSize] of Integer; { Массив для хранения стека }
-  StackTop : Integer = 0; { Вершина стека - индекс в массиве Stack }
-
-{ === Операции со стеком === }
-
-{ Стек пуст? }
-function isEmpty : Boolean;
-begin
-  isEmpty := StackTop = 0;
-end;
-
-{ Положить значение на вершину стека }
-procedure Push( Value : Integer );
-begin
-  assert( StackTop &lt; StackSize, 'Стек полон! Больше положить в него нельзя!');
-  Inc(StackTop);
-  Stack[StackTop] := Value;
-end;
-
-{ Забрать значение с вершины стека }
-function Pop : Integer;
-begin
-  assert( not isEmpty, 'Нельзя извлечь элемент, потому что стек пуст!');
-  Pop := Stack[StackTop];
-  Dec( StackTop );
-end;
-
-{ === Тестирование работы стека === }
-begin
-  Writeln(isEmpty); { Выводит "TRUE" - стек пуст }
-  Push(2); { В стеке: 2 }
-  Writeln(isEmpty); { Выводит "FALSE" - стек не пуст }
-  Push(5); { В стеке: 2, 5 }
-  Writeln(Pop); { Выводит "5", в стеке: 2 }
-  Writeln(Pop); { Выводит "2", в стеке пусто }
-end.</pre>
-
-    <p>
-        <strong>Очередь</strong> — структура данных с дисциплиной доступа к элементам «первый пришёл — первый вышел»
-        (<strong>FIFO</strong>, First In — First Out). Добавление элемента (принято обозначать словом enqueue —
-        поставить в
-        очередь) возможно лишь в конец очереди, выборка — только из начала очереди (что принято называть словом dequeue
-        —
-        убрать из очереди), при этом выбранный элемент из очереди удаляется. </p>
-
-    <p><img src="../s1/img/queue.gif" width="517" height="214" alt="Очередь" longdesc="img/queue.gif"></p>
+    <p><img src="../s1/img/queue.gif" width="517" height="214" alt="Очередь"></p>
 
     <p>&nbsp;</p>
 

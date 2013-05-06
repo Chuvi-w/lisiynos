@@ -32,7 +32,7 @@
     </div>
 </div>
 
-<div id="content" style="width:80%;">
+<div id="content">
 <h1>Алгоритмы на графах</h1>
 
 <h2>Обход вершин графа</h2>
@@ -42,9 +42,10 @@
 <p>Метод обхода графа при котором в первую очередь переход делается из последней посещённой вершины (вершины хранятся в
     <strong>стеке</strong>). Обход в глубину получается естественным образом при рекурсивном обходе графа.</p>
 
-<p align="center">Порядок обхода вершин при поиске в глубину</p>
+<p style="text-align: center">Порядок обхода вершин при поиске в глубину</p>
 
-<p align="center"><img src="graph_alg/depth-first-tree.png" width="390" height="250" alt="Порядок обхода графа в DFS"></p>
+ <p style="text-align: center"><img src="graph_alg/depth-first-tree.png" width="390" height="250" alt="Порядок обхода графа в DFS">
+</p>
 
 <pre class="sh_pascal">
 const MaxN = 100; { Максимальное количество верщин }
@@ -73,9 +74,10 @@ end.</pre>
     обходе
     графа.</p>
 
-<p align="center">Порядок обхода вершин при поиске в ширину</p>
+<p style="text-align: center">Порядок обхода вершин при поиске в ширину</p>
 
-<p align="center"><img src="graph_alg/breadth-first-tree.png" width="390" height="250" alt="Обход при поиске в ширину"></p>
+ <p style="text-align: center"><img src="graph_alg/breadth-first-tree.png" width="390" height="250" alt="Обход при поиске в ширину">
+</p>
 
 <p>&nbsp;</p>
 
@@ -228,11 +230,7 @@ begin
     динамический алгоритм для нахождения кратчайших расстояний между всеми вершинами взвешенного ориентированного
     графа. Разработан в 1962 году Робертом Флойдом и Стивеном Уоршеллом.</p>
 
-<p>Пусть вершины графа </span><span
-        >&nbsp;</span><span
-        >пронумерованы
-  от 1 до</span><span style='
-'>&nbsp;</span><i><span style='
+<p>Пусть вершины графа<span>&nbsp;</span><span>пронумерованы от 1 до</span><span style=''>&nbsp;</span><i><span style='
 '>n</span></i><span style='
 '>&nbsp;</span><span style='
 '>и введено обозначение</span><span style='
@@ -335,8 +333,7 @@ begin
 <p>Таким образом, для нахождения значения
     функции достаточно выбрать минимум из двух обозначенных значений.</p>
 
-<p>Тогда</span><span style='
-'>&nbsp;</span><span
+<p>Тогда <span
         ><a
         href="http://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BA%D1%83%D1%80%D1%81%D0%B8%D1%8F"
         title=Рекурсия><span style='color:#0645AD'>рекуррентная</span></a></span><span
@@ -350,11 +347,7 @@ begin
         >имеет
 вид:</span></p>
 
-<p style='
-'><span style='font-family:
-"Arial","sans-serif";'><img border=0 width=21 height=26
-                            id="Рисунок 14" src="graph_alg/image012.gif" alt="d_{i j}^0"></span><span
-        >&nbsp;-
+<p><img border=0 width=21 height=26 id="Рисунок 14" src="graph_alg/image012.gif" alt="d_{i j}^0"><span>&nbsp;-
 длина ребра</span><span style='
 '>&nbsp;</span><span style='
 '><img border=0 width=48 height=23 id="Рисунок 15"
@@ -363,48 +356,45 @@ begin
 <p style='
 '><img border=0 width=243 height=27
        id="Рисунок 16" src="graph_alg/image013.gif"
-       alt="d_{i j}^{k} = \min (d_{i j}^{k-1},\; d_{i k}^{k-1} + d_{k j}^{k-1})"></span></p>
+       alt="d_{i j}^{k} = \min (d_{i j}^{k-1},\; d_{i k}^{k-1} + d_{k j}^{k-1})"></p>
 
 <p style='
-'>Алгоритм Флойда&nbsp;- Уоршелла
-    последовательно вычисляет все значения</span><span style='
+'>Алгоритм Флойда&nbsp;- Уоршелла последовательно вычисляет все значения<span style='
 '>&nbsp;</span><span
-            ><img
-            border=0 width=27 height=28 id="Рисунок 17"
-            src="graph_alg/image002.gif" alt="d_{i j}^{k}"></span><span
-            >,</span><span
-            >&nbsp;</span><span
-            ><img
-            border=0 width=40 height=19 id="Рисунок 18"
-            src="graph_alg/image014.gif" alt="\forall i,\; j"></span><span
-            >&nbsp;</span><span
-            >для</span><span
-            >&nbsp;</span><i><span
-            >k</span></i><span
-            >&nbsp;</span><span
-            >от 1 до</span><span
-            >&nbsp;</span><i><span
-            >n</span></i><span
-            >.
+        ><img
+        border=0 width=27 height=28 id="Рисунок 17"
+        src="graph_alg/image002.gif" alt="d_{i j}^{k}"></span><span
+        >,</span><span
+        >&nbsp;</span><span
+        ><img
+        border=0 width=40 height=19 id="Рисунок 18"
+        src="graph_alg/image014.gif" alt="\forall i,\; j"></span><span
+        >&nbsp;</span><span
+        >для</span><span
+        >&nbsp;</span><i><span
+        >k</span></i><span
+        >&nbsp;</span><span
+        >от 1 до</span><span
+        >&nbsp;</span><i><span
+        >n</span></i><span
+        >.
 Полученные значения</span><span>&nbsp;</span><span style='
 '><img border=0 width=21 height=23 id="Рисунок 19"
        src="graph_alg/image015.gif" alt="d_{i j}^{n}"></span><span
-            >&nbsp;</span><span
-            >являются
+        >&nbsp;</span><span
+        >являются
 длинами кратчайших путей между вершинами</span><span style='
 '>&nbsp;</span><span
-            ><img
-            border=0 width=29 height=18 id="Рисунок 20"
-            src="graph_alg/image003.gif" alt="i,\; j"></span><span
-            >.</span></p>
+        ><img
+        border=0 width=29 height=18 id="Рисунок 20"
+        src="graph_alg/image003.gif" alt="i,\; j"></span><span
+        >.</span></p>
 <pre class="sh_pascal">
 for k := 1 to n do { k - промежуточная вершина } 
   for i := 1 to n do { из i-ой вершины } 
     for j := 1 to n do { в j-ую вершину } 
       W[i][j] = min(W[i][j], W[i][k] + W[k][j]);
 </pre>
-</p>
-
 
 <h3>Алгоритм Прима</h3>
 
@@ -458,7 +448,6 @@ for k := 1 to n do { k - промежуточная вершина }
         <p> $ T \gets T+(p[v],v)$</p>
     </div>
 </div>
-</p>
 
 <h2>Поиск особых путей в графах</h2>
 

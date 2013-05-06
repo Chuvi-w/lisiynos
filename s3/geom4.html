@@ -29,7 +29,7 @@
     </div>
 </div>
 
-<div id="content" style="width:80%;">
+<div id="content">
 <h1>4. Задачи с использованием геометрических понятий</h1>
 
 <p>При решении
@@ -64,26 +64,32 @@
 
 <ol>
 <li>Найти точку с минимальной координатой по оси $OX$.
-    Запомнить ее.</li>
+    Запомнить ее.
+</li>
 
 <li>Построить вектор, задающий первоначальное вертикальное направление (за
-    начало вектора можно взять найденную точку).</li>
+    начало вектора можно взять найденную точку).
+</li>
 
-<li>В цикле перебирая все остальные точки, чтобы найти такую, чтобы вектор с концом в этой точке, а началом в исходной образовал с первоначальным
-вектором минимальный угол (минимальному углу соответствует максимальный косинус, который определяется из формулы скалярного произведения). 
-Найденная таким образом точка будет точкой из выпуклой оболочки.</li>
+<li>В цикле перебирая все остальные точки, чтобы найти такую, чтобы вектор с концом в этой точке, а началом в исходной
+    образовал с первоначальным
+    вектором минимальный угол (минимальному углу соответствует максимальный косинус, который определяется из формулы
+    скалярного произведения).
+    Найденная таким образом точка будет точкой из выпуклой оболочки.
+</li>
 
 <li>Найденную точку принять за исходную, новый построенный вектор принять за
     исходное направление и из оставшихся $N-2$ точек искать
     следующую точку по принципу, изложенному в предыдущем пункте.</p>
 
-<li>Процесс прекратить, когда дойдем до первой выбранной точки или переберем по количеству $N$ точек (предотвращение зацикливания).</p>
+<li>Процесс прекратить, когда дойдем до первой выбранной точки или переберем по количеству $N$ точек (предотвращение
+зацикливания).</p>
 
 <p><strong><i>Уровень 2.</i></strong> Написать программу, которая выводит в файл координаты
     домов, вдоль которых должна пройти кольцевая автодорога.</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
-    ввода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Формат
+    ввода</cite>: </p>
 
 <p>Количество
     домов <span>N</span> (3&lt;<span lang=EN-
@@ -100,8 +106,8 @@
                                                                         US>Y<sub>N</sub></span> (2 числа через пробел)
 </p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
-    вывода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Формат
+    вывода</cite>: </p>
 
 <p>Координаты
     1-го дома X<sub>1</sub> Y<sub>1</sub>
@@ -116,8 +122,8 @@
 
 <p style='margin-top:6.0pt;text-indent:20pt'><i>Пример:</i></p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Входные
-    данные</u>:                      <u>Выходные данные</u>:              </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Входные
+    данные</cite>:                      <cite>Выходные данные</cite>:              </p>
 
 <p>5                                                  1 1</span></p>
 
@@ -131,11 +137,11 @@
 
 <p>4 1</span></p>
 
-<p><u><span
-        style='text-decoration:none'>&nbsp;</span></u></p>
+<p><cite><span
+        style='text-decoration:none'>&nbsp;</span></cite></p>
 
-<p><u>Программа</u><u> 1.1 (</span>на</u><u> языке</u><u><span>
-QBasic)</span></u>:</span></p>
+<p><cite>Программа</cite><cite> 1.1 (</span>на</cite><cite> языке</cite><cite><span>
+QBasic)</span></cite>:</span></p>
 
 <p style='margin-right:1.0cm;text-indent:19.85pt'><span>OPEN “INPUT.TXT” FOR INPUT AS #1</span></p>
 
@@ -153,8 +159,7 @@ QBasic)</span></u>:</span></p>
 <p style='margin-right:1.0cm;text-indent:
 19.85pt'><span>FOR i = 1 TO n</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>INPUT #1, x(i), y(i)</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>INPUT #1, x(i), y(i)</span></p>
 
 <p style='margin-right:1.0cm;text-indent:
 19.85pt'><span>NEXT</span></p>
@@ -175,8 +180,7 @@ margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>INPUT #1, x(i), y(i)<
 <p style='margin-right:1.0cm;text-indent:
 19.85pt'><span>FOR i = 2 TO n</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>IF x(i) &lt; x1 THEN x1 = x(i): y1 = y(i): i1 = i: n1 =
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>IF x(i) &lt; x1 THEN x1 = x(i): y1 = y(i): i1 = i: n1 =
     i</span></p>
 
 <p style='margin-right:1.0cm;text-indent:
@@ -192,76 +196,57 @@ margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>IF x(i) &lt; x1 THEN 
 <p style='margin-right:1.0cm;text-indent:
 19.85pt'><span>DO</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:35.4pt;margin-bottom:.0001pt;'><span lang=EN-
-                                                 US>mcos</span>
+<p style='margin: 0cm 1.0cm 0cm 35.4pt;'><span lang=EN-
+                                               US>mcos</span>
     = -2                    ‘ число, необходимое для поиска максимального cos,
 </p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:4.0cm;margin-bottom:.0001pt;text-indent:28.2pt'>‘
+<p style='margin: 0cm 1.0cm 0cm 4.0cm;text-indent:28.2pt'>‘
     т.е. минимального угла</p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>X10 = X1 - X0:
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>X10 = X1 - X0:
     Y10 = Y1 - Y0                        '
     строим вектор а</p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>a = SQR</span>(X10 ^
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>a = SQR</span>(X10 ^
     2 + Y10 ^ 2)            ' находим |a|</p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>FOR i = 1 TO n</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>FOR i = 1 TO n</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:49.05pt;margin-bottom:.0001pt;text-indent:20pt'>IF i &lt;&gt; i1 THEN</span></p>
+<p style='margin: 0cm 1.0cm 0cm 49.05pt;text-indent:20pt'>IF i &lt;&gt; i1 THEN</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:77.4pt;margin-bottom:.0001pt;text-indent:20pt'>xi1 = x(i) - x1: yi1 = y(i) - y1                </span>
+<p style='margin: 0cm 1.0cm 0cm 77.4pt;text-indent:20pt'>xi1 = x(i) - x1: yi1 = y(i) - y1                </span>
     ' </span>вектор<span> b</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:77.4pt;margin-bottom:.0001pt;text-indent:20pt'>b = SQR(xi1 ^ 2 + yi1 ^ 2)                   </span>' </span>
+<p style='margin: 0cm 1.0cm 0cm 77.4pt;text-indent:20pt'>b = SQR(xi1 ^ 2 + yi1 ^ 2)                   </span>' </span>
     <span>|b|</span></p>
 
-<p style='margin-top:0cm;margin-right:17.75pt;margin-bottom:
-0cm;margin-left:283.65pt;margin-bottom:.0001pt;text-indent:
+<p style='margin: 0cm 17.75pt 0cm 283.65pt;text-indent:
 -206.25pt'><span>cosa</span> = (X10 * xi</span>1 + Y10 * <span>yi</span>1)
     / (a * b)        ' cos</span> угла из скалярного </p>
 
-<p style='margin-top:0cm;margin-right:17.75pt;margin-bottom:
-0cm;margin-left:283.65pt;margin-bottom:.0001pt;text-indent:
+<p style='margin: 0cm 17.75pt 0cm 283.65pt;text-indent:
 -.45pt'><span>‘ </span>произведения</p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:49.05pt;margin-bottom:.0001pt;text-indent:1.0cm'>IF cosa &gt; mcos THEN mcos = cosa: nomi = i</span></p>
+<p style='margin: 0cm 1.0cm 0cm 49.05pt;text-indent:1.0cm'>IF cosa &gt; mcos THEN mcos = cosa: nomi = i</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:41.4pt;margin-bottom:.0001pt;text-indent:20pt'>END IF</span></p>
+<p style='margin: 0cm 1.0cm 0cm 41.4pt;text-indent:20pt'>END IF</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>NEXT i</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>NEXT i</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>k = k + 1</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>k = k + 1</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>IF nomi = n1 THEN END</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>IF nomi = n1 THEN END</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>x0 = x1: y0 =
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>x0 = x1: y0 =
     y1                                          </span>' </span>за вектор а берем<span> b
 </span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>x1 = x(nomi): y1 = y(nomi)</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>x1 = x(nomi): y1 = y(nomi)</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>PRINT #2, x1, y1</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>PRINT #2, x1, y1</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>i1 = nomi</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>i1 = nomi</span></p>
 
 <p style='margin-top:6.0pt;text-indent:20pt'>LOOP UNTIL k &gt; n – 1</span></p>
 
@@ -282,8 +267,8 @@ margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>i1 = nomi</span></p>
     (Джарвиса и
     Грэхема).</p>
 
-<p><u>Программа
-    1.3 (на языке </u><u><span>QBasic</span>)</u>:</p>
+<p><cite>Программа
+    1.3 (на языке </cite><cite><span>QBasic</span>)</cite>:</p>
 
 <p style='margin-right:1.0cm;text-indent:
 19.85pt'><span>SCREEN</span> 9                                 
@@ -304,14 +289,11 @@ margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>i1 = nomi</span></p>
 <p style='margin-right:1.0cm;text-indent:
 19.85pt'><span>FOR i = 1 TO n</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>x(i) = INT(RND * 600 + 20)</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>x(i) = INT(RND * 600 + 20)</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>y(i) = INT(RND * 300 + 20)</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>y(i) = INT(RND * 300 + 20)</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>CIRCLE (x(i), y(i)), 3</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>CIRCLE (x(i), y(i)), 3</span></p>
 
 <p style='margin-right:1.0cm;text-indent:
 19.85pt'><span>NEXT</span></p>
@@ -326,8 +308,7 @@ margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>CIRCLE (x(i), y(i)), 
 <p style='margin-right:1.0cm;text-indent:
 19.85pt'><span>FOR i = 2 TO n</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>IF x(i) &lt; x1 THEN x1 = x(i): y1 = y(i): i1 = i: n1 =
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>IF x(i) &lt; x1 THEN x1 = x(i): y1 = y(i): i1 = i: n1 =
     i</span></p>
 
 <p style='margin-right:1.0cm;text-indent:
@@ -343,60 +324,43 @@ margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>IF x(i) &lt; x1 THEN 
 <p style='margin-right:1.0cm;text-indent:
 19.85pt'><span>DO</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:4.0cm;margin-bottom:.0001pt;text-indent:-65.2pt'>mcos = -2                </span></p>
+<p style='margin: 0cm 1.0cm 0cm 4.0cm;text-indent:-65.2pt'>mcos = -2                </span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>x10 = x1 - x0: y10 = y1 -
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>x10 = x1 - x0: y10 = y1 -
     y0                        </span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>a = SQR(x10 ^ 2 + y10 ^ 2)            </span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>a = SQR(x10 ^ 2 + y10 ^ 2)            </span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>FOR i = 1 TO n</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>FOR i = 1 TO n</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:49.05pt;margin-bottom:.0001pt;text-indent:20pt'>IF i &lt;&gt; i1 THEN</span></p>
+<p style='margin: 0cm 1.0cm 0cm 49.05pt;text-indent:20pt'>IF i &lt;&gt; i1 THEN</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:77.4pt;margin-bottom:.0001pt;text-indent:20pt'>xi1 = x(i) - x1: yi1 = y(i) - y1    </span></p>
+<p style='margin: 0cm 1.0cm 0cm 77.4pt;text-indent:20pt'>xi1 = x(i) - x1: yi1 = y(i) - y1    </span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:77.4pt;margin-bottom:.0001pt;text-indent:20pt'>b = SQR(xi1 ^ 2 + yi1 ^ 2)       </span></p>
+<p style='margin: 0cm 1.0cm 0cm 77.4pt;text-indent:20pt'>b = SQR(xi1 ^ 2 + yi1 ^ 2)       </span></p>
 
-<p style='margin-top:0cm;margin-right:17.75pt;margin-bottom:
-0cm;margin-left:283.65pt;margin-bottom:.0001pt;text-indent:
+<p style='margin: 0cm 17.75pt 0cm 283.65pt;text-indent:
 -206.25pt'><span>cosa = (x10 * xi1 + y10 * yi1) / (a * b)       
 </span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:49.05pt;margin-bottom:.0001pt;text-indent:1.0cm'>IF cosa &gt; mcos THEN mcos = cosa: nomi = i</span></p>
+<p style='margin: 0cm 1.0cm 0cm 49.05pt;text-indent:1.0cm'>IF cosa &gt; mcos THEN mcos = cosa: nomi = i</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:41.4pt;margin-bottom:.0001pt;text-indent:20pt'>END IF</span></p>
+<p style='margin: 0cm 1.0cm 0cm 41.4pt;text-indent:20pt'>END IF</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>NEXT i</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>NEXT i</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>LINE (x1, y1)-(x(nomi), y(nomi))</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>LINE (x1, y1)-(x(nomi), y(nomi))</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>k = k + 1</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>k = k + 1</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>IF nomi = n1 THEN END</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>IF nomi = n1 THEN END</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>x0 = x1: y0 =
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>x0 = x1: y0 =
     y1                                          </span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>x1 = x(nomi): y1 = y(nomi)</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>x1 = x(nomi): y1 = y(nomi)</span></p>
 
-<p style='margin-top:0cm;margin-right:1.0cm;margin-bottom:0cm;
-margin-left:20.7pt;margin-bottom:.0001pt;text-indent:20pt'>i1 = nomi</span></p>
+<p style='margin: 0cm 1.0cm 0cm 20.7pt;text-indent:20pt'>i1 = nomi</span></p>
 
 <p style='margin-top:6.0pt;text-indent:20pt'>LOOP UNTIL k &gt; n – 1</span></p>
 
@@ -483,8 +447,8 @@ Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     автомобиля, если
     задана последовательность координат движения этого автомобиля.</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
-    ввода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Формат
+    ввода</cite>: </p>
 
 <p>Координаты
     начала движения X<sub>0</sub> Y<sub>0</sub>
@@ -506,16 +470,16 @@ Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             US>Y<sub>N</sub></span><sub>+1</sub>
     (2 числа через пробел)</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
-    вывода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Формат
+    вывода</cite>: </p>
 
 <p>Величина
     штрафа </p>
 
 <p style='margin-top:6.0pt;text-indent:20pt'><i>Пример:</i></p>
 
-<p style='margin-top:6.0pt;'><u>Входные
-    данные</u>:                 <u>Выходные данные</u>:              </p>
+<p style='margin-top:6.0pt;'><cite>Входные
+    данные</cite>:                 <cite>Выходные данные</cite>:              </p>
 
 <p>-2 -1                                        2
     млн. руб.</p>
@@ -533,8 +497,8 @@ Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <p class="title">Рис. 7</p>
 </div>
 
-<p><u>Программа</u><u> 2.1 (</span>на</u><u> языке</u><u><span>
-QBasic)</span></u>:</span></p>
+<p><cite>Программа</cite><cite> 2.1 (</span>на</cite><cite> языке</cite><cite><span>
+QBasic)</span></cite>:</span></p>
 
 <p style='margin-right:1.0cm;text-indent:
 19.85pt'>&nbsp;</p>
@@ -596,7 +560,7 @@ QBasic)</span></u>:</span></p>
     данным -
     получается 2 левых поворота.</p>
 
-<p><u>Примечание</u>:
+<p><cite>Примечание</cite>:
     При оформлении к задаче графического сопровождения не забывать, что
     экранная
     система координат является неправильной (левой), поэтому проверка
@@ -604,10 +568,10 @@ QBasic)</span></u>:</span></p>
     произведения на знак должна измениться, то есть значение должно быть
     &lt; 0.</p>
 
-<p><u><span style='text-decoration:none'>&nbsp;</span></u></p>
+<p><cite><span style='text-decoration:none'>&nbsp;</span></cite></p>
 
-<p><u>Программа 2.2 (на языке </u><u><span lang=EN-
-                                           US>QBasic</span>)</u>:</p>
+<p><cite>Программа 2.2 (на языке </cite><cite><span lang=EN-
+                                           US>QBasic</span>)</cite>:</p>
 
 <p><span>SCREEN</span> 9</p>
 
@@ -757,8 +721,8 @@ Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     внутрь N-
     угольника.</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
-    ввода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Формат
+    ввода</cite>: </p>
 
 <p style='margin-top:6.0pt;text-indent:20pt'>Количество
     вершин многоугольника (число <span>N</span>)</p>
@@ -778,8 +742,8 @@ Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     точки <span>X<sub>a</sub></span><span>
 </span>Y<sub>a</sub></span> (2 числа через пробел)</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
-    вывода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Формат
+    вывода</cite>: </p>
 
 <p>Слово «IN</span>» (если точка внутри) или слово «<span lang=EN-
                                                           US>OUT</span>»
@@ -792,8 +756,8 @@ Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <p class="title">Рис. 8</p>
 </div>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Входные
-    данные</u>:                      <u>Выходные данные</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Входные
+    данные</cite>:                      <cite>Выходные данные</cite>: </p>
 
 <p style='margin-top:6.0pt;text-indent:20pt'>5                                                  OUT</span></p>
 
@@ -809,11 +773,11 @@ Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <p>1 1</span></p>
 
-<p><u><span style='text-
-decoration:none'>&nbsp;</span></span></u></p>
+<p><cite><span style='text-
+decoration:none'>&nbsp;</span></span></cite></p>
 
-<p><u>Программа</u><u> 3.1 (</span>на языке </u><u><span lang=EN-
-                                                         US>QBasic)</span></u>:</span></p>
+<p><cite>Программа</cite><cite> 3.1 (</span>на языке </cite><cite><span lang=EN-
+                                                         US>QBasic)</span></cite>:</span></p>
 
 <p><span>DECLARE
 FUNCTION acos! </span>(X!)</p>
@@ -915,8 +879,8 @@ x))</span></p>
 
 <p>&nbsp;</p>
 
-<p><u>Программа</u><u> 3.</span>2 (на языке </u><u><span lang=EN-
-                                                         US>Pascal)</span></u>:</span></p>
+<p><cite>Программа</cite><cite> 3.</span>2 (на языке </cite><cite><span lang=EN-
+                                                         US>Pascal)</span></cite>:</span></p>
                                                   
 <pre class="sh_pascal">
 Type mas=array[1..100] of real;
@@ -983,9 +947,7 @@ end.</pre>
 <h3>4.4.2. Задачи для самостоятельного
     решения.</h3>
 
-<p style='margin-top:6.0pt;text-
-indent:20pt'><strong>Задача&nbsp;4.&nbsp;</strong>(Областная
-    олимпиада, 1995). </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><strong>Задача&nbsp;4.&nbsp;</strong>(Областная олимпиада, 1995). </p>
 
 <p style='margin-top:6.0pt;text-indent:20pt'><strong><i>Уровень
     2.</i></strong> Написать программу, которая определяет выпуклый
@@ -995,15 +957,15 @@ indent:20pt'><strong>Задача&nbsp;4.&nbsp;</strong>(Областная
     где i = 1, 2, ..., n. Данный многоугольник содержит все точки указанного
     множества.</p>
 
-<p style='text-indent:17.0pt'><u>Указание</u>.
+<p style='text-indent:17.0pt'><cite>Указание</cite>.
     Эта задача аналогична задаче 1. Отличием является лишь то, что из
     множества
     вершин построенного выпуклого многоугольника необходимо исключить
     «лишние»
     точки, то есть те, которые лежат на сторонах многоугольника.</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
-    ввода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Формат
+    ввода</cite>: </p>
 
 <p style='margin-top:6.0pt;text-indent:20pt'>Количество
     точек (число N)</p>
@@ -1019,8 +981,8 @@ indent:20pt'><strong>Задача&nbsp;4.&nbsp;</strong>(Областная
                                                                         US>Y<sub>N</sub></span> (2 числа через пробел)
 </p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
-    вывода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Формат
+    вывода</cite>: </p>
 
 <p>Координаты
     первой вершины многоугольника X<sub>1</sub> Y</span><sub>1</sub> (2 числа через пробел)</p>
@@ -1049,8 +1011,8 @@ indent:20pt'><strong>Задача&nbsp;4.&nbsp;</strong>(Областная
     своих
     вершин.</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
-    ввода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Формат
+    ввода</cite>: </p>
 
 <p style='margin-top:6.0pt;text-indent:20pt'>Высота
     бассейна <span>H</span> и грузоподъемность машины G</span>
@@ -1067,8 +1029,8 @@ indent:20pt'><strong>Задача&nbsp;4.&nbsp;</strong>(Областная
                                                                           US>Y<sub>N</sub></span> (2 числа через
     пробел)</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
-    вывода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Формат
+    вывода</cite>: </p>
 
 <p>Вещественное
     число с 3 знаками после запятой (объем бассейна)</p>
@@ -1088,11 +1050,11 @@ indent:20pt'><strong>Задача&nbsp;4.&nbsp;</strong>(Областная
     светофора на
     перекрестке. Написать соответствующую программу.</p>
 
-<p><u>Указание</u>:
+<p><cite>Указание</cite>:
     Задача на определение пересечения двух прямых или двух отрезков.</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
-    ввода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Формат
+    ввода</cite>: </p>
 
 <p>Координаты X<sub>1</sub> Y<sub>1
 </sub>пункта А
@@ -1107,8 +1069,8 @@ indent:20pt'><strong>Задача&nbsp;4.&nbsp;</strong>(Областная
 <p>Координаты X<sub>4</sub> Y<sub>4</sub>
     пункта D</span> (2 числа через пробел)</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
-    вывода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Формат
+    вывода</cite>: </p>
 
 <p>Слово «YES</span>», если возникает необходимость в светофоре,
     слово «NO</span>», если нет.</p>
@@ -1128,8 +1090,8 @@ indent:20pt'><strong>Задача&nbsp;4.&nbsp;</strong>(Областная
     координаты точек и координаты концов отрезков вводятся с
     клавиатуры.</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'> <u>Формат
-    ввода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'> <cite>Формат
+    ввода</cite>: </p>
 
 <p style='margin-top:6.0pt;text-indent:20pt'>N</span> и <span>M</span> (2 числа через
     пробел)</p>
@@ -1167,8 +1129,8 @@ indent:20pt'><strong>Задача&nbsp;4.&nbsp;</strong>(Областная
     отрезка (2 числа
     через пробел)</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
-    вывода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Формат
+    вывода</cite>: </p>
 
 <p style='margin-top:6.0pt;text-indent:20pt'>Рисунок
     на экране монитора</p>
@@ -1186,7 +1148,7 @@ indent:20pt'><strong>Задача&nbsp;4.&nbsp;</strong>(Областная
     содержащей все
     заданные точки на плоскости. </p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Указание</u>:
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Указание</cite>:
     Искомая окружность может опираться либо на три точки, либо на две точки,
     лежащие на ее диаметре. Следовательно, надо перебрать все варианты
     троек и пар
@@ -1196,8 +1158,8 @@ indent:20pt'><strong>Задача&nbsp;4.&nbsp;</strong>(Областная
     оболочку,
     построение которой приведено в задаче 1.</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
-    ввода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Формат
+    ввода</cite>: </p>
 
 <p style='margin-top:6.0pt;text-indent:20pt'>N</span> (число точек)</p>
 
@@ -1211,8 +1173,8 @@ indent:20pt'><strong>Задача&nbsp;4.&nbsp;</strong>(Областная
                                                                               US>N</span>-й точки (2 числа через
     пробел)</p>
 
-<p style='margin-top:6.0pt;text-indent:20pt'><u>Формат
-    вывода</u>: </p>
+<p style='margin-top:6.0pt;text-indent:20pt'><cite>Формат
+    вывода</cite>: </p>
 
 <p style='margin-top:6.0pt;text-indent:20pt'>X<span>
 </span>Y&nbsp;<span>R</span> (координаты центра и радиус
