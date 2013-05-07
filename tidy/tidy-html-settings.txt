@@ -1,6 +1,0 @@
-tab-size:4
-add-xml-decl: no
-add-xml-space: no
-input-xml: no
-output-xhtml: no
-output-xml: no
