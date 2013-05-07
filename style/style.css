@@ -315,3 +315,29 @@ td.number {
     padding-left: 5px;
     padding-right: 5px;
 }
+
+.main {
+    border: 2px solid #CCCCCC;
+    border-collapse: collapse;
+    width: 450px;
+    font-family: Cambria, Cochin, Georgia, serif;
+}
+
+.main td, .main th {
+    border: 1px solid #CCC;
+    padding: 10px;
+}
+
+.main th {
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #DDE9FF;
+}
+
+.main tr:nth-of-type(2n + 2) {
+    background-color: #ECF7FF;
+}
+
+.main tr:nth-of-type(2n + 3) {
+    background-color: #FBFDFF;
+}
