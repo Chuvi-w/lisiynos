@@ -27,6 +27,8 @@ a:hover {
 #content {
  /*   width: 1000px; */
     margin: 0 auto;
+	width: 90%;
+	margin: 10pt;
 }
 
 #nav {
