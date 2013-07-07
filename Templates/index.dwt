@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+<!-- TemplateBeginEditable name="doctitle" -->
+Сессия X - СЕЗОН: учебно-тематический план
+<!-- TemplateEndEditable -->
+</title>
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link href="../style/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div style="width:80%;">
+    <div style="float:right;">
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+                width="100" height="50">
+            <param name="movie" value="../audio/a_smsqulh3n.swf">
+            <param name="bgcolor" value="fff">
+            <param name="FlashVars" value="src=../audio/6016574696f60301------------ffffff">
+            <param name="autoplay" value="false">
+            <embed src="../audio/a_smsqulh3n.swf" bgcolor="fff" width="100" height="70"
+                   type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
+                   FlashVars="src=../audio/6016574696f60301------------ffffff"></embed>
+        </object>
+    </div>
+</div>
+<div id="content">
+<h1><!-- TemplateBeginEditable name="title" -->Сессия 2 - лето: учебно-тематический план<!-- TemplateEndEditable --></h1>
+<!-- TemplateBeginEditable name="content" --> 
+<p>content</p>
+<!-- TemplateEndEditable -->
+<p>Время в академических часах: 1 час = 45 мин. = один урок. </p>
+
+<p>Очная сессия: теоретический материал - 18 часов, решение задач - 18 часов.</p>
+
+<p>Дистанционная сессия: 18 часов.</p>
+</div>
+<script type="text/javascript" src="../js/index.js"></script>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter21717616 = new Ya.Metrika({id:21717616,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/21717616" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
