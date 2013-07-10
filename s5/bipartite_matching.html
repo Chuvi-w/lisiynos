@@ -107,20 +107,19 @@ for (i = 0; i &lt; n; i++)
 <pre class="sh_pascal">
 var n : integer; { Количество вершин }
 
-function dfs( v : integer ):integer; 
-var i, ret : integer;
+function dfs( v : integer ):boolean; 
+var i : integer; ret : boolean;
 begin
-  ret := 0; { Изначально считаем, что возвращаем ноль }
+  ret := false; { Изначально считаем, что не нашли }
   u[v] := 1;
   if f(v) then 
-    ret := 1;
+    ret := true;
   else   
     for i:=1 to n do 
       if g[v][i] and (u[i] = 0) then
-        ret := ret or dfs() 
+        ret := ret or dfs(i) 
   dfs := ret;      
-end;
-</pre>
+end;</pre>
 
 Поиск паросочетания:
 <pre class="sh_cpp">
