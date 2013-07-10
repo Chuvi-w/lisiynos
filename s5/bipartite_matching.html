@@ -61,17 +61,18 @@
 <pre class="sh_cpp">
 int dfs(int v, int color)
 {
+  int ret = 1;
   u[v] = color;
   // Перебираем соседей
   for(int i = 0; i &lt; g[v].size(); i++)
   {
     int v2 = g[v][i];
     if (u[v2] == 0)
-      dfs (v2, 3 - color);
+      ret &amp;= dfs(v2, 3 - color);
     else if (u[v2] == color)
       return 0;
   }
-  return 1;
+  return ret;
 }
 ...
 
