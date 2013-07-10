@@ -184,5 +184,61 @@
         обхода дерева решений в глубину и стандартизированы операторы, позволяющие вмешиваться в этот процесс (такие как
         оператор отсечения ! или ветвления ->) и не позволяющие распараллелить программу, задействовав в поиске решения
         несколько процессоров или узлов сети.</p></div>
+
+    <h2>Решение задач на LISP</h2>
+
+
+<h3>Наибольший общий делитель</h3>
+
+<pre style='color:#000000;background:#ffffff;'><html><body style='color:#000000; background:#ffffff; '><pre>
+#lang racket
+<span style='color:#696969; '>; Открываем входной файл как in</span>
+<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>define</span> in <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>open-input-file</span> <span style='color:#0000e6; '>"gcd.in"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+<span style='color:#696969; '>; Открываем выходной файл как out, перезаписываем его если он уже есть</span>
+<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>define</span> out <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>open-output-file</span> <span style='color:#0000e6; '>"gcd.out"</span> #<span style='color:#400000; '>:exists</span> <span style='color:#800080; '>'replace</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+<span style='color:#696969; '>; Функция gcd, если y равен нулю, то возвращает x, </span>
+<span style='color:#696969; '>; иначе вызывает саму себя с параметрами y и остаток от деления x на y</span>
+<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>define</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>gcd</span> x y<span style='color:#808030; '>)</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>zero?</span> y<span style='color:#808030; '>)</span> x <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>gcd</span> y <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>remainder</span> x y<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+<span style='color:#696969; '>; Считываем два числа из входного файла, передаём их на вход функции gcd и выводим в выходной файл ответ</span>
+<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>display</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>gcd</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>read</span> in<span style='color:#808030; '>)</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>read</span> in<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> out<span style='color:#808030; '>)</span>
+<span style='color:#696969; '>; Сбрасываем буфер вывода</span>
+<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>flush-output</span> out<span style='color:#808030; '>)</span>
+</pre>
+
+
+<h3></h3>
+
+<pre style='color:#000000;background:#ffffff;'><html><body style='color:#000000; background:#ffffff; '><pre>
+#lang racket
+<span style='color:#696969; '>; Открываем входной файл как in</span>
+<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>define</span> in<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>open-input-file"rpn.in"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+<span style='color:#696969; '>; Открываем выходной файл как out, перезаписываем его если он уже есть</span>
+<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>define</span> out<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>open-output-file"rpn.out"#:exists</span> <span style='color:#800080; '>'replace</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+
+<span style='color:#696969; '>; Выполнение операции</span>
+<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>define</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>do</span> f e s operation<span style='color:#808030; '>)</span> 
+  <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>f</span> 
+   <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>cdr</span> e<span style='color:#808030; '>)</span> 
+   <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>cons</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>operation</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>car</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>cdr</span> s<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>car</span> s<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>cdr</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>cdr</span> s<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+
+<span style='color:#696969; '>; Функция f: e - оставшаяся часть выражения, s - стек</span>
+<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>define</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>f</span> e s<span style='color:#808030; '>)</span>
+  <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>null?</span> e<span style='color:#808030; '>)</span>
+     <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>car</span> s<span style='color:#808030; '>)</span>         
+     <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>eq?</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>car</span> e<span style='color:#808030; '>)</span> <span style='color:#800080; '>'+</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>do</span> f e s <span style='color:#808030; '>+</span><span style='color:#808030; '>)</span>
+        <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>eq?</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>car</span> e<span style='color:#808030; '>)</span> <span style='color:#800080; '>'-</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>do</span> f e s -<span style='color:#808030; '>)</span>
+           <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>eq?</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>car</span> e<span style='color:#808030; '>)</span> <span style='color:#800080; '>'*</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>do</span> f e s *<span style='color:#808030; '>)</span>
+              <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>eq?</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>car</span> e<span style='color:#808030; '>)</span> <span style='color:#800080; '>'</span><span style='color:#808030; '>/</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>do</span> f e s <span style='color:#808030; '>/</span><span style='color:#808030; '>)</span>
+                 <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>f</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>cdr</span> e<span style='color:#808030; '>)</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>cons</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>car</span> e<span style='color:#808030; '>)</span> s<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+              <span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+
+<span style='color:#696969; '>; Считываем из входного файла, подаём на вход функции f и выводим результат в выходной файл</span>
+<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>display</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>f</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>read</span> in<span style='color:#808030; '>)</span> <span style='color:#800080; '>'</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> out<span style='color:#808030; '>)</span>
+<span style='color:#696969; '>; Сбрасываем буфер вывода</span>
+<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>flush-output</span> out<span style='color:#808030; '>)</span>
+</pre>
+
+
+
 </body>
 </html>
