@@ -171,15 +171,18 @@ for(int i1=1; i1&lt;=n1; i1++){
 {$APPTYPE CONSOLE}
 uses SysUtils;
 
+const MaxN = 100;
+
 var
-  u: array [1 .. 1000] of integer;
-  g: array [1 .. 1000, 1 .. 1000] of boolean;
+  u: array [1..MaxN] of integer;
+  g: array [1..MaxN, 1..MaxN] of boolean;
   n: integer;
 
+{ Depth-First-Search для раскраски графа }
 procedure dfs(v, color: integer);
 var i: integer;
 begin
-  u[v] := color;
+  u[v] := color; { Красим вершину v в цвет color }
   { Перебираем соседей вершины v }
   for i := 1 to n do
     if g[v, i] then { Если есть ребро из v в i }
