@@ -175,12 +175,12 @@ uses SysUtils;
 const MaxN = 100;
 
 var
-  u: array [1..MaxN] of integer;
-  g: array [1..MaxN, 1..MaxN] of boolean;
-  n: integer;
+  n: integer; { Количество вершин }
+  g: array [1..MaxN, 1..MaxN] of boolean; { Матрица смежности }
+  u: array [1..MaxN] of integer; { Цвет вершины }
 
 { Depth-First-Search для раскраски графа }
-procedure dfs(v, color: integer);
+procedure dfs(v, color: integer); { v - вершина, color - цвет, в который её красим }
 var i: integer;
 begin
   u[v] := color; { Красим вершину v в цвет color }
