@@ -331,6 +331,162 @@ public class SegTree {
 <p><img src="segments_tree/tree_example.png" width="600" height="444" alt="Пример дерева"></p>
 <p><img src="segments_tree/example.png" alt="Пример дерева"></p>
 
+<h3>Реализация на Delphi</h3>
+<pre class="sh_pascal">
+{$APPTYPE CONSOLE}
+
+uses SysUtils;
+
+const base = 1 shl 20;
+
+var
+  S, B, E: array [1 .. 2 * base] of Integer; { S-Sum, B-Begin, E-End }
+  N: Integer;
+
+{ Количество точек на отрезке от A до B }
+function Sum(x, y, i: Integer): Integer;
+begin
+  if (y<B[i]) or (x>E[i]) then begin
+    Sum := 0;
+    exit;
+  end;
+  if (x<=B[i]) and (y>=E[i]) then begin
+    Sum := S[i];
+    exit;
+  end;
+  Sum := Sum(x,y,i*2) + Sum(x,y,i*2+1);
+end;
+
+{ Добавление точки }
+procedure Put(p: Integer);
+begin
+  p := base + p - 1;
+  while p > 0 do
+  begin
+    inc(S[p]);
+    p := p div 2; { Поднимаемся к отрезку-предку }
+  end;
+end;
+
+{ Вычисляем начала и концы отрезков в дереве отрезков }
+procedure fillBE;
+var
+  i: Integer;
+begin
+  { Нижний слой }
+  for i := base to 2 * base do
+  begin
+    B[i] := i - base + 1;
+    E[i] := B[i];
+  end;
+  { Поднимаемся выше }
+  for i := base - 1 downto 1 do
+  begin
+    B[i] := B[i * 2];
+    E[i] := E[i * 2 + 1];
+  end;
+end;
+
+var
+  K: Integer;
+  i, p, x, y: Integer;
+begin
+  Assign(Input, 'numbers.in');
+  Reset(Input);
+  Assign(Output, 'numbers.out');
+  Rewrite(Output);
+  Read(N, K);
+  fillBE;
+  for i := 1 to K do
+  begin
+    Read(p);
+    if p = 0 then
+    begin
+      Read(x, y);
+      Writeln(Sum(x, y, 1));
+    end
+    else
+      Put(p);
+  end;
+end.
+</pre>
+
+<p>Без предпросчёта начал/концов отрезков.</p>
+<pre class="sh_pascal">
+{$APPTYPE CONSOLE}
+
+uses SysUtils;
+
+const base = 1 shl 20;
+
+var
+  S: array [1 .. 2 * base] of Integer; { S-Sum, B-Begin, E-End }
+  N: Integer;
+
+function B( i:integer ):Integer;
+begin
+  if i>=base then
+    B := i-base+1
+  else
+    B := B(i*2);
+end;
+
+function E( i:integer ):Integer;
+begin
+  if i>=base then
+    E := i-base+1
+  else
+    E := E(i*2+1);
+end;
+
+{ Количество точек на отрезке от A до B }
+function Sum(x, y, i: Integer): Integer;
+begin
+  if (y<B(i)) or (x>E(i)) then begin
+    Sum := 0;
+    exit;
+  end;
+  if (x<=B(i)) and (y>=E(i)) then begin
+    Sum := S[i];
+    exit;
+  end;
+  Sum := Sum(x,y,i*2) + Sum(x,y,i*2+1);
+end;
+
+{ Добавление точки }
+procedure Put(p: Integer);
+begin
+  p := base + p - 1;
+  while p > 0 do
+  begin
+    inc(S[p]);
+    p := p div 2; { Поднимаемся к отрезку-предку }
+  end;
+end;
+
+var
+  K: Integer;
+  i, p, x, y: Integer;
+begin
+  Assign(Input, 'numbers.in');
+  Reset(Input);
+  Assign(Output, 'numbers.out');
+  Rewrite(Output);
+  Read(N, K);
+  for i := 1 to K do
+  begin
+    Read(p);
+    if p = 0 then
+    begin
+      Read(x, y);
+      Writeln(Sum(x, y, 1));
+    end
+    else
+      Put(p);
+  end;
+end.
+</pre>
+
 </div>
 </body>
 
