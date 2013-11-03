@@ -343,3 +343,7 @@ td.number {
 .main tr:nth-of-type(2n + 3) {
     background-color: #FBFDFF;
 }
+
+.picture {
+    text-align: center;
+}
