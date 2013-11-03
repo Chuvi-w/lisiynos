@@ -5,13 +5,14 @@
     <link rel="stylesheet" type="text/css" href="../style/style.css">
     <script type="text/javascript" src="../syntax/sh_main.min.js"></script>
     <script type="text/javascript" src="../syntax/sh_cpp.min.js"></script>
+    <script type="text/javascript" src="../syntax/sh_pascal.js"></script>
     <script type="text/javascript" src="../syntax/sh_java.js"></script>
     <link type="text/css" rel="stylesheet" href="../style/sh_nedit.css">
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
     <script type="text/javascript"
-            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 </head>
 <body onLoad="sh_highlightDocument();">
@@ -329,6 +330,181 @@ public class SegTree {
 <li><a href="http://neerc.ifmo.ru/wiki/index.php?title=%D0%94%D0%B5%D1%80%D0%B5%D0%B2%D0%BE_%D0%BE%D1%82%D1%80%D0%B5%D0%B7%D0%BA%D0%BE%D0%B2._%D0%9F%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B5">Дерево отрезков на neerc.ifmo.ru</a></li>
 </ul>
 <p><img src="segments_tree/tree_example.png" width="600" height="444" alt="Пример дерева"></p>
+<p><img src="segments_tree/example.png" alt="Пример дерева"></p>
+
+<h3>Реализация на Delphi - Числа на отрезке</h3>
+
+<p>Вова нарисовал на доске горизонтальную прямую, отметил на ней $N$ точек и
+пронумеровал их слева направо натуральными числами от $1$ до $N$. После этого
+он стал обводить некоторые точки кружочками. Время от времени Паша, чтобы
+оторвать его от этого занятия, спрашивает его, сколько точек на отрезке от
+$A$ до $B$, включительно, Вова уже обвёл кружочками. Ответьте Паше на все
+его вопросы, чтобы не отвлекать Вову.</p>
+
+<p>В первой строке входного файла записаны два целых числа $N$ и $K$ "---
+количество точек на отрезке и количество событий, соответственно
+($1 \le N \le 1\,000\,000$, $1 \le K \le 100\,000$).</p>
+
+<p>В следующих $K$ строках заданы события в порядке, в котором они случались.
+Каждая из этих строк либо содержит целое число $C$ от $1$ до $N$,
+включительно, которое означает, что Вова обвёл кружочком точку с номером
+$C$, либо имеет вид $0$ $A$ $B$, где $1 \le A \le B \le N$,
+что означает, что Паша спросил, сколько точек на отрезке от $A$ до $B$,
+включительно, уже обведено кружочками.</p>
+
+<p>Вова обводит каждую точку не более одного раза.</p>
+
+
+<pre class="sh_pascal">
+{$APPTYPE CONSOLE}
+
+uses SysUtils;
+
+const base = 1 shl 20;
+
+var
+  S, B, E: array [1 .. 2 * base] of Integer; { S-Sum, B-Begin, E-End }
+  N: Integer;
+
+{ Количество точек на отрезке от A до B }
+function Sum(x, y, i: Integer): Integer;
+begin
+  if (y &lt; B[i]) or (x &gt; E[i]) then begin
+    Sum := 0;
+    exit;
+  end;
+  if (x <= B[i]) and (y >= E[i]) then begin
+    Sum := S[i];
+    exit;
+  end;
+  Sum := Sum(x,y,i*2) + Sum(x,y,i*2+1);
+end;
+
+{ Добавление точки }
+procedure Put(p: Integer);
+begin
+  p := base + p - 1;
+  while p > 0 do
+  begin
+    inc(S[p]);
+    p := p div 2; { Поднимаемся к отрезку-предку }
+  end;
+end;
+
+{ Вычисляем начала и концы отрезков в дереве отрезков }
+procedure fillBE;
+var i: Integer;
+begin
+  { Нижний слой }
+  for i := base to 2 * base do
+  begin
+    B[i] := i - base + 1;
+    E[i] := B[i];
+  end;
+  { Поднимаемся выше }
+  for i := base - 1 downto 1 do
+  begin
+    B[i] := B[i * 2];
+    E[i] := E[i * 2 + 1];
+  end;
+end;
+
+var
+  K: Integer;
+  i, p, x, y: Integer;
+begin
+  Assign(Input, 'numbers.in');
+  Reset(Input);
+  Assign(Output, 'numbers.out');
+  Rewrite(Output);
+  Read(N, K);
+  fillBE;
+  for i := 1 to K do
+  begin
+    Read(p);
+    if p = 0 then
+    begin
+      Read(x, y);
+      Writeln(Sum(x, y, 1));
+    end
+    else
+      Put(p);
+  end;
+end.
+</pre>
+
+<p>Без предпросчёта начал/концов отрезков.</p>
+<pre class="sh_pascal">
+{$APPTYPE CONSOLE}
+
+uses SysUtils;
+
+const base = 1 shl 20;
+
+var
+  S: array [1 .. 2 * base] of Integer; { S-Sum, B-Begin, E-End }
+  N: Integer; { Количество точек }
+
+function B( i:integer ):Integer;
+begin
+  if i>=base then
+    B := i-base+1
+  else
+    B := B(i*2);
+end;
+
+function E( i:integer ):Integer;
+begin
+  if i>=base then
+    E := i-base+1
+  else
+    E := E(i*2+1);
+end;
+
+{ Количество точек на отрезке от A до B }
+function Sum(x, y, i: Integer): Integer;
+begin
+  if (y<B(i)) or (x>E(i)) then begin
+    Sum := 0;
+    exit;
+  end;
+  if (x<=B(i)) and (y>=E(i)) then begin
+    Sum := S[i];
+    exit;
+  end;
+  Sum := Sum(x,y,i*2) + Sum(x,y,i*2+1);
+end;
+
+{ Добавление точки }
+procedure Put(p: Integer);
+begin
+  p := base + p - 1; { Индекс элемента на нижнем уровне дерева }
+  while p > 0 do
+  begin
+    inc(S[p]);
+    p := p div 2; { Поднимаемся к отрезку-предку }
+  end;
+end;
+
+var
+  K: Integer;
+  i, p, x, y: Integer;
+begin
+  Assign(Input, 'numbers.in'); Reset(Input);
+  Assign(Output, 'numbers.out'); Rewrite(Output);
+  Read(N, K);
+  for i := 1 to K do
+  begin
+    Read(p);
+    if p = 0 then begin
+      Read(x, y); { Начало и конец интервала  }
+      Writeln(Sum(x, y, 1));
+    end
+    else { Обводим точку }
+      Put(p);
+  end;
+end.
+</pre>
 
 </div>
 </body>
