@@ -116,15 +116,15 @@
 
 <p>Конечного
     автомата для решения этой задачи не существует. <em>Доказательство:</em> Действительно, пусть такой
-    автомат существует и </span><span lang=EN-US style='font-size:12.0pt;
+    автомат существует и </span><span style='font-size:12.0pt;
 color:black'>M</span><span style='font-size:12.0pt;line-height:
 92%;color:black'> - число его состояний. Переведем в двоичную запись число из 2</span><sup>M</span></sup> единиц. Тогда
     на выходе
-    должна получиться единица с </span><span lang=EN-US style='font-size:12.0pt;
+    должна получиться единица с </span><span style='font-size:12.0pt;
 color:black'>M</span><span style='font-size:12.0pt;line-height:
 92%;color:black'> нулями. Но на вход автомата подается постоянный символ
     (единица), поэтому последовательность на выходе должна повторяться не более,
-    чем через </span><span lang=EN-US style='font-size:12.0pt;
+    чем через </span><span style='font-size:12.0pt;
 color:black'>M</span>
     (число всех состояний автомата) символов. Следовательно, единица с </span>M</span> нулями на выходе
     появиться не может.</p>
@@ -138,27 +138,27 @@ color:black'>M</span>
 
 <p>Деление на 2
     моделируется в машине Тьюринга вычеркиванием единиц через одну (заменой их
-    другим символом, например, </span><span lang=EN-US style='font-size:12.0pt;
+    другим символом, например, </span><span style='font-size:12.0pt;
 color:black'>x</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>), При встрече с очередной единицей происходит переход из
-    состояния </span><span lang=EN-US style='font-size:12.0pt;
+    состояния </span><span style='font-size:12.0pt;
 color:black'>Q</span><sub><span style='font-size:12.0pt;
 color:black'>0 </span></sub><span style='font-size:12.0pt;
-color:black'>(чет) в состояние </span><span lang=EN-US style='font-size:12.0pt;
+color:black'>(чет) в состояние </span><span style='font-size:12.0pt;
 color:black'>Q</span><sub><span style='font-size:12.0pt;
 color:black'>1</span></sub><span style='font-size:12.0pt;
 color:black'>(нечет) или наоборот. Остаток  определяется
       четностью-нечетностью числа просмотренных единиц, то есть, если при встрече с
       нулем (предполагается, что все клетки ленты, кроме единиц, изображающих число,
       заполнены нулями) текущим состоянием будет </span>Q</span><sub>0</span></sub>, то остаток равен 0, и
-    состояние </span><span lang=EN-US style='font-size:12.0pt;
+    состояние </span><span style='font-size:12.0pt;
 color:black'>Q</span><sub><span style='font-size:12.0pt;
 color:black'>0</span></sub><span style='font-size:12.0pt;
-color:black'> переходит в состояние </span><span lang=EN-US style='font-size:
+color:black'> переходит в состояние </span><span style='font-size:
 12.0pt;color:black'>Q</span><sub><span style='font-size:12.0pt;
 color:black'>2 </span></sub><span style='font-size:12.0pt;
 color:black'>(запоминается остаток 0), если при встрече с нулем
-    текущим состоянием будет </span><span lang=EN-US style='font-size:12.0pt;
+    текущим состоянием будет </span><span style='font-size:12.0pt;
 color:black'>Q</span><sub><span style='font-size:12.0pt;
 color:black'>1</span></sub><span style='font-size:12.0pt;
 color:black'>, то остаток равен 1, и состояние </span>Q</span><sub>1</span></sub> переходит в состояние </span>Q</span>
@@ -171,7 +171,7 @@ color:black'>, то остаток равен 1, и состояние </span>Q<
     единице. Это и есть очередная (с конца) цифра числа в двоичной записи. Теперь
     движение ленты пойдет в обратном направлении, при этом состояние </span>Q</span><sub>2 </span></sub>(или </span>
     Q</span><sub>3</span></sub>)<sub> </sub> переходит в
-    состояние </span><span lang=EN-US style='font-size:12.0pt;
+    состояние </span><span style='font-size:12.0pt;
 color:black'>Q</span><sub><span style='font-size:12.0pt;
 color:black'>4</span></sub><span style='font-size:12.0pt;
 color:black'>, которое имеет смысл поиска начала текущего частного и
@@ -829,7 +829,7 @@ color:black'>, которое имеет смысл поиска начала т
     момент лента установлена так, что обозревается самая левая единица числа.</span></p>
 
 <p>Q</span><sub>0 </span></sub>1 </span>Q</span><sub>1</span></sub> </span>x</span> </span>R</span> {обозревается левая
-    единица числа, она заменяется на </span><span lang=EN-US style='font-size:12.0pt;
+    единица числа, она заменяется на </span><span style='font-size:12.0pt;
 color:black'>x</span><span style='font-size:12.0pt;line-height:
 92%;color:black'> (вычеркивается), и </span></p>
 
@@ -845,14 +845,14 @@ color:black'>x</span><span style='font-size:12.0pt;line-height:
 
 <p style='text-align:justify;text-indent:2.0cm;line-height:
 92%'> четно
-    (состояние </span><span lang=EN-US style='font-size:12.0pt;
+    (состояние </span><span style='font-size:12.0pt;
 color:black'>Q</span><sub><span style='font-size:12.0pt;
 color:black'>0</span></sub><span style='font-size:12.0pt;
 color:black'>), запоминаем четность или, что то же самое, остаток 0 </span></p>
 
 <p style='text-align:justify;text-indent:2.0cm;line-height:
 92%'>(переход в
-    состояние </span><span lang=EN-US style='font-size:12.0pt;
+    состояние </span><span style='font-size:12.0pt;
 color:black'>Q</span><sub><span style='font-size:12.0pt;
 color:black'>2</span></sub><span style='font-size:12.0pt;
 color:black'>) и начинаем передвигать ленту в обратном </span></p>
@@ -866,7 +866,7 @@ color:black'>) и начинаем передвигать ленту в обра
 
 <p style='text-align:justify;text-indent:2.0cm;line-height:
 92%'>просмотренных
-    единиц (состояние </span><span lang=EN-US style='font-size:12.0pt;line-height:
+    единиц (состояние </span><span style='font-size:12.0pt;line-height:
 92%;color:black'>Q</span><sub><span style='font-size:12.0pt;
 color:black'>3</span></sub><span style='font-size:12.0pt;
 color:black'>)}.</span></p>
@@ -884,10 +884,10 @@ color:black'>)}.</span></p>
          </span></p>
 
 <p> </span>Q</span><sub>3</span></sub> 1 </span>Q</span><sub>3</span></sub> 1 </span>L</span>    и то же самое с
-    заменой </span><span lang=EN-US style='font-size:12.0pt;
+    заменой </span><span style='font-size:12.0pt;
 color:black'>Q</span><sub><span style='font-size:12.0pt;
 color:black'>3</span></sub><span style='font-size:12.0pt;
-color:black'> на </span><span lang=EN-US style='font-size:12.0pt;line-height:
+color:black'> на </span><span style='font-size:12.0pt;line-height:
 92%;color:black'>Q</span><sub><span style='font-size:12.0pt;
 color:black'>2</span></sub><span style='font-size:12.0pt;
 color:black'> .</span></p>
@@ -895,7 +895,7 @@ color:black'> .</span></p>
 <p>Наконец, когда
     лента доходит до нуля, вместо него пишется <i>a</i> или </span><i>b</span></i><i>,</span></i> в зависимости от
     четности
-    просмотренных единиц (состоянию </span><span lang=EN-US style='font-size:12.0pt;
+    просмотренных единиц (состоянию </span><span style='font-size:12.0pt;
 color:black'>Q</span><sub><span style='font-size:12.0pt;
 color:black'>2</span></sub><span style='font-size:12.0pt;
 color:black'> соответствует символ <i>a,</i> состоянию </span>Q</span><sub>3</span></sub><i> </span></i> -
@@ -928,7 +928,7 @@ color:black'> соответствует символ <i>a,</i> состояни
     то это означает, что все единицы вычеркнуты, и машина переходит в состояние </span>Q</span><sub>5</span></sub>
     (фактически, это означает
     остановку, так как в описании машины нет пятерок, имеющих в качестве исходного
-    состояние </span><span lang=EN-US style='font-size:12.0pt;
+    состояние </span><span style='font-size:12.0pt;
 color:black'>Q</span><sub><span style='font-size:12.0pt;
 color:black'>5</span></sub><span style='font-size:12.0pt;
 color:black'>):</span></p>
@@ -972,7 +972,7 @@ color:black'>):</span></p>
 <p>D</span>- пустая строка; </span>M</span>:=</span>N</span></p>
 
 <p>ЦИКЛ-ПОКА </span>M</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:Symbol;
+        style='font-size:12.0pt;font-family:Symbol;
 color:black'>&sup1;</span><span style='font-size:12.0pt;
 color:black'>0 </span></p>
 
@@ -1060,14 +1060,14 @@ color:black'>0 </span></p>
 <p><i>Доказательство.</span></i> </span></p>
 
 <p>Пусть такая
-    программа существует. Обозначим ее </span><span lang=EN-US style='font-size:
+    программа существует. Обозначим ее </span><span style='font-size:
 12.0pt;color:black'>S</span><span style='font-size:12.0pt;
 color:black'>. На ее вход подается текст любой программы </span>T</span>, результатом </span>S</span>(</span>T</span>)
     работы программы </span>S</span> является </span>True</span>, если </span>T</span> -текст
     <хорошей>
-        программы, и </span><span lang=EN-US style='font-size:12.0pt;
+        программы, и </span><span style='font-size:12.0pt;
 color:black'>False</span><span style='font-size:12.0pt;
-color:black'>, если </span><span lang=EN-US style='font-size:12.0pt;line-height:
+color:black'>, если </span><span style='font-size:12.0pt;line-height:
 92%;color:black'>T</span><span style='font-size:12.0pt;
 color:black'> - текст "зацикливающейся" программы.</span>
 </p>
@@ -1076,10 +1076,10 @@ color:black'> - текст "зацикливающейся" программы.<
     ниже.</span></p>
 
 <p><span
-        style='font-size:12.0pt;font-family:"Courier New";color:black'><strong>ЕСЛИ</strong> </span><span lang=EN-US
+        style='font-size:12.0pt;font-family:"Courier New";color:black'><strong>ЕСЛИ</strong> </span><span
                                                                                                           style='font-size:12.0pt;font-family:
 "Courier New";color:black'>S</span><span style='font-size:12.0pt;line-height:
-92%;font-family:"Courier New";color:black'>(</span><span lang=EN-US
+92%;font-family:"Courier New";color:black'>(</span><span
                                                          style='font-size:12.0pt;font-family:"Courier New";color:black'>T</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>)
     {Т -текст хорошей программы}</span></p>
@@ -1088,7 +1088,7 @@ color:black'> - текст "зацикливающейся" программы.<
 </p>
 
 <p><span
-        style='font-size:12.0pt;font-family:"Courier New";color:black'><strong>ИНАЧЕ</strong></span><span lang=EN-US
+        style='font-size:12.0pt;font-family:"Courier New";color:black'><strong>ИНАЧЕ</strong></span><span
                                                                                                           style='font-size:12.0pt;
 font-family:"Courier New";color:black'> STOP</span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'> {останов работы
@@ -1096,14 +1096,14 @@ font-family:"Courier New";color:black'> {останов работы
 
 <p>Какой результат
     </span>S</span>(</span>T</span>1) даст программа </span>S</span> при вводе текста этой
-    программы?  Предположим, что </span><span lang=EN-US style='font-size:12.0pt;
+    программы?  Предположим, что </span><span style='font-size:12.0pt;
 color:black'>True</span><span style='font-size:12.0pt;
 color:black'>, тогда это означает, что программа </span>P</span> останавливается при вводе
     любого текста. Следовательно, по смыслу программы </span>P</span>, она будет зацикливаться
-    при вводе текста </span><span lang=EN-US style='font-size:12.0pt;line-height:
+    при вводе текста </span><span style='font-size:12.0pt;line-height:
 92%;color:black'>T</span><span style='font-size:12.0pt;
 color:black'>1, и это означает, что программа </span>S</span> работает неправильно. Но
-    выдать </span><span lang=EN-US style='font-size:12.0pt;
+    выдать </span><span style='font-size:12.0pt;
 color:black'>False</span><span style='font-size:12.0pt;
 color:black'> она не может по тем же причинам, так как это означает, что
             программа P может зациклиться, а тогда, по содержанию программы </span>P</span>, она должна, наоборот,
@@ -1126,9 +1126,9 @@ color:black'> она не может по тем же причинам, так �
 
 <p><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>ПРОГРАММА
-</span><span lang=EN-US style='font-size:12.0pt;font-family:
+</span><span style='font-size:12.0pt;font-family:
 "Courier New";color:black'>S</span><span style='font-size:12.0pt;line-height:
-92%;font-family:"Courier New";color:black'>(</span><span lang=EN-US
+92%;font-family:"Courier New";color:black'>(</span><span
                                                          style='font-size:12.0pt;font-family:"Courier New";color:black'>T</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>)</span></p>
 
@@ -1137,29 +1137,29 @@ color:black'> она не может по тем же причинам, так �
 
 <p><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'> 
-ЕСЛИ в тексте </span><span lang=EN-US style='font-size:12.0pt;
+ЕСЛИ в тексте </span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>T</span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'> анализируемой программы
 содержится слово </span></p>
 
 <p><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>   
-  ТО </span><span lang=EN-US style='font-size:12.0pt;font-family:
+  ТО </span><span style='font-size:12.0pt;font-family:
 "Courier New";color:black'>S</span><span style='font-size:12.0pt;line-height:
-92%;font-family:"Courier New";color:black'>(</span><span lang=EN-US
+92%;font-family:"Courier New";color:black'>(</span><span
                                                          style='font-size:12.0pt;font-family:"Courier New";color:black'>T</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>):=</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>False</span></p>
 
 <p><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>   
-ИНАЧЕ </span><span lang=EN-US style='font-size:12.0pt;
+ИНАЧЕ </span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>S</span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>(</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>T</span><span style='font-size:12.0pt;font-family:
-"Courier New";color:black'>):=</span><span lang=EN-US style='font-size:12.0pt;
+"Courier New";color:black'>):=</span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>True</span></p>
 
 <p><span
@@ -1172,9 +1172,9 @@ font-family:"Courier New";color:black'>True</span></p>
 
 <p><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>ПРОГРАММА
-</span><span lang=EN-US style='font-size:12.0pt;font-family:
+</span><span style='font-size:12.0pt;font-family:
 "Courier New";color:black'>P</span><span style='font-size:12.0pt;line-height:
-92%;font-family:"Courier New";color:black'>(</span><span lang=EN-US
+92%;font-family:"Courier New";color:black'>(</span><span
                                                          style='font-size:12.0pt;font-family:"Courier New";color:black'>T</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>)</span></p>
 
@@ -1183,10 +1183,10 @@ font-family:"Courier New";color:black'>True</span></p>
 
 <p><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'> 
-ЕСЛИ </span><span lang=EN-US style='font-size:12.0pt;
+ЕСЛИ </span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>S</span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>(</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>T</span><span style='font-size:12.0pt;font-family:
 "Courier New";color:black'>) </span></p>
 
@@ -1196,7 +1196,7 @@ color:black'>T</span><span style='font-size:12.0pt;font-family:
 
 <p><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>   
-ИНАЧЕ </span><span lang=EN-US style='font-size:12.0pt;
+ИНАЧЕ </span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>STOP</span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'> {останов работы
 программы}</span></p>
@@ -1207,9 +1207,9 @@ font-family:"Courier New";color:black'> {останов работы
 
 <p><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>ПОДПРОГРАММА
-</span><span lang=EN-US style='font-size:12.0pt;font-family:
+</span><span style='font-size:12.0pt;font-family:
 "Courier New";color:black'>S</span><span style='font-size:12.0pt;line-height:
-92%;font-family:"Courier New";color:black'>(</span><span lang=EN-US
+92%;font-family:"Courier New";color:black'>(</span><span
                                                          style='font-size:12.0pt;font-family:"Courier New";color:black'>T</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>)</span></p>
 
@@ -1219,7 +1219,7 @@ S</span></p>
 
 <p><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'> 
-ЕСЛИ в тексте </span><span lang=EN-US style='font-size:12.0pt;
+ЕСЛИ в тексте </span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>T</span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'> анализируемой программы
 содержится </span></p>
@@ -1230,36 +1230,36 @@ font-family:"Courier New";color:black'> анализируемой програ�
 
 <p><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>   
-ТО </span><span lang=EN-US style='font-size:12.0pt;font-family:
+ТО </span><span style='font-size:12.0pt;font-family:
 "Courier New";color:black'>S</span><span style='font-size:12.0pt;line-height:
-92%;font-family:"Courier New";color:black'>(</span><span lang=EN-US
+92%;font-family:"Courier New";color:black'>(</span><span
                                                          style='font-size:12.0pt;font-family:"Courier New";color:black'>T</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>):=</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>False</span></p>
 
 <p><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>   
-ИНАЧЕ </span><span lang=EN-US style='font-size:12.0pt;
+ИНАЧЕ </span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>S</span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>(</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>T</span><span style='font-size:12.0pt;font-family:
-"Courier New";color:black'>):=</span><span lang=EN-US style='font-size:12.0pt;
+"Courier New";color:black'>):=</span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>True</span></p>
 
 <p><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>КОНЕЦ
-</span><span lang=EN-US style='font-size:12.0pt;font-family:
+</span><span style='font-size:12.0pt;font-family:
 "Courier New";color:black'>S</span></p>
 
 <p style='text-align:justify;text-indent:21.3pt;line-height:
 92%'>Текст </span>T</span>1 этой программы содержит
     слово "повторять", поэтому, по нашей гипотезе, эта программа должна
     зациклиться. Но она остановится, так как подпрограмма </span>S</span> обнаружит это слово и
-    присвоит </span><span lang=EN-US style='font-size:12.0pt;
+    присвоит </span><span style='font-size:12.0pt;
 color:black'>S</span>(</span>T</span>1) значение </span>False</span>. Но тогда в программе P
-    выполнится команда </span><span lang=EN-US style='font-size:12.0pt;line-height:
+    выполнится команда </span><span style='font-size:12.0pt;line-height:
 92%;color:black'>STOP</span><span style='font-size:12.0pt;
 color:black'>, и она остановится. Таким образом, построена программа, которая
     будет останавливаться, хотя и содержит <недозволенное> слово в своем тексте.</span></p>
@@ -1451,16 +1451,16 @@ font-family:Symbol;color:black'>&AElig;</span>, означающий, что ц�
     формулами).</span></p>
 
 <p>В этот язык
-    должны входить выражения вида </span><span lang=EN-US style='font-size:12.0pt;
+    должны входить выражения вида </span><span style='font-size:12.0pt;
 color:black'>b</span><span style='font-size:12.0pt;line-height:
-92%;color:black'>, (</span><span lang=EN-US style='font-size:12.0pt;line-height:
+92%;color:black'>, (</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>a</span><span style='font-size:12.0pt;
-color:black'>-</span><span lang=EN-US style='font-size:12.0pt;
+color:black'>-</span><span style='font-size:12.0pt;
 color:black'>f</span>),
     ((</span>h</span>*</span>c</span>)/(</span>d</span>+</span>g</span>)), которые состоят из
     переменных, обозначенных строчными латинскими буквами, знаков арифметических
     операций и круглых скобок. Каждое арифметическое действие заключается в скобки.
-    Таким образом, выражения (2+</span><span lang=EN-US style='font-size:12.0pt;
+    Таким образом, выражения (2+</span><span style='font-size:12.0pt;
 color:black'>a</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>), (ab), c/d не войдут в наш язык: первое выражение содержит
 недозволенный символ <2>, во втором - отсутствует знак арифметической операции,
@@ -1472,24 +1472,24 @@ color:black'>&nbsp;</span></p>
 
 <p><span style='font-size:12.0pt;
 color:black'>&lt;формула&gt;::=&lt;переменная&gt;</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:Symbol;
+        style='font-size:12.0pt;font-family:Symbol;
 color:black'>&frac12;</span><span style='font-size:12.0pt;
 color:black'>(&lt;формула&gt;&lt;знак операции&gt;&lt;формула&gt;)</span></p>
 
 <p><span style='font-size:12.0pt;
-color:black'>&lt;переменная&gt;::=</span>a</span><span lang=EN-US
+color:black'>&lt;переменная&gt;::=</span>a</span><span
                                                        style='font-size:12.0pt;font-family:Symbol;color:black'>&frac12;</span>b</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:Symbol;
-color:black'>&frac12;</span><span lang=EN-US style='font-size:12.0pt;
-color:black'>c</span><span lang=EN-US style='font-size:12.0pt;
+        style='font-size:12.0pt;font-family:Symbol;
+color:black'>&frac12;</span><span style='font-size:12.0pt;
+color:black'>c</span><span style='font-size:12.0pt;
 font-family:Symbol;color:black'>&frac12;</span>:</span><span
         style='font-size:12.0pt;font-family:Symbol;color:black'>&frac12;</span>z</span></p>
 
 <p><span style='font-size:12.0pt;
 color:black'>&lt;знак операции&gt;::=+</span><span
-        style='font-size:12.0pt;font-family:Symbol;color:black'>&frac12;</span>-</span><span lang=EN-US
+        style='font-size:12.0pt;font-family:Symbol;color:black'>&frac12;</span>-</span><span
                                                                                              style='font-size:12.0pt;font-family:Symbol;color:black'>&frac12;</span>*</span><span
-        lang=EN-US
+
         style='font-size:12.0pt;font-family:Symbol;color:black'>&frac12;</span>/</span>&nbsp;</span></p>
 
 <p>Для построения
@@ -1503,10 +1503,10 @@ color:black'>&lt;знак операции&gt;::=+</span><span
 <p><i>Правило 1. </span></i></p>
 
 <p>Каждый
-    терминальный символ </span><span lang=EN-US style='font-size:12.0pt;line-height:
+    терминальный символ </span><span style='font-size:12.0pt;line-height:
 92%;color:black'>t</span><span style='font-size:12.0pt;
 color:black'> изображается кружочком (вершиной графа), помеченным самим
-символом </span><span lang=EN-US style='font-size:12.0pt;
+символом </span><span style='font-size:12.0pt;
 color:black'>t</span>.</span><span style='font-size:12.0pt;
 color:black'>&nbsp;</span></p>
 
@@ -1524,10 +1524,10 @@ color:black'>Правило 2.</span></i><span style='font-size:12.0pt;
 color:black'> </span></p>
 
 <p>Каждый
-    нетерминальный символ </span><span lang=EN-US style='font-size:12.0pt;
+    нетерминальный символ </span><span style='font-size:12.0pt;
 color:black'>N</span><span style='font-size:12.0pt;line-height:
 92%;color:black'> изображается прямоугольником (вершиной графа), помеченным
-этим же символом </span><span lang=EN-US style='font-size:12.0pt;line-height:
+этим же символом </span><span style='font-size:12.0pt;line-height:
 92%;color:black'>N</span><span style='font-size:12.0pt;
 color:black'>.</span></p>
 
@@ -1557,9 +1557,9 @@ color:black'>.</span></p>
 <p> Последовательность
     терминальных и нетерминальных симоволов изображается соединением
     соответствующих вершин дугами в порядке их следования. Например, изображение
-    последовательности </span><span lang=EN-US style='font-size:12.0pt;line-height:
+    последовательности </span><span style='font-size:12.0pt;line-height:
 92%;color:black'>N</span><span style='font-size:12.0pt;
-color:black'>1 </span><span lang=EN-US style='font-size:12.0pt;line-height:
+color:black'>1 </span><span style='font-size:12.0pt;line-height:
 92%;color:black'>N</span><span style='font-size:12.0pt;
 color:black'>2 синтаксической диаграммой имеет вид: </span></p>
 <table cellpadding=0 cellspacing=0 align=left>
@@ -1580,9 +1580,9 @@ color:black'>2 синтаксической диаграммой имеет ви
 <h5><i>Правило
     4</span></i>. </span></h5>
 
-<h5 style='text-align:justify;text-indent:1.0cm;'>Значку <</span><span lang=EN-US style='font-family:Symbol;
+<h5 style='text-align:justify;text-indent:1.0cm;'>Значку <</span><span style='font-family:Symbol;
 color:black'>&frac12;</span>> сопоставляется
-    ветвление. Например, </span>N</span>1</span><span lang=EN-US style='font-family:Symbol;
+    ветвление. Например, </span>N</span>1</span><span style='font-family:Symbol;
 color:black'>&frac12;</span>N</span>2 на синтаксической диаграмме  выглядит так.</span></h5>
 <table cellpadding=0 cellspacing=0 align=left>
     <tr>
@@ -1678,28 +1678,28 @@ color:black'>&nbsp;</span></p>
 
 <p><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>ЕСЛИ </span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>ch</span><span style='font-size:12.0pt;font-family:
-"Courier New";color:black'>=</span><span lang=EN-US style='font-size:12.0pt;
+"Courier New";color:black'>=</span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>t</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'> </span><span style='font-size:12.0pt;font-family:
-"Courier New";color:black'>ТО </span><span lang=EN-US style='font-size:12.0pt;
+"Courier New";color:black'>ТО </span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>read</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>(</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>ch</span><span style='font-size:12.0pt;font-family:
-"Courier New";color:black'>) ИНАЧЕ </span><span lang=EN-US style='font-size:
+"Courier New";color:black'>) ИНАЧЕ </span><span style='font-size:
 12.0pt;font-family:"Courier New";color:black'>error</span></p>
 
 <p><span style='font-size:12.0pt;
 color:black'>&nbsp;</span></p>
 
 <p>Здесь
-    переменная </span><span lang=EN-US style='font-size:12.0pt;
+    переменная </span><span style='font-size:12.0pt;
 color:black'>ch</span>
     обозначает текущий символ записи выражения, процедура </span>read</span>(</span>ch</span>) считывает следующий
-    символ записи, процедура </span><span lang=EN-US style='font-size:12.0pt;
+    символ записи, процедура </span><span style='font-size:12.0pt;
 color:black'>error</span><span style='font-size:12.0pt;
 color:black'> обрабатывает ошибку (в простейшем варианте просто
 прерывает дальнейший анализ выражения).</span></p>
@@ -1720,9 +1720,9 @@ color:black'> обрабатывает ошибку (в простейшем в�
     терминальных или нетерминальных символов соответствует линейная программа, в
     которой последовательно перечислены соответствующие символам операторы и
     процедуры распознавания. Последовательность заключается в операторные скобки.
-    Например, для последовательности </span><span lang=EN-US style='font-size:12.0pt;
+    Например, для последовательности </span><span style='font-size:12.0pt;
 color:black'>N</span><span style='font-size:12.0pt;line-height:
-92%;color:black'>1 </span><span lang=EN-US style='font-size:12.0pt;line-height:
+92%;color:black'>1 </span><span style='font-size:12.0pt;line-height:
 92%;color:black'>N</span><span style='font-size:12.0pt;
 color:black'>2 программа выглядит так:</span></p>
 
@@ -1734,13 +1734,13 @@ font-family:"Courier New";color:black'>НАЧАЛО</span></p>
 
 <p><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>  </span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>N</span><span style='font-size:12.0pt;font-family:
 "Courier New";color:black'>1</span></p>
 
 <p><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>  </span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>N</span><span style='font-size:12.0pt;font-family:
 "Courier New";color:black'>2</span></p>
 
@@ -1762,31 +1762,31 @@ color:black'>&nbsp;</span></p>
 
 <p><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>ЕСЛИ </span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
-color:black'>ch</span><span lang=EN-US style='font-size:12.0pt;line-height:
-92%;font-family:Symbol;color:black'>&Icirc;</span><span lang=EN-US
+        style='font-size:12.0pt;font-family:"Courier New";
+color:black'>ch</span><span style='font-size:12.0pt;line-height:
+92%;font-family:Symbol;color:black'>&Icirc;</span><span
                                                         style='font-size:12.0pt;font-family:"Courier New";color:black'>L</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>(</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>N</span><span style='font-size:12.0pt;font-family:
-"Courier New";color:black'>1) ТО </span><span lang=EN-US style='font-size:12.0pt;
+"Courier New";color:black'>1) ТО </span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>N</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>1
 ИНАЧЕ</span></p>
 
 <p><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>ЕСЛИ </span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
-color:black'>ch</span><span lang=EN-US style='font-size:12.0pt;line-height:
-92%;font-family:Symbol;color:black'>&Icirc;</span><span lang=EN-US
+        style='font-size:12.0pt;font-family:"Courier New";
+color:black'>ch</span><span style='font-size:12.0pt;line-height:
+92%;font-family:Symbol;color:black'>&Icirc;</span><span
                                                         style='font-size:12.0pt;font-family:"Courier New";color:black'>L</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>(</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>N</span><span style='font-size:12.0pt;font-family:
-"Courier New";color:black'>2) ТО </span><span lang=EN-US style='font-size:12.0pt;
+"Courier New";color:black'>2) ТО </span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>N</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>2
-ИНАЧЕ </span><span lang=EN-US style='font-size:12.0pt;
+ИНАЧЕ </span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>error</span></p>
 
 <p><span style='font-size:12.0pt;
@@ -1795,7 +1795,7 @@ color:black'>&nbsp;</span></p>
 <p>Здесь </span>L</span>(</span>N</span>1) обозначает множество
     начальных символов, с которых может начинаться
     <расшифровка> нетерминального
-        символа </span><span lang=EN-US style='font-size:12.0pt;
+        символа </span><span style='font-size:12.0pt;
 color:black'>N</span>1.
         (Заметим, что множества начальных символов </span>N</span>1 и </span>N</span>2 не имеют общих элементов
         в силу однозначности ветвления. Если же это условие не выполняется, строить
@@ -1811,7 +1811,7 @@ color:black'>N</span>1.
 
 <p><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>ПРОГРАММА </span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>FORMULA</span></p>
 
 <p><span style='font-size:12.0pt;
@@ -1819,34 +1819,34 @@ font-family:"Courier New";color:black'>НАЧАЛО</span></p>
 
 <p><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>  ЕСЛИ </span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
-color:black'>ch</span><span lang=EN-US style='font-size:12.0pt;line-height:
+        style='font-size:12.0pt;font-family:"Courier New";
+color:black'>ch</span><span style='font-size:12.0pt;line-height:
 92%;font-family:Symbol;color:black'>&Icirc;</span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>[</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>a</span><span style='font-size:12.0pt;font-family:
-"Courier New";color:black'>..</span><span lang=EN-US style='font-size:12.0pt;
+"Courier New";color:black'>..</span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>z</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>]
 ТО </span></p>
 
 <p><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>    ЕСЛИ </span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
-color:black'>ch</span><span lang=EN-US style='font-size:12.0pt;line-height:
+        style='font-size:12.0pt;font-family:"Courier New";
+color:black'>ch</span><span style='font-size:12.0pt;line-height:
 92%;font-family:Symbol;color:black'>&Icirc;</span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>[</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>a</span><span style='font-size:12.0pt;font-family:
-"Courier New";color:black'>..</span><span lang=EN-US style='font-size:12.0pt;
+"Courier New";color:black'>..</span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>z</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>]
-ТО </span><span lang=EN-US style='font-size:12.0pt;font-family:
+ТО </span><span style='font-size:12.0pt;font-family:
 "Courier New";color:black'>read</span><span style='font-size:12.0pt;line-height:
-92%;font-family:"Courier New";color:black'>(</span><span lang=EN-US
+92%;font-family:"Courier New";color:black'>(</span><span
                                                          style='font-size:12.0pt;font-family:"Courier New";color:black'>ch</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>)
-ИНАЧЕ </span><span lang=EN-US style='font-size:12.0pt;
+ИНАЧЕ </span><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>error</span></p>
 
 <p><span style='font-size:12.0pt;
@@ -1854,7 +1854,7 @@ font-family:"Courier New";color:black'>  ИНАЧЕ</span></p>
 
 <p><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>    ЕСЛИ </span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>ch</span><span style='font-size:12.0pt;font-family:
 "Courier New";color:black'>=`(` ТО </span></p>
 
@@ -1863,49 +1863,49 @@ font-family:"Courier New";color:black'>    НАЧАЛО</span></p>
 
 <p><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>      ЕСЛИ </span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>ch</span><span style='font-size:12.0pt;font-family:
-"Courier New";color:black'>=`(` ТО </span><span lang=EN-US style='font-size:
+"Courier New";color:black'>=`(` ТО </span><span style='font-size:
 12.0pt;font-family:"Courier New";color:black'>read</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>(</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>ch</span><span style='font-size:12.0pt;font-family:
-"Courier New";color:black'>) ИНАЧЕ </span><span lang=EN-US style='font-size:
+"Courier New";color:black'>) ИНАЧЕ </span><span style='font-size:
 12.0pt;font-family:"Courier New";color:black'>error</span></p>
 
 <p><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>      </span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>FORMULA</span></p>
 
-<p><span lang=EN-US style='font-size:
+<p><span style='font-size:
 12.0pt;font-family:"Courier New";color:black'>      </span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>ЕСЛИ</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
-color:black'> ch</span><span lang=EN-US style='font-size:12.0pt;line-height:
-92%;font-family:Symbol;color:black'>&Icirc;</span><span lang=EN-US
+        style='font-size:12.0pt;font-family:"Courier New";
+color:black'> ch</span><span style='font-size:12.0pt;line-height:
+92%;font-family:Symbol;color:black'>&Icirc;</span><span
                                                         style='font-size:12.0pt;font-family:"Courier New";color:black'>{`+`,`-`,`*`,`/`}
 </span><span style='font-size:12.0pt;font-family:"Courier New";
-color:black'>ТО</span><span lang=EN-US style='font-size:12.0pt;line-height:
+color:black'>ТО</span><span style='font-size:12.0pt;line-height:
 92%;font-family:"Courier New";color:black'> read(ch) </span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>ИНАЧЕ</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'> error</span></p>
 
-<p><span lang=EN-US style='font-size:
+<p><span style='font-size:
 12.0pt;font-family:"Courier New";color:black'>      FORMULA</span></p>
 
-<p><span lang=EN-US style='font-size:
+<p><span style='font-size:
 12.0pt;font-family:"Courier New";color:black'>      </span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>ЕСЛИ
-</span><span lang=EN-US style='font-size:12.0pt;font-family:
+</span><span style='font-size:12.0pt;font-family:
 "Courier New";color:black'>ch</span><span style='font-size:12.0pt;line-height:
-92%;font-family:"Courier New";color:black'>=`)` ТО </span><span lang=EN-US
+92%;font-family:"Courier New";color:black'>=`)` ТО </span><span
                                                                 style='font-size:12.0pt;font-family:"Courier New";color:black'>read</span><span
         style='font-size:12.0pt;font-family:"Courier New";color:black'>(</span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>ch</span><span style='font-size:12.0pt;font-family:
-"Courier New";color:black'>) ИНАЧЕ </span><span lang=EN-US style='font-size:
+"Courier New";color:black'>) ИНАЧЕ </span><span style='font-size:
 12.0pt;font-family:"Courier New";color:black'>error</span></p>
 
 <p><span style='font-size:12.0pt;
@@ -1913,7 +1913,7 @@ font-family:"Courier New";color:black'>    КОНЕЦ</span></p>
 
 <p><span style='font-size:12.0pt;
 font-family:"Courier New";color:black'>    ИНАЧЕ </span><span
-        lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+        style='font-size:12.0pt;font-family:"Courier New";
 color:black'>error</span></p>
 
 <p><span style='font-size:12.0pt;
@@ -2003,9 +2003,9 @@ color:black'>&nbsp;</span></p>
     иметь место перенос единицы из последнего разряда.</span></p>
 
 <p>Введем
-    нетерминальные символы </span><span lang=EN-US style='font-size:12.0pt;
+    нетерминальные символы </span><span style='font-size:12.0pt;
 color:black'>A</span><span style='font-size:12.0pt;line-height:
-92%;color:black'> и </span><span lang=EN-US style='font-size:12.0pt;line-height:
+92%;color:black'> и </span><span style='font-size:12.0pt;line-height:
 92%;color:black'>B</span><span style='font-size:12.0pt;
 color:black'>, соответствующие понятиям &lt;завершенный пример&gt; и
 &lt;незавершенный пример&gt;. Завершенным примером являются первая, четвертая и
@@ -2018,12 +2018,12 @@ color:black'>&nbsp;</span></p>
 
 <p style='text-indent:36.0pt;'>0          0          1          0          0          1</span></p>
 
-<h5>A</span>::=     0 </span><span lang=EN-US style='font-family:Symbol;
+<h5>A</span>::=     0 </span><span style='font-family:Symbol;
 color:black'>&frac12;</span>       1</span><span
-        lang=EN-US style='font-family:Symbol;color:black'>&frac12;</span>        0</span><span lang=EN-US style='font-family:Symbol;
-color:black'>&frac12;</span>A</span>     0 </span><span lang=EN-US style='font-family:Symbol;
+        style='font-family:Symbol;color:black'>&frac12;</span>        0</span><span style='font-family:Symbol;
+color:black'>&frac12;</span>A</span>     0 </span><span style='font-family:Symbol;
 color:black'>&frac12;</span> </span>A</span>   1 </span><span
-        lang=EN-US style='font-family:Symbol;color:black'>&frac12;</span> </span>A</span>   0</span></h5>
+        style='font-family:Symbol;color:black'>&frac12;</span> </span>A</span>   0</span></h5>
 
 <p style='text-indent:36.0pt;'>0          1          1          0          1          1</span></p>
 
@@ -2041,9 +2041,9 @@ color:black'>&frac12;</span> </span>A</span>   1 </span><span
 
 <p style='text-indent:36.0pt;'>0          0          0          1</span></p>
 
-<h5>B</span>::=     0 </span><span lang=EN-US style='font-family:Symbol;
-color:black'>&frac12;</span>A</span>    0</span><span lang=EN-US style='font-family:Symbol;
-color:black'>&frac12;</span>B</span>     1 </span><span lang=EN-US style='font-family:Symbol;
+<h5>B</span>::=     0 </span><span style='font-family:Symbol;
+color:black'>&frac12;</span>A</span>    0</span><span style='font-family:Symbol;
+color:black'>&frac12;</span>B</span>     1 </span><span style='font-family:Symbol;
 color:black'>&frac12;</span> </span>B</span>   0</span></h5>
 
 <p style='text-indent:36.0pt;'>1          1          0          0</span></p>
@@ -2062,13 +2062,13 @@ color:black'>&nbsp;</span></p>
 </p>
 
 <h2 align=left style='text-align:left;'>A</span>::=     0 </span><span
-        lang=EN-US style='font-family:Symbol;color:black'>&frac12;</span>       1</span><span lang=EN-US style='font-family:Symbol;
+        style='font-family:Symbol;color:black'>&frac12;</span>       1</span><span style='font-family:Symbol;
 color:black'>&frac12;</span>        0</span><span
-        lang=EN-US style='font-family:Symbol;color:black'>&frac12;</span>A</span>     0 </span><span
-        lang=EN-US style='font-family:Symbol;color:black'>&frac12;</span> </span>A</span>   1 </span><span lang=EN-US
+        style='font-family:Symbol;color:black'>&frac12;</span>A</span>     0 </span><span
+        style='font-family:Symbol;color:black'>&frac12;</span> </span>A</span>   1 </span><span
                                                                                                            style='font-family:Symbol;
 color:black'>&frac12;</span> </span>A</span>   0 </span><span
-        lang=EN-US style='font-family:Symbol;color:black'>&frac12;</span> </span>B</span>   1</span><span lang=EN-US
+        style='font-family:Symbol;color:black'>&frac12;</span> </span>B</span>   1</span><span
                                                                                                           style='font-family:Symbol;
 color:black'>&frac12;</span> </span>B</span>    1</span></h2>
 
@@ -2107,22 +2107,22 @@ color:black'> </span></p>
 <p class=MsoBodyText2 align=left style='text-align:left;'><i>Пример 1.</span></i> </span></p>
 
 <p>Первый из них -
-    это множество цепочек двух символов <</span><span lang=EN-US style='font-size:
+    это множество цепочек двух символов <</span><span style='font-size:
 12.0pt;color:black'>a</span><span style='font-size:12.0pt;
-color:black'>> и <</span><span lang=EN-US style='font-size:
+color:black'>> и <</span><span style='font-size:
 12.0pt;color:black'>b</span><span style='font-size:12.0pt;
 color:black'>>, в которых сначала идут только символы <</span>a</span>>, а после них -  только
-    символы <</span><span lang=EN-US style='font-size:12.0pt;
+    символы <</span><span style='font-size:12.0pt;
 color:black'>b</span>>.
-    Например, </span><span lang=EN-US style='font-size:12.0pt;
+    Например, </span><span style='font-size:12.0pt;
 color:black'>abb</span><span style='font-size:12.0pt;
-color:black'>, </span><span lang=EN-US style='font-size:12.0pt;line-height:
+color:black'>, </span><span style='font-size:12.0pt;line-height:
 92%;color:black'>a</span><span style='font-size:12.0pt;
-color:black'>, </span><span lang=EN-US style='font-size:12.0pt;line-height:
+color:black'>, </span><span style='font-size:12.0pt;line-height:
 92%;color:black'>aaa</span><span style='font-size:12.0pt;
-color:black'>, </span><span lang=EN-US style='font-size:12.0pt;line-height:
+color:black'>, </span><span style='font-size:12.0pt;line-height:
 92%;color:black'>bb</span><span style='font-size:12.0pt;
-color:black'>, </span><span lang=EN-US style='font-size:12.0pt;line-height:
+color:black'>, </span><span style='font-size:12.0pt;line-height:
 92%;color:black'>aaabbb</span><span style='font-size:12.0pt;
 color:black'> и т.п. Обычно, такой язык обозначают так:{</span>a<sup>n</sup>b<sup>m</sup></span>}.</span></p>
 
@@ -2133,7 +2133,7 @@ color:black'> и т.п. Обычно, такой язык обозначают �
 
 <p style='margin-left:18.0pt;text-indent:10.35pt;line-height:
 92%'>1)   Постройте
-    грамматику языка {</span><span lang=EN-US style='font-size:12.0pt;line-height:
+    грамматику языка {</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>a<sup>n</sup>b<sup>m</sup></span><span style='font-size:12.0pt;
 color:black'>}.</span></p>
 
@@ -2145,14 +2145,14 @@ text-indent:1.0cm;'>2) Постройте
 <p class=MsoBodyTextIndent2 style='text-indent:-18.0pt;'><i>Пример 2.</span></i></p>
 
 <p>Теперь
-    рассмотрим второй язык {</span><span lang=EN-US style='font-size:12.0pt;
+    рассмотрим второй язык {</span><span style='font-size:12.0pt;
 color:black'>a<sup>n</sup>b<sup>n</sup></span>}. Этот язык является
     подмножеством первого языка и состоит только из тех его слов, которые содержат
     одинаковое количество тех и других букв. Оказывается, что нельзя построить
     конечный автомат, распознающий этот язык. Причина состоит в том, что конечный
     автомат
     <не умеет считать>, поэтому после ввода всех символов <</span>a</span>> он не сможет определить,
-        то ли количество символов <</span><span lang=EN-US style='font-size:12.0pt;
+        то ли количество символов <</span><span style='font-size:12.0pt;
 color:black'>b</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>> введено. Более строго доказать этот факт можно, опираясь на
 теорему о поведении конечного автомата, работающего автономно (то есть когда на
@@ -2167,15 +2167,15 @@ color:black'>b</span><span style='font-size:12.0pt;line-height:
 <p><span style='font-size:12.0pt;
 color:black'>&nbsp;</span></p>
 
-<h5 align=center style='text-align:center;'>S</span>::=</span>aSb</span><span lang=EN-US style='font-family:
-Symbol;color:black'>&frac12;</span><span lang=EN-US style='font-family:Symbol;
+<h5 align=center style='text-align:center;'>S</span>::=</span>aSb</span><span style='font-family:
+Symbol;color:black'>&frac12;</span><span style='font-family:Symbol;
 color:black'>&AElig;</span></h5>
 
 <p align=center style='text-align:center;text-indent:1.0cm;
 '>&nbsp;</span></p>
 
 <p>Грамматика
-    состоит из одного правила. Значок </span><span lang=EN-US style='font-size:
+    состоит из одного правила. Значок </span><span style='font-size:
 12.0pt;font-family:Symbol;color:black'>&AElig;</span> обозначает
     <пустой>
         символ, его вставка, например, в выражение </span>aSb</span>, вместо </span>S</span>, порождает слово </span>
@@ -2233,22 +2233,22 @@ color:black'>&AElig;</span></h5>
 color:black'>Аксиома</span></p>
 
 <p class=MsoNormal><span style='font-size:12.0pt;
-color:black'>1</span><span lang=EN-US style='font-size:12.0pt;
+color:black'>1</span><span style='font-size:12.0pt;
 color:black'>x</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>1=1</span></p>
 
 <p class=MsoNormal><span style='font-size:12.0pt;
 color:black'>Правила</span></p>
 
-<p class=MsoNormal><span lang=EN-US style='font-size:
+<p class=MsoNormal><span style='font-size:
 12.0pt;color:black'>AxB</span><span style='font-size:12.0pt;
-color:black'>=</span><span lang=EN-US style='font-size:12.0pt;
+color:black'>=</span><span style='font-size:12.0pt;
 color:black'>C</span><span style='font-size:12.0pt;line-height:
-92%;color:black'> ::= </span><span lang=EN-US style='font-size:12.0pt;
+92%;color:black'> ::= </span><span style='font-size:12.0pt;
 color:black'>A</span><span style='font-size:12.0pt;line-height:
-92%;color:black'>1</span><span lang=EN-US style='font-size:12.0pt;line-height:
+92%;color:black'>1</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>xB</span><span style='font-size:12.0pt;
-color:black'>=</span><span lang=EN-US style='font-size:12.0pt;
+color:black'>=</span><span style='font-size:12.0pt;
 color:black'>CB</span></p>
 
 <h5>AxB</span>=</span>C</span> ::= </span>BxA</span>=</span>C</span></h5>
@@ -2269,7 +2269,7 @@ color:black'>CB</span></p>
 <p class=MsoNormal><i>Пример. </span></i></p>
 
 <p class=MsoNormal>Приведем пример
-    вывода равенства 11</span><span lang=EN-US style='font-size:12.0pt;line-height:
+    вывода равенства 11</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>x</span><span style='font-size:12.0pt;
 color:black'>111=111111 в построенной грамматике. Эту же задачу можно
 сформулировать как грамматический разбор или распознавание данного предложения
@@ -2279,27 +2279,27 @@ color:black'>111=111111 в построенной грамматике. Эту �
     левой части первого правила.</span></p>
 
 <p class=MsoNormal><span style='font-size:12.0pt;
-color:black'>1</span><span lang=EN-US style='font-size:12.0pt;
+color:black'>1</span><span style='font-size:12.0pt;
 color:black'>x</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>1=1 {аксиома}</span></p>
 
 <p class=MsoNormal><span style='font-size:12.0pt;
-color:black'>11</span><span lang=EN-US style='font-size:12.0pt;
+color:black'>11</span><span style='font-size:12.0pt;
 color:black'>x</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>1=11 {первое правило при </span>A</span>=1 </span>B</span>=1 </span>C</span>=1}</span></p>
 
 <p class=MsoNormal><span style='font-size:12.0pt;
-color:black'>111</span><span lang=EN-US style='font-size:12.0pt;
+color:black'>111</span><span style='font-size:12.0pt;
 color:black'>x</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>1=111 {первое правило при </span>A</span>=11 </span>B</span>=1 </span>C</span>=1)</span></p>
 
 <p class=MsoNormal><span style='font-size:12.0pt;
-color:black'>1</span><span lang=EN-US style='font-size:12.0pt;
+color:black'>1</span><span style='font-size:12.0pt;
 color:black'>x</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>111=111 {второе правило при A=111 B=1 C=111}</span></p>
 
 <p class=MsoNormal><span style='font-size:12.0pt;
-color:black'>11</span><span lang=EN-US style='font-size:12.0pt;
+color:black'>11</span><span style='font-size:12.0pt;
 color:black'>x</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>111=111111 (по первому правилу при </span>A</span>=1 </span>B</span>=111 </span>C</span>=111}</span>
 </p>
@@ -2331,21 +2331,21 @@ color:black'>2)<span style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 <p class=MsoNormal><span style='font-size:12.0pt;
 color:black'>1#1 - аксиома</span></p>
 
-<p class=MsoNormal><span lang=EN-US style='font-size:
+<p class=MsoNormal><span style='font-size:
 12.0pt;color:black'>A</span><span style='font-size:12.0pt;
-color:black'>#</span><span lang=EN-US style='font-size:12.0pt;
+color:black'>#</span><span style='font-size:12.0pt;
 color:black'>B</span><span style='font-size:12.0pt;line-height:
-92%;color:black'>::=</span><span lang=EN-US style='font-size:12.0pt;line-height:
+92%;color:black'>::=</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>A</span><span style='font-size:12.0pt;
-color:black'>1#</span><span lang=EN-US style='font-size:12.0pt;line-height:
+color:black'>1#</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>BAA</span><span style='font-size:12.0pt;
 color:black'>1 - правило генерации промежуточных слов</span></p>
 
-<p class=MsoNormal><span lang=EN-US style='font-size:
+<p class=MsoNormal><span style='font-size:
 12.0pt;color:black'>A</span><span style='font-size:12.0pt;
-color:black'>#</span><span lang=EN-US style='font-size:12.0pt;
+color:black'>#</span><span style='font-size:12.0pt;
 color:black'>B</span><span style='font-size:12.0pt;line-height:
-92%;color:black'>::=</span><span lang=EN-US style='font-size:12.0pt;line-height:
+92%;color:black'>::=</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>B</span><span style='font-size:12.0pt;
 color:black'> - получение из промежуточного слова окончательного</span></p>
 
@@ -2386,9 +2386,9 @@ color:black'> </span></p>
     математических теорий и процедуры нахождения доказательств</span></strong></h2>
 
 <p class=MsoNormal>Пост показал,
-    что, используя правила вида </span><span lang=EN-US style='font-size:12.0pt;
+    что, используя правила вида </span><span style='font-size:12.0pt;
 color:black'>gA</span><span style='font-size:12.0pt;line-height:
-92%;color:black'>::=</span><span lang=EN-US style='font-size:12.0pt;line-height:
+92%;color:black'>::=</span><span style='font-size:12.0pt;line-height:
 92%;color:black'>Ah</span><span style='font-size:12.0pt;
 color:black'>, можно описать формально любую математическую теорию. Все теоремы
     этой теории можно будет получить грамматическим выводом из аксиом. При этом
