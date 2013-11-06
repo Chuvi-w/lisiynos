@@ -9,6 +9,7 @@
     <link type="text/css" rel="stylesheet" href="../style/sh_nedit.css">
     <script type="text/javascript">
         function f() {
+            sh_highlightDocument();
             loadFiles([
                 ['test', 'a.cpp']
             ], function () {
@@ -284,46 +285,39 @@ int main(){
 <h2>Работа с классами</h2>
 
 <pre class="sh_cpp">
-#include <iostream>
-    #include
-    <conio.h>
+#include &lt;iostream&gt;
+#include &lt;conio.h&gt;
 
-        using namespace std;
+using namespace std;
 
-        // === Объявление всех классов ===
+// === Объявление всех классов ===
+class Pair {
+private: // Метка доступа private - доступно только в пределах класса
+  int x,y; // Объявили два поля: x и y. Они имеют целый тип (int)
+public: // Метка доступа. public - всё что будет перечислено далее открыто для всех
+  void init(int _x, int _y){
+    x = _x; y = _y;
+  }
 
-        class Pair
-        {
-        private: // Метка доступа private - доступно только в пределах класса
-        int x,y; // Объявили два поля: x и y. Они имеют целый тип (int)
-        public: // Метка доступа. public - всё что будет перечислено далее открыто для всех
-        void init(int _x, int _y){
-        x = _x;
-        y = _y;
-        }
+  friend void print(ostream& os,Pair& pair){
+    os << " (" << pair.x << ", " << pair.y << ") ";
+  }
 
-        friend void print(ostream& os,Pair& pair){
-        os << " (" << pair.x << ", " << pair.y << ") ";
-        }
+  friend ostream& operator<<(ostream& os,Pair& pair){
+    os << " (" << pair.x << ", " << pair.y << ") ";
+    return os;
+  }
+};
 
-        friend ostream& operator<<(ostream& os,Pair& pair){
-        os << " (" << pair.x << ", " << pair.y << ") ";
-        return os;
-        }
+int main(int argc, char* argv[]) {
+  // Использование класса
+  Pair p;
+  p.init(2,3); // Пользуемся методом init для заполнения закрытых полей класса
+  print(cout,p);
 
-        };
-
-
-        int main(int argc, char* argv[])
-        {
-        // Использование класса
-        Pair p;
-        p.init(2,3); // Пользуемся методом init для заполнения закрытых полей класса
-        print(cout,p);
-
-        getch();
-        return 0;
-        }
+  getch();
+  return 0;
+}
 </pre>
 
 
