@@ -329,11 +329,26 @@ type
     x,y : Integer;
   end;  </pre>
 
-<pre class="sh_cpp">
-
 <h3>Перечисления в C/C++</h3>
 
+<pre class="sh_cpp">
+#include <iostream>
+#include <vector>
 
+using namespace std;
+
+main(){
+  vector<int> v;
+  vector<int> v(количество);
+
+  v.push_back([выражение]);
+  v.resize([количество]);
+  v.size(); // Возвращает количество элементов в векторе (размер массива)
+}
+</pre>
+
+
+<pre class="sh_cpp">
 enum [имя]
 
 </pre>
