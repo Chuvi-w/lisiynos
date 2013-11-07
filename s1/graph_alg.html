@@ -330,37 +330,24 @@ begin
         >имеет
 вид:</span></p>
 
-<p><img border=0 width=21 height=26 id="Рисунок 14" src="graph_alg/image012.gif" alt="d_{i j}^0"><span>&nbsp;-
-длина ребра</span><span style='
-'>&nbsp;</span><span style='
-'><img border=0 width=48 height=23 id="Рисунок 15"
+<p>$d_{i j}^0$ <img border=0 width=21 height=26 id="Рисунок 14" src="graph_alg/image012.gif" alt="d_{i j}^0"><span> - длина ребра $(i,\;j)$ <img border=0 width=48 height=23 id="Рисунок 15"
        src="graph_alg/image006.gif" alt="(i,\;j)"></span></p>
 
-<p style='
-'><img border=0 width=243 height=27
+<p>$d_{i j}^{k} = \min (d_{i j}^{k-1},\; d_{i k}^{k-1} + d_{k j}^{k-1})$
+
+<img border=0 width=243 height=27
        id="Рисунок 16" src="graph_alg/image013.gif"
        alt="d_{i j}^{k} = \min (d_{i j}^{k-1},\; d_{i k}^{k-1} + d_{k j}^{k-1})"></p>
 
-<p style='
-'>Алгоритм Флойда&nbsp;- Уоршелла последовательно вычисляет все значения<span style='
-'>&nbsp;</span><span
-        ><img
+<p>Алгоритм Флойда - Уоршелла последовательно вычисляет все значения <img
         border=0 width=27 height=28 id="Рисунок 17"
         src="graph_alg/image002.gif" alt="d_{i j}^{k}"></span><span
         >,</span><span
         >&nbsp;</span><span
         ><img
         border=0 width=40 height=19 id="Рисунок 18"
-        src="graph_alg/image014.gif" alt="\forall i,\; j"></span><span
-        >&nbsp;</span><span
-        >для</span><span
-        >&nbsp;</span><i><span
-        >k</span></i><span
-        >&nbsp;</span><span
-        >от 1 до</span><span
-        >&nbsp;</span><i><span
-        >n</span></i><span
-        >.
+        src="graph_alg/image014.gif" alt="\forall i,\; j"></span><span>&nbsp;</span><span>для</span><span>&nbsp;</span><i><span>k</span></i><span>&nbsp;</span><span
+        >от 1 до</span><span>&nbsp;</span><i><span>n</span></i><span>.
 Полученные значения</span><span>&nbsp;</span><span style='
 '><img border=0 width=21 height=23 id="Рисунок 19"
        src="graph_alg/image015.gif" alt="d_{i j}^{n}"></span><span
