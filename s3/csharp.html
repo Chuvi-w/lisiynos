@@ -4,26 +4,10 @@
     <title>Язык программирования C#</title>
     <link rel="stylesheet" type="text/css" href="../style/style.css">
     <script type="text/javascript" src="../syntax/sh_main.min.js"></script>
-    <script type="text/javascript" src="../syntax/sh_java.js"></script>
+    <script type="text/javascript" src="../syntax/sh_csharp.min.js"></script>
     <link type="text/css" rel="stylesheet" href="../style/sh_nedit.css">
 </head>
 <body onLoad="sh_highlightDocument();">
-<div style="width:80%;">
-    <div style="float:right;">
-        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
-                codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
-                width="100" height="50">
-            <param name="movie" value="../audio/a_smsqulh3n.swf">
-            <param name="bgcolor" value="fff">
-            <param name="FlashVars" value="src=9094e666f613f513f50301------------ffffff">
-            <param name="autoplay" value="false">
-            <embed src="../audio/a_smsqulh3n.swf" bgcolor="fff"
-                   width="100" height="70" type="application/x-shockwave-flash"
-                   pluginspage="http://www.macromedia.com/go/getflashplayer"
-                   FlashVars="src=9094e666f613f513f50301------------ffffff"></embed>
-        </object>
-    </div>
-</div>
 
 <div id="content">
 
@@ -32,6 +16,40 @@
     <p>На некоторых олимпиадах по программированию используют язык C#. Примеры: олимпиада МАИ по программированию.</p>
 
     <p>В олимпиадах на TopCoder сейчас разрешены: C++, Java, C# и VB.NET.</p>
+
+    <h2>Многопоточность</h2>
+
+    <h3>Финализатор C#</h3>
+
+    <p><b>Финализатор</b> - это метод класса, который автоматически вызывается средой исполнения в промежутке времени между моментом, 
+    когда объект этого класса опознаётся сборщиком мусора как неиспользуемый, и моментом удаления объекта (освобождения занимаемой им памяти). 
+    Финализатор для конкретного объекта всегда выполняется после того, как программа прекращает использовать данный объект и до того, 
+    как занимаемая объектом память будет освобождена сборщиком мусора. 
+    Удобно считать, что финализатор вызывается непосредственно перед удалением объекта из памяти, хотя это обычно не гарантируется.</p>
+
+<h3>lock</h3>
+<pre class="sh_csharp">
+class Account {
+  decimal balance;
+  private Object thisLock = new Object();
+
+  public void Withdraw(decimal amount) {
+    lock (thisLock) {
+      if (amount > balance) {
+        throw new Exception("Insufficient funds");
+      }
+      balance -= amount;
+    }
+  }
+}
+</pre>
+
+    <p>Ключевое слово <b>lock</b> не позволит одному потоку войти в важный раздел кода в тот момент, когда в нем находится другой поток. При попытке входа другого потока в заблокированный код потребуется дождаться снятия блокировки объекта.</p>
+
+    <p>Блокировка потоков. lock.. .
+Синхронизация потоков. Синхронизация процессов.
+    </p>
+
 
 </div>
 </body>
