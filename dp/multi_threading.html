@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="../style/style.css">
     <script type="text/javascript" src="../syntax/sh_main.min.js"></script>
     <script type="text/javascript" src="../syntax/sh_xml.min.js"></script>
+    <script type="text/javascript" src="../syntax/sh_java.min.js"></script>
     <link type="text/css" rel="stylesheet" href="../style/sh_nedit.css">
 </head>
 <body onLoad="sh_highlightDocument()">
@@ -44,19 +45,22 @@
     философский вопрос.<br>
     Пример на Java</p>
 
-<p>class EggVoice extends Thread {<br>
-    @Override<br>
-    public void run() {<br>
-    for(int i = 0; i &lt; 5; i++) {<br>
-    try{<br>
-    sleep(1000); //Приостанавливает поток на 1 секунду<br>
-    }catch(InterruptedException e){}<br>
-    System.out.println(&quot;яйцо!&quot;);<br>
-    } //Слово «яйцо» сказано 5 раз <br>
-    }<br>
-    }</p>
+<pre class="sh_java">
+class EggVoice extends Thread {
+  @Override
+  public void run() {
+    for(int i = 0; i &lt; 5; i++) {
+      try{
+        sleep(1000); // Приостанавливаем поток на 1 секунду
+      }catch(InterruptedException e){ /* Ничего не делаем */ }
+      System.out.println(&quot;яйцо!&quot;);
+    } // Слово «яйцо» сказано 5 раз
+  }
+}
+</pre>
 
-<p>public class ChickenVoice //Класс с методом main()<br>
+<pre class="sh_java">
+public class ChickenVoice //Класс с методом main()<br>
     {<br>
     static EggVoice mAnotherOpinion; //Побочный поток <br>
     public static void main(String[] args)<br>
@@ -83,6 +87,7 @@
     System.out.println(&quot;Спор закончен!&quot;);<br>
     }<br>
     }</p>
+</pre>
 
 <p>&nbsp;</p>
 
