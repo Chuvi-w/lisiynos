@@ -12,23 +12,6 @@
     </script>
 </head>
 <body onLoad="sh_highlightDocument();">
-<div style="width:80%;">
-    <div style="float:right;">
-        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
-                codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
-                width="100" height="50">
-            <param name="movie" value="../audio/a_smsqulh3n.swf">
-            <param name="bgcolor" value="fff">
-            <param name="FlashVars" value="src=9094e666f613f513f50301------------ffffff">
-            <param name="autoplay" value="false">
-            <embed src="../audio/a_smsqulh3n.swf" bgcolor="fff"
-                   width="100" height="70" type="application/x-shockwave-flash"
-                   pluginspage="http://www.macromedia.com/go/getflashplayer"
-                   FlashVars="src=9094e666f613f513f50301------------ffffff"></embed>
-        </object>
-    </div>
-</div>
-
 <div id="content">
 
 <h1>Хеши и их применение</h1>
@@ -100,14 +83,14 @@ h = ((hash[r] - hash[l - 1] * pow[r - l + 1]) % base + base) % base;
 </pre>
 
 <p>
-Теперь для поиска вхождений паттерна осталось сравнить ее хеш с хешами всех подстрок текста такой же длины. В результате, решению потребуется
+Теперь для поиска вхождений паттерна осталось сравнить ее хеш с хешами всех подстрок текста такой же длины. В результате, решению потребуется:</p>
 
 <ul>
-<li> O(|p| + |t|)  -  на вычисление хешей.
-<li> O(|p|) -  на предподсчет степеней $x$.
-<li> O(|t| - |p|) -  на сравнение хешей патерна и подстрок текста.
+<li> O(|p| + |t|)  -  на вычисление хешей.</li>
+<li> O(|p|) -  на предподсчет степеней $x$.</li>
+<li> O(|t| - |p|) -  на сравнение хешей паттерна и подстрок текста.</li>
 </ul>
-В сумме, O(|p|+|t|).</p>
+<p>В сумме: O(|p|+|t|).</p>
 
 
 <h2>HashSet и HashMap, обработка коллизий</h2>
