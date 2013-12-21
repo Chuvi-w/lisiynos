@@ -83,11 +83,8 @@
 
 </pre>
     
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p></p>
-
-<pre class="sh_cpp">
+    <p><strong>Структура для удобной работы с битами числа:</strong></p>
+  <pre class="sh_cpp">
 struct BF { // BitField
   unsigned int data; // Данные
   int get(int i){ // Получить значение i-ого бита 
@@ -99,8 +96,7 @@ struct BF { // BitField
     // Очищаем нужный бит и объединяем его по принципу ИЛИ с числом в котором все нули, а i-ый бит - value
     data = (data & ~(1 &lt;&lt; i)) | (value &lt;&lt; i);
   };
-};
-</pre>
+};</pre>
 
 </div>
 </body>
