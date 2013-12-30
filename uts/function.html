@@ -1,0 +1,134 @@
+<html>
+<head>
+    <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    <title>Задача: Булева функция</title>
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <script type="text/javascript" src="../syntax/sh_main.min.js"></script>
+    <script type="text/javascript" src="../syntax/sh_pascal.min.js"></script>
+    <script type="text/javascript" src="../syntax/sh_cpp.min.js"></script>
+    <script type="text/javascript" src="../syntax/sh_basic.js"></script>
+    <link type="text/css" rel="stylesheet" href="../style/sh_nedit.css">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+
+    </script>
+    <script type="text/javascript"
+            src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+<body onLoad="sh_highlightDocument();">
+<div style="width:80%;">
+    <div style="float:right;">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+                width="100" height="50">
+            <param name="movie" value="../audio/a_smsqulh3n.swf">
+            <param name="bgcolor" value="fff">
+            <param name="FlashVars" value="src=9094e666f613f513f50301------------ffffff">
+            <param name="autoplay" value="false">
+            <embed src="../audio/a_smsqulh3n.swf" bgcolor="fff" width="100" height="70"
+                   type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
+                   FlashVars="src=9094e666f613f513f50301------------ffffff"></embed>
+        </object>
+    </div>
+</div>
+
+<div id="content">
+<h1>Задача: Булева функция</h1>
+
+<p></p>
+
+<h3>Решение</h3>
+
+<pre class="sh_cpp">
+#include &lt;map&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;cstdio&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;assert.h&gt; // Проверка утверждений
+
+using namespace std;
+
+int ones[100001][2], // ones[L,res] - максимальное количество единиц при длине строки L и результате res
+    from[100001][2]; // из какого результата это получилось (первый аргумент функции)
+char bb[100001][2]; // Второй аргумент 
+
+int main (){
+  freopen ("function.in", "r", stdin);
+  freopen ("function.out", "w", stdout);
+
+  int n;
+  cin &gt;&gt; n; // Длина строки
+
+  int f[2][2]; // Function
+  char s[5] = "0100";
+  cin &gt;&gt; s; // Функция
+
+  for(int l = 0; l&lt;=n; l++)
+    for(int a = 0; a &lt;= 1; a++){
+      ones[l][a] = -1; // Заполняем -1
+      from[l][a] = -1;
+    }
+
+  f[0][0] = s[0] - '0';
+  f[0][1] = s[1] - '0';
+  f[1][0] = s[2] - '0';
+  f[1][1] = s[3] - '0';
+
+  // База динамики
+  for(int a = 0; a &lt;= 1; a++) {
+    if(a &gt; ones[1][a]){
+      ones[1][a] = a;
+      bb[1][a] = a + '0';
+      from[1][a] = -1;
+    }
+  }
+
+  // Основной шаг динамики
+  for(int l = 2; l &lt;= n; ++l) // Длина строки
+    for(int a = 0; a &lt;= 1; ++a) // Первый аргумент 
+      if(ones[l-1][a] != -1) 
+        for(int b = 0; b &lt;= 1; ++b) { // Второй аргумент 
+          int res = f[a][b];
+          int cur_ones = ones[l-1][a] + b;
+          if(cur_ones &gt; ones[l][res]){
+            ones[l][res] = cur_ones;
+            bb[l][res] = b + '0';
+            from[l][res] = a;
+          }
+        }
+
+  // cout &lt;&lt; ones[n][1] &lt;&lt; endl;
+  if(ones[n][1] == -1){ // Если строка с длиной n и результатом 1 недостижима
+    cout &lt;&lt; "No solution";
+    return 0;
+  }
+
+  // Собираем ответ 
+  int res = 1;
+  char ans[100001];
+  for(int l = n; l &gt;= 1; --l){
+    ans[l-1] = bb[l][res];
+    res = from[l][res];
+  }
+  ans[n] = 0;
+  cout &lt;&lt; ans &lt;&lt; endl;
+
+  // Проверяем корректность ответа
+  res = ans[0]-'0';
+  for(int l = 1; l &lt; n; ++l){
+    res = f[res][ans[l]-'0'];
+  }
+  assert(res == 1);
+}
+</pre>
+
+
+</div>
+
+</body>
+
+</html>
