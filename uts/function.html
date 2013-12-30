@@ -17,21 +17,6 @@
     </script>
 </head>
 <body onLoad="sh_highlightDocument();">
-<div style="width:80%;">
-    <div style="float:right;">
-        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
-                codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
-                width="100" height="50">
-            <param name="movie" value="../audio/a_smsqulh3n.swf">
-            <param name="bgcolor" value="fff">
-            <param name="FlashVars" value="src=9094e666f613f513f50301------------ffffff">
-            <param name="autoplay" value="false">
-            <embed src="../audio/a_smsqulh3n.swf" bgcolor="fff" width="100" height="70"
-                   type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
-                   FlashVars="src=9094e666f613f513f50301------------ffffff"></embed>
-        </object>
-    </div>
-</div>
 
 <div id="content">
 <h1>Задача: Булева функция</h1>
@@ -60,6 +45,7 @@ int main (){
   freopen ("function.in", "r", stdin);
   freopen ("function.out", "w", stdout);
 
+  // Ввод исходных данных
   int n;
   cin &gt;&gt; n; // Длина строки
 
@@ -67,18 +53,17 @@ int main (){
   char s[5] = "0100";
   cin &gt;&gt; s; // Функция
 
-  for(int l = 0; l&lt;=n; l++)
-    for(int a = 0; a &lt;= 1; a++){
-      ones[l][a] = -1; // Заполняем -1
-      from[l][a] = -1;
-    }
-
   f[0][0] = s[0] - '0';
   f[0][1] = s[1] - '0';
   f[1][0] = s[2] - '0';
   f[1][1] = s[3] - '0';
 
   // База динамики
+  for(int l = 0; l &lt;= n; l++)
+    for(int a = 0; a &lt;= 1; a++){
+      ones[l][a] = -1; // Заполняем -1
+      from[l][a] = -1;
+    }
   for(int a = 0; a &lt;= 1; a++) {
     if(a &gt; ones[1][a]){
       ones[1][a] = a;
@@ -126,8 +111,23 @@ int main (){
 }
 </pre>
 
+<!-- Put this script tag to the <head> of your page -->
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?105"></script>
+
+<script type="text/javascript">
+  VK.init({apiId: 4090332, onlyWidgets: true});
+</script>
+
+<!-- Put this div tag to the place, where the Comments block will be -->
+<div id="vk_comments"></div>
+<script type="text/javascript">
+VK.Widgets.Comments("vk_comments", {limit: 15, width: "496", attach: "*"});
+</script>
 
 </div>
+
+
+
 
 </body>
 
