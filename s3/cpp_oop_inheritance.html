@@ -45,7 +45,7 @@
     <p><strong>public наследование - </strong>в классе-наследнике доступны все свойства класса-предка кроме private, и
         они также доступны извне.</p>
 
-    <p><strong>private</strong> - класс-наследник наследует свойства и методы &quot;только для себя&quot;. Т.е.</p>
+    <p><strong>private</strong> - класс-наследник наследует свойства и методы &quot;только для себя&quot;.</p>
 
     <p><strong>protected </strong>- класс-наследник наследует свойства и передают их своим наследникам.</p>
 
@@ -53,13 +53,15 @@
 
     <p>Создадим три класса: A, B и C - которые будут выводит экземпляр какого класса вызван.</p>
 
+    <p>Ключевое слово <b>virtual</b> объявляет метод виртуальным.</p>
+
 <pre class="sh_cpp">
 #include &lt;iostream&gt;
 
 use namespace std;
 
 class A {
-  // virtual
+  // virtual // Раскомментируйте эту строку
   void nv(){
     cout << "nv A" << endl;
   };
@@ -74,6 +76,12 @@ class B : public A {
 class C : public B {
   void show(){
     cout << "show C" << endl;
+  };
+};
+
+class D : public B, public C {
+  void show(){
+    cout << "show D" << endl;
   };
 };
 
