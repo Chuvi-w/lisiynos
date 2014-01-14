@@ -1,0 +1,56 @@
+<html>
+<head>
+    <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    <title>template. Шаблонные функции. Стратегии</title>
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <script type="text/javascript" src="../syntax/sh_main.min.js"></script>
+    <script type="text/javascript" src="../syntax/sh_cpp.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../style/sh_nedit.css">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+<body onLoad="sh_highlightDocument();">
+<div id="content">
+  <h1>Ключевое слово template. Шаблонные функции. Стратегии</h1>
+
+        <h2>Обобщённое программирование.</h2>
+
+ <p><b>Обобщённое программирование (generic programming)</b> - парадигма программирования, заключающаяся в таком описании данных и алгоритмов, которое можно применять к различным типам данных, не меняя само это описание. В том или ином виде поддерживается разными языками программирования.
+ </p>
+
+        <h2>Описание шаблона. Шаблонные функции (min, max и т.д.)</h2>
+
+  <pre class="sh_cpp">
+// Описание шаблонной функции
+template &lt;typename T&gt; T max(T x, T y) {
+  if (x < y)
+    return y;
+  else
+    return x;
+}
+...
+// Применение шаблонной функции
+ 
+int a = max(10,15);
+...
+double f = max(123.11, 123.12);
+...
+
+// Функция минимума 
+template &lt;typename T&gt; T min(T x, T y) { // T - параметр шаблона, T - произвольный тип данных для которого определена операция меньше "<"
+  return (x < y) ? x : y;
+}
+  </pre>
+        <h2>Шаблонные классы.</h2>
+        <h2>Контейнеры</h2>
+        <h2>Стандартная библиотека шаблонов STL: контейнеры, итераторы, алгоритмы, адаптеры, функторы (vector,
+            algorithm)        </h2>
+
+
+</div>
+</body>
+</html>
