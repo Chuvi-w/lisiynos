@@ -45,6 +45,7 @@ def go(filename):
 
 #print parsed_html.body.find('div', attrs={'class':'container'}).text
 
+# TODO: Дописать сюда все темы
 for fn in ["alg_number_theory.html"]:
   go(fn)
 
