@@ -76,7 +76,6 @@ def go(filename):
 
     parsed_html = BeautifulSoup(html)
     # Find hours and theme
-    print 'h1 = ', parsed_html.body.find('h1').text
     theory = int(parsed_html.body.find('span', attrs={'class': 'theory'}).text)
     practic = int(parsed_html.body.find('span', attrs={'class': 'practic'}).text)
     theory_dist = int(parsed_html.body.find('span', attrs={'class': 'theory_dist'}).text)
