@@ -87,7 +87,7 @@ def go(arg):
 
     parsed_html = BeautifulSoup(html)
     # Find hours and theme
-    print parsed_html.body.find('h1').text
+    #print parsed_html.body.find('h1').text
 
     for item in parsed_html.body.findAll(True, {'class': 'theme'}):
         tags.add(item.text)
