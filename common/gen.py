@@ -14,6 +14,7 @@ def check_files(curFile):
     allFiles.remove('index.html')
     print allFiles
 
+
 def ReadTemplate(template_fn):
     return open('..\\common\\' + template_fn, 'r').read()
 
@@ -35,6 +36,7 @@ def GenFile(template, params, fn, overwrite=False):
 
 # Шаблон одной строки при генерации таблицы
 line_template = ReadTemplate("line_template.html")
+chapter_template = ReadTemplate("chapter_template.html")
 body = ""
 
 
@@ -57,11 +59,26 @@ session_dist = Session()
 tags = set()
 
 
+# Тема
+class Theme():
+    def __init__(self, theme, title):
+        self.theme = theme
+        self.title = title
+
+
 # Read from file
 def go(arg):
     global body, session, session_dist, tags
     if isinstance(arg, basestring):
         filename = arg
+    elif isinstance(arg, Theme):
+        d = {
+            'theme': arg.theme,
+            'title': arg.title,
+        }
+        res = Template(chapter_template).safe_substitute(d)
+        body += "\n" + res
+        return
     else:
         filename, theory, practic, theory_dist, practic_dist = arg
 
@@ -102,11 +119,13 @@ def go(arg):
         if v == 0:
             d[k] = '&nbsp;'
     res = Template(line_template).safe_substitute(d)
-    body += "\n" + res
+    body += "\n" + res.encode('utf-8')
+
 
 #print parsed_html.body.find('div', attrs={'class':'container'}).text
 
 import color_console as cons
+
 
 def Check(expected, actual, message):
     if actual != expected:
