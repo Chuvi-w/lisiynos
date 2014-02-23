@@ -1,32 +1,18 @@
 # -*- coding: utf-8 -*-
 import os
 from string import Template
-
-from BeautifulSoup import BeautifulSoup
-
-html = """<html>
-<head>Heading</head>
-<body attr1='val1'>
-    <div class='container'>
-        <div id='class'>Something here</div>
-        <div>Something else</div>
-    </div>
-    <div class='xx'>
-        NOT SHOW :)
-    </div>
-</body>
-</html>"""
-#the HTML code you've written above
-parsed_html = BeautifulSoup(html)
-print parsed_html.body.find('div', attrs={'class': 'container'}).text
-
 from os import listdir
 from os.path import isfile, join, dirname, realpath
 
+from BeautifulSoup import BeautifulSoup
+
+
 # Filter *.html files
 thisDir = dirname(realpath(__file__))
-onlyFiles = [f for f in listdir(thisDir) if isfile(join(thisDir, f)) and f.endswith(".html")]
-#print onlyFiles
+allFiles = set(f for f in listdir(thisDir) if isfile(join(thisDir, f)) and f.endswith(".html"))
+allFiles.remove('index_template.html')
+allFiles.remove('index.html')
+print allFiles
 
 
 def ReadTemplate(template_fn):
@@ -68,21 +54,30 @@ class Session:
 session = Session()
 session_dist = Session()
 
+
 # Read from file
-def go(filename):
+def go(arg):
     global body, session, session_dist
+    if isinstance(arg, basestring):
+        filename = arg
+    else:
+        filename, theory, practic, theory_dist, practic_dist = arg
+
     f = open(filename, "r")
     html = f.read()
 
     parsed_html = BeautifulSoup(html)
     # Find hours and theme
-    print 'h1 = ', parsed_html.body.find('h1').text
-    theory = int(parsed_html.body.find('span', attrs={'class': 'theory'}).text)
-    practic = int(parsed_html.body.find('span', attrs={'class': 'practic'}).text)
-    theory_dist = int(parsed_html.body.find('span', attrs={'class': 'theory_dist'}).text)
-    practic_dist = int(parsed_html.body.find('span', attrs={'class': 'practic_dist'}).text)
-    print 'theory = ', theory, theory_dist
-    print 'practic = ', practic, practic_dist
+    print parsed_html.body.find('h1').text
+    if isinstance(arg, basestring):
+        theory = int(parsed_html.body.find('span', attrs={'class': 'theory'}).text)
+        practic = int(parsed_html.body.find('span', attrs={'class': 'practic'}).text)
+        theory_dist = int(parsed_html.body.find('span', attrs={'class': 'theory_dist'}).text)
+        practic_dist = int(parsed_html.body.find('span', attrs={'class': 'practic_dist'}).text)
+        print 'theory = ', theory, theory_dist
+        print 'practic = ', practic, practic_dist
+
+
     # Выводить в index.html и генерировать описание
     d = {
         'theory': theory, 'practic': practic,
@@ -102,11 +97,32 @@ def go(filename):
 
 # TODO: Дописать сюда все темы
 for fn in [
-    "alg_number_theory.html", "strings.html"
+    "alg_number_theory.html",
+    "strings.html",
+    "segment_tree_modification.html",
+    "trees.html",
+    ("games.html", 2, 4, 1, 1),
+
 ]:
     go(fn)
 
+import color_console as cons
+
+
+def Check(expected, actual, message):
+    if actual != expected:
+        default_colors = cons.get_text_attr()
+        default_bg = default_colors & 0x0070
+        cons.set_text_attr(cons.FOREGROUND_RED | default_bg | cons.FOREGROUND_INTENSITY)
+        print 'ERROR:',
+        cons.set_text_attr(default_colors)
+        print message % (expected, actual)
+
 # Генерируемый файл 
+Check(18, session.all_theory, u'Теории на очной сессии должно быть %d часов, сейчас: %d')
+Check(36, session.all_time(), u'Всего на очной сессии должно быть %d часов, сейчас: %d')
+Check(16, session_dist.all_time(), u'Сумма по дистанционной сессии должна быть %d часов, сейчас: %d')
+
 GenFile(ReadTemplate("index_template.html"),
         {
             'title': "Сессия 6 - осень: учебно-тематический план",
@@ -120,4 +136,6 @@ GenFile(ReadTemplate("index_template.html"),
 
         },
         "index_gen.html", True)
+
+# Показываем неиспользованные файлы
 
