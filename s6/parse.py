@@ -54,10 +54,13 @@ class Session:
 session = Session()
 session_dist = Session()
 
+# Темы
+tags = set()
+
 
 # Read from file
 def go(arg):
-    global body, session, session_dist
+    global body, session, session_dist, tags
     if isinstance(arg, basestring):
         filename = arg
     else:
@@ -69,6 +72,11 @@ def go(arg):
     parsed_html = BeautifulSoup(html)
     # Find hours and theme
     print parsed_html.body.find('h1').text
+
+    for item in parsed_html.body.findAll(True, {'class': 'theme'}):
+        tags.add(item.text)
+        print "Тема: ", item.text
+
     if isinstance(arg, basestring):
         theory = int(parsed_html.body.find('span', attrs={'class': 'theory'}).text)
         practic = int(parsed_html.body.find('span', attrs={'class': 'practic'}).text)
@@ -128,6 +136,10 @@ Check(18, session.all_theory, u'Теории на очной сессии дол
 Check(36, session.all_time(), u'Всего на очной сессии должно быть %d часов, сейчас: %d')
 Check(18, session_dist.all_time(), u'Сумма по дистанционной сессии должна быть %d часов, сейчас: %d')
 
+themes = list(tags)
+themes.sort()
+print ', '.join(themes)
+
 GenFile(ReadTemplate("index_template.html"),
         {
             'title': "Сессия 6 - осень: учебно-тематический план",
@@ -138,7 +150,7 @@ GenFile(ReadTemplate("index_template.html"),
             'all_theory_dist': session_dist.all_theory,
             'all_practic_dist': session_dist.all_practice,
             'all_session_dist': session_dist.all_time(),
-
+            'themes': (', '.join(themes)).encode("utf-8"),
         },
         "index.html", True)
 
