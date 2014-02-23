@@ -90,19 +90,21 @@ def go(arg):
     # print d
     session.theme(theory, practic)
     session_dist.theme(theory_dist, practic_dist)
-    if d['theory'] == 0: d['theory'] = '&nbsp;';
-    if d['theory_dist'] == 0: d['theory_dist'] = '&nbsp;';
+    # Заменяем все нули на &nbsp;
+    for k, v in d.iteritems():   # use items in Python 3
+        if v == 0:
+            d[k] = '&nbsp;'
     res = Template(line_template).safe_substitute(d)
     body += "\n" + res
 
 #print parsed_html.body.find('div', attrs={'class':'container'}).text
 
-# TODO: Дописать сюда все темы
+# Все темы в порядке их следования в курсе
 for fn in [
     ("strings.html", 4, 4, 1, 1),
     ("segment_tree_modification.html", 2, 3, 1, 1),
     ("trees.html", 5, 1, 1, 1),
-    ('..\\s3\\segments_tree.html', 3, 2, 1, 2),  # Структуры данных: дерево отрезков
+    ('..\\s3\\segments_tree.html', 3, 2, 1, 2), # Структуры данных: дерево отрезков
     #("games.html", 2, 4, 1, 1),
     ("alg_number_theory.html", 4, 4, 2, 3), # Целочисленная арифметика, простые числа
     ("olymp.html", 0, 4, 0, 4), # Командная работа (решение олимпиад прошлых лет)
