@@ -87,9 +87,11 @@ def go(arg):
         'filename': filename,
         'theme': parsed_html.body.find('h1').text,
     }
-    print d
+    # print d
     session.theme(theory, practic)
     session_dist.theme(theory_dist, practic_dist)
+    if d['theory'] == 0: d['theory'] = '&nbsp;';
+    if d['theory_dist'] == 0: d['theory_dist'] = '&nbsp;';
     res = Template(line_template).safe_substitute(d)
     body += "\n" + res
 
@@ -97,12 +99,13 @@ def go(arg):
 
 # TODO: Дописать сюда все темы
 for fn in [
-    "alg_number_theory.html",
-    "strings.html",
-    "segment_tree_modification.html",
-    "trees.html",
-    ("games.html", 2, 4, 1, 1),
-
+    ("strings.html", 4, 4, 1, 1),
+    ("segment_tree_modification.html", 2, 3, 1, 1),
+    ("trees.html", 5, 1, 1, 1),
+    ('..\\s3\\segments_tree.html', 3, 2, 1, 2),  # Структуры данных: дерево отрезков
+    #("games.html", 2, 4, 1, 1),
+    ("alg_number_theory.html", 4, 4, 2, 3), # Целочисленная арифметика, простые числа
+    ("olymp.html", 0, 4, 0, 4), # Командная работа (решение олимпиад прошлых лет)
 ]:
     go(fn)
 
@@ -121,7 +124,7 @@ def Check(expected, actual, message):
 # Генерируемый файл 
 Check(18, session.all_theory, u'Теории на очной сессии должно быть %d часов, сейчас: %d')
 Check(36, session.all_time(), u'Всего на очной сессии должно быть %d часов, сейчас: %d')
-Check(16, session_dist.all_time(), u'Сумма по дистанционной сессии должна быть %d часов, сейчас: %d')
+Check(18, session_dist.all_time(), u'Сумма по дистанционной сессии должна быть %d часов, сейчас: %d')
 
 GenFile(ReadTemplate("index_template.html"),
         {
@@ -135,7 +138,7 @@ GenFile(ReadTemplate("index_template.html"),
             'all_session_dist': session_dist.all_time(),
 
         },
-        "index_gen.html", True)
+        "index.html", True)
 
 # Показываем неиспользованные файлы
 
