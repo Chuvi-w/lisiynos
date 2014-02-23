@@ -151,7 +151,7 @@ def GenerateIndex(title):
     GenFile(ReadTemplate("index_template.html"),
             {
                 'title': title,
-                'body': body.encode("utf-8"),
+                'body': body, # .encode("utf-8"),
                 'all_theory': session.all_theory,
                 'all_practic': session.all_practice,
                 'all_session': session.all_time(),
