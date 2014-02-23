@@ -5,6 +5,9 @@ a statement.
 $Id: test26_color_console.py 534 2009-05-10 04:00:59Z andre $
 """
 
+import sys
+sys.path.append('../')
+
 import color_console as cons
 
 def test():

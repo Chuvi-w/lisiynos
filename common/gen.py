@@ -6,17 +6,16 @@ from os.path import isfile, join, dirname, realpath
 
 from BeautifulSoup import BeautifulSoup
 
-
 # Filter *.html files
-thisDir = dirname(realpath(__file__))
-allFiles = set(f for f in listdir(thisDir) if isfile(join(thisDir, f)) and f.endswith(".html"))
-allFiles.remove('index_template.html')
-allFiles.remove('index.html')
-print allFiles
-
+def check_files(curFile):
+    thisDir = dirname(realpath(curFile)) # __file__
+    allFiles = set(f for f in listdir(thisDir) if isfile(join(thisDir, f)) and f.endswith(".html"))
+    #allFiles.remove('index_template.html')
+    allFiles.remove('index.html')
+    print allFiles
 
 def ReadTemplate(template_fn):
-    return open(template_fn, 'r').read()
+    return open('..\\common\\' + template_fn, 'r').read()
 
 
 def GenFile(template, params, fn, overwrite=False):
@@ -75,7 +74,7 @@ def go(arg):
 
     for item in parsed_html.body.findAll(True, {'class': 'theme'}):
         tags.add(item.text)
-        print "Тема: ", item.text
+        print u"Тема: ", item.text
 
     if isinstance(arg, basestring):
         theory = int(parsed_html.body.find('span', attrs={'class': 'theory'}).text)
@@ -107,20 +106,7 @@ def go(arg):
 
 #print parsed_html.body.find('div', attrs={'class':'container'}).text
 
-# Все темы в порядке их следования в курсе
-for fn in [
-    ("strings.html", 4, 4, 1, 1),
-    ("segment_tree_modification.html", 2, 3, 1, 1),
-    ("trees.html", 5, 1, 1, 1),
-    ('..\\s3\\segments_tree.html', 3, 2, 1, 2), # Структуры данных: дерево отрезков
-    #("games.html", 2, 4, 1, 1),
-    ("alg_number_theory.html", 4, 4, 2, 3), # Целочисленная арифметика, простые числа
-    ("olymp.html", 0, 4, 0, 4), # Командная работа (решение олимпиад прошлых лет)
-]:
-    go(fn)
-
 import color_console as cons
-
 
 def Check(expected, actual, message):
     if actual != expected:
@@ -131,28 +117,30 @@ def Check(expected, actual, message):
         cons.set_text_attr(default_colors)
         print message % (expected, actual)
 
-# Генерируемый файл 
-Check(18, session.all_theory, u'Теории на очной сессии должно быть %d часов, сейчас: %d')
-Check(36, session.all_time(), u'Всего на очной сессии должно быть %d часов, сейчас: %d')
-Check(18, session_dist.all_time(), u'Сумма по дистанционной сессии должна быть %d часов, сейчас: %d')
 
-themes = list(tags)
-themes.sort()
-print ', '.join(themes)
+# Генеририрование index.html для конкретной сессии
+def GenerateIndex(title):
+    # Все проверки
+    Check(18, session.all_theory, u'Теории на очной сессии должно быть %d часов, сейчас: %d')
+    Check(36, session.all_time(), u'Всего на очной сессии должно быть %d часов, сейчас: %d')
+    Check(18, session_dist.all_time(), u'Сумма по дистанционной сессии должна быть %d часов, сейчас: %d')
 
-GenFile(ReadTemplate("index_template.html"),
-        {
-            'title': "Сессия 6 - осень: учебно-тематический план",
-            'body': body.encode("utf-8"),
-            'all_theory': session.all_theory,
-            'all_practic': session.all_practice,
-            'all_session': session.all_time(),
-            'all_theory_dist': session_dist.all_theory,
-            'all_practic_dist': session_dist.all_practice,
-            'all_session_dist': session_dist.all_time(),
-            'themes': (', '.join(themes)).encode("utf-8"),
-        },
-        "index.html", True)
+    themes = list(tags)
+    themes.sort()
+    print ', '.join(themes)
 
-# Показываем неиспользованные файлы
+    GenFile(ReadTemplate("index_template.html"),
+            {
+                'title': title,
+                'body': body.encode("utf-8"),
+                'all_theory': session.all_theory,
+                'all_practic': session.all_practice,
+                'all_session': session.all_time(),
+                'all_theory_dist': session_dist.all_theory,
+                'all_practic_dist': session_dist.all_practice,
+                'all_session_dist': session_dist.all_time(),
+                'themes': (', '.join(themes)).encode("utf-8"),
+            },
+            "index.html", True)
 
+    # Показываем неиспользованные файлы
