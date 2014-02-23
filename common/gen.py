@@ -84,6 +84,7 @@ def go(arg):
 
     f = open(filename, "r")
     html = f.read()
+    f.close()
 
     parsed_html = BeautifulSoup(html)
     # Find hours and theme
