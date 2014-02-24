@@ -1,32 +1,40 @@
 # -*- coding: utf-8 -*-
+import sys
 
-from BeautifulSoup import BeautifulSoup
-html = """<html>
-<head>Heading</head>
-<body attr1='val1'>
-    <div class='container'>
-        <div id='class'>Something here</div>
-        <div>Something else</div>
-    </div>
-    <div class='xx'>
-        NOT SHOW :)
-    </div>
-</body>
-</html>"""
-#the HTML code you've written above
-parsed_html = BeautifulSoup(html)
-print parsed_html.body.find('div', attrs={'class':'container'}).text
+sys.path.append('../common')
 
-from os import listdir
-from os import getcwd
-from os.path import isfile, join, dirname, realpath
-mypath = dirname(realpath(__file__))
-# Filter *.html files
-onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath,f)) and f.endswith(".html")]
-print onlyfiles
-# Find hours and theme
+from gen import go, GenerateIndex, Theme
 
-f = open("","r")
-data = f.read()
+# Все темы в порядке их следования в курсе
+for fn in [
+    Theme('Вычислительная геометрия', 'Понедельник - 7'),
+    ("dichotomy.html", 1, 1, 1, 1), # Нахождение корня функции методом деления отрезка пополам
+    ("geom1.html", 1, 1, 0, 1), # Геометрия: основные понятия
+    ("geom2.html", 1, 1, 0, 1), # Геометрия: отношения между объектами
+    ("geom3.html", 1, 0, 0, 1), # Геометрия: построение выпуклой оболочки
 
+    Theme('C/C++, динамическое программирование', 'Вторник - 6'),
+    ("cpp.html", 3, 3, 0, 1), # C/C++.
 
+    Theme('Рекурсия и переборные алгоритмы + функциональное программирование', 'Среда - 6'),
+    ("functions.html", 2, 1, 1, 0), # Функции. Виды параметров. Передача массивов
+    ("recursion.html", 2, 1, 1, 0), # Рекурсия: НОД, Ханойские башни, перебор с возвратом
+
+    Theme("Алгоритмы на графах", "Четверг - 6"),
+    # Теория графов. Определения графа, основных элементов графов. Типы графов. Деревья: число вершин и висячих вершин
+    # Представления графов в памяти: с помощью матрицы смежности и списка ребер. Оценка сложности для простейших операций.
+    ("../s2/graphs.html", 2, 2, 0, 1),
+    # DFS и BFS. Алгоритм. Реализация для простейших представлений в памяти. Оценка сложности. Восстановление пути.
+    ("../s1/graph_alg.html", 1, 1, 0, 1),
+
+    Theme("Алгоритмы на графах", "Пятница - 7"),
+    # Алгоритмы на графах: Флойда, Дейкстры, Краскала
+    ("../s1/graph_alg.html", 2, 2, 0, 1),
+    ('segments_tree.html', 2, 1, 1, 2), # Алгоритмы на графах: Флойда, Дейкстры, Краскала
+
+    Theme("Олимпиада", "Суббота - 4"),
+    ("olymp.html", 0, 4, 0, 4), # Командная работа (решение олимпиад прошлых лет)
+]:
+    go(fn)
+
+GenerateIndex("Сессия 3 - осень (ноябрь): учебно-тематический план")
