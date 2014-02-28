@@ -6,6 +6,12 @@
     <script type="text/javascript" src="../syntax/sh_main.min.js"></script>
     <script type="text/javascript" src="../syntax/sh_java.js"></script>
     <link type="text/css" rel="stylesheet" href="../style/sh_nedit.css">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 </head>
 <body onLoad="sh_highlightDocument();">
 <div style="width:80%;">
@@ -42,7 +48,7 @@
 <p>Бесплатно распространяемый комплект для Java, включающий в себя:</p>
 
 <ul>
-    <li>Исполнительную систему Java (JRE) - необходима для выполнения всех Java-программ</li>
+    <li>Исполнительную систему Java (JRE - Java Runtime Environment) - необходима для выполнения всех Java-программ</li>
     <li>Компилятор Java (javac)</li>
     <li>Стандартные библиотеки классов Java</li>
     <li>Примеры, документацию, различные утилиты</li>
@@ -60,8 +66,8 @@
 
 <p>
     Источник для установки:
-    <a href="http://java.sun.com/javase/downloads/widget/jdk6.jsp">http://java.sun.com/javase/downloads/widget/jdk6.jsp</a>
-    (далее скачать Download Java SE Development Kit 6u21)
+    <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>
+    (далее скачать Java Platform (JDK) 7u51)
 </p>
 
 <h2>Первая программа на Java в IntelliJ Idea</h2>
@@ -103,7 +109,7 @@
 //file name - HelloWorld.java
 public class HelloWorld {
   public static void main(String[] args) {
-    System.out.println("Hello world!"); //вывод строки в консоль
+    System.out.println("Hello world!"); // вывод строки в консоль
   }
 }
 </pre>
@@ -117,9 +123,7 @@ public class HelloWorld {
 
 <p>Источник для установки: <a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a>, выбрать
     Eclipse IDE for Java Developers, скачать его, распаковать <strong>zip</strong>-архив в прозвольную папку, зайти в
-    неё
-    и запустить <strong>eclipse.exe</strong>. </p>
-
+    неё и запустить <strong>eclipse.exe</strong>. </p>
 
 <p><img src="java/create_project.jpg" width="467" height="499" alt="Eclipse"></p>
 
@@ -135,16 +139,59 @@ public class HelloWorld {
 
 <p><img src="java/create_java_class_dialog.jpg" width="500" height="605" alt="ss"></p>
 
+<pre class="sh_java">
+/*
+  * Весь текст, который находится между косой чертой и звездочкой и до
+  * звездочки с косой чертой считается коментарием и никак не влияет на работу
+  * программы.
+  * Коменнтарии нужны, что бы человек мог поставить различные пометки по тексту
+  * программы, что бы потом быстрее разобратся.
+  * Кроме того коментарием считается строка начинающаяся с двух косых черт // и
+  * до конца строки
+  */
+package example; // Имя пакета. Оно означает что наш файл лежит в папке src/example/
+
+ /**
+  * Обычно перед началом класса пишут описательный коментарий о нем
+  * и указывают авторство
+  * @author fbasin
+  */
+public class MainClass { // Заголовок класса состоит из трех частей. «Указатель доступа»
+  // «ключевое слово class» «Имя класса»
+
+ /**
+  * По правилам хорошего тона перед каждым методом надо писать коментарий с
+  * описанием метода принимаемыми параметрами и возвращаемым результатом
+  * @param args the command line arguments
+  */
+public static void main(String[] args) { // Структура заголовка метода следующая:
+  // «Указатель доступа» «Признак статичного доступа» «Возвращаемый результат»
+  // «Имя класса» «Принимаемые параметры»
+  // TODO code application logic here
+  } // Завершение метода
+} // Окончание описания класса.
+</pre>
+
+<p>В современном программировании есть большое число различных языковых конструкций (команд, операторов, структур), которые позволяют эффективно и сжато решать множество сложных задач, но есть несколько базовых элементов знания которых уже достаточно что бы писать работающие программы.
+</p>
+
+<h3>Переменные</h3>
+
+<p>Это поименнованные области памяти, в которой может быть сохранено значение определенного типа. Сохраненное значение переменной будет доступно во всей области видимости переменой до окончания выполнения программы.</p>
+<p>Каждая переменная имеет два атрибута:</p>
+<p><b>Имя переменной</b> - должно быть уникальным в области видимости и начинатся с буквы.</p>
+<p><b>Тип переменной</b> - указывает на то, какой тип значений может буть сохранен в переменной. Простейшие типы, целое число, дробное число, логическое значение да/нет.</p>
+
+
 <h2>Типы данных языка Java</h2>
 Для всех простейших встроенных типов Java существуют классы-обертки, в которые включены
 полезные методы, например подсчет количества бит в числе, конвертация строки в число.
 <p><strong>Целочисленные типы</strong></p>
 <ul>
-    <li>byte - 8-битный знаковый тип. Обертка - Byte.
-        Числа от 0 до 255.
-    <li>short - 16-битный знаковый тип. Обертка - Short.
-    <li>int - 32-битный знаковый тип. Обертка - Integer.
-    <li>long - 64-битный знаковый тип. Обертка - Long.
+    <li><b>byte</b> - 8-битный знаковый тип. Обертка - Byte. Числа от -128 до 127.</li>
+    <li><b>short</b> - 16-битный знаковый тип (-32.768..32.767). Обертка - Short.</li>
+    <li><b>int</b> - 32-битный знаковый тип ($-2^{31}$..$$). Обертка - Integer.</li>
+    <li><b>long</b> - 64-битный знаковый тип. Обертка - Long.</li>
 </ul>
 <p><strong>Вещественные типы</strong></p>
 <ul>
