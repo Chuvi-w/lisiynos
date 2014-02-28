@@ -40,6 +40,7 @@ chapter_template = ReadTemplate("chapter_template.html")
 body = ""
 
 
+# Статистика по одной сессии
 class Session:
     all_theory = 0
     all_practice = 0
