@@ -44,6 +44,7 @@ chapter_template = ReadTemplate("chapter_template.html")
 body = ""
 
 
+# Статистика по одной сессии
 class Session:
     all_theory = 0
     all_practice = 0
@@ -94,7 +95,12 @@ def go(arg):
     # Find hours and theme
     #print parsed_html.body.find('h1').text
 
-    for item in parsed_html.body.findAll(True, {'class': 'theme'}):
+    ul_tags = parsed_html.body.findAll(True, {'class': 'tags'})
+    print ul_tags
+    if len(ul_tags) == 0:
+      print filename
+
+    for item in ul_tags[0].findAll('a'):
         tags.add(item.text)
         #print u"Тема: ".encode('cp866'), item.text
 
