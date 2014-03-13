@@ -223,6 +223,37 @@
         <li>Code::Blocks – <a href="http://www.codeblocks.org">http://www.codeblocks.org</a>;</li>
         <li>Far manager – <a href="http://farmanager.com/index.php?l=ru">http://farmanager.com/index.php?l=ru</a></li>
     </ul>
+
+    <h2>Командные строки для компиляции решений</h2>
+
+
+    <table class="pretty">
+        <thead>
+        <tr>
+            <th>Компилятор</th>
+            <th>Командная строка</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Free Pascal 2.6.0</td>
+            <td>fpc &lt;исходный файл&gt;</td>
+        <tr>
+            <td>GNU С 4.6.1 (MinGW)</td>
+            <td>gcc -O2 -x c –Wl,--stack=67108864 исходный_файл</td>
+        </tr>
+        <tr>
+            <td>Visual C++ 2010</td>
+            <td>cl /O2 /EHs /TP исходный_файл</td>
+        <tr>
+            <td>GNU C++ 4.6.1 (MinGW)</td>
+            <td>g++ -O2 -x c++ –Wl,--stack=67108864 исходный_файл</td>
+        <tr>
+            <td>Borland/Embarcadero Delphi 7.0</td>
+            <td>dcc32 -сс исходный_файл</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 </body>
