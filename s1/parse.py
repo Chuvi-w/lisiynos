@@ -9,6 +9,7 @@ from gen import go, GenerateIndex, Theme
 for fn in [
     Theme('Тестирующая система, алгоритмы, сложность, системы счисления', 'Понедельник - 7'),
     ("testsys.html", 0, 1, 0, 0),
+    ("terminology.html", 0, 0, 0, 0),
     ("alg.html", 1, 0, 0, 1),
     ("pascal.html", 1, 0, 0, 1),
     ("delphi.html", 1, 0, 0, 1),
