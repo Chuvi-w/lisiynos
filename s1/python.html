@@ -162,6 +162,13 @@ print A+B
     <li><strong>Строки</strong>: &quot;Hello world&quot;</li>
     <li>...это ещё не все...</li>
 </ul>
+
+<pre class="sh_python">
+sys.stdin = open(&quot;a.in&quot;,&quot;r&quot;)    # Входной файл
+sys.stdout = open(&quot;a.out&quot;,&quot;w&quot;)  # Выходной файл
+print(&quot;a=&quot;,a)
+</pre>
+
 <p><strong>Демонстрация работы различных типов данных:</strong></p>
 
 <p>Понятие переменной, объекта, ссылки, семантика (значение) оператора присваивания</p>
@@ -174,7 +181,7 @@ print A+B
 a = 3
 b = a
 b = 4
-print "a =", a, ' b =', b # a = 3  b = 4, переменная a не изменилась после изменения b
+print ("a =", a, ' b =', b)  # a = 3  b = 4, переменная a не изменилась после изменения b
 
 # Экземпляры классов присваиваются "по ссылке"
 class MyClass: field = 1 # Создали класс MyClass с одним полем field
@@ -183,7 +190,7 @@ a.field = 3
 b = MyClass()
 b = a #  Теперь b и a ссылаются на один и тот же объект
 b.field = 4
-print "a.field =", a.field, ' b.field =', b.field # a.field = 4  b.field = 4
+print ("a.field =", a.field, ' b.field =', b.field)  # a.field = 4  b.field = 4
 </pre>
 
 <pre class="sh_python">
