@@ -8,11 +8,12 @@ from gen import go, GenerateIndex, Theme
 # Все темы в порядке их следования в курсе
 for fn in [
     Theme('Тестирующая система, алгоритмы, сложность, системы счисления', 'Понедельник - 7'),
+    ("python.html", 2, 0, 0, 2),
     ("testsys.html", 0, 1, 0, 0),
     ("terminology.html", 0, 0, 0, 0),
     ("alg.html", 1, 0, 0, 1),
-    ("pascal.html", 1, 0, 0, 1),
-    ("delphi.html", 1, 0, 0, 1),
+    #  ("pascal.html", 1, 0, 0, 1),
+    #  ("delphi.html", 1, 0, 0, 1),
     ("radix.html", 1, 0, 0, 1),
     ("sort.html", 1, 0, 0, 1),
     ("binsearch.html", 1, 0, 0, 1),
