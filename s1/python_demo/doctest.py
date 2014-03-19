@@ -6,5 +6,5 @@ def average(values):
     """
     return sum(values) / len(values)
 
-import doctest
-doctest.testmod()   # automatically validate the embedded tests
+import doctest2
+doctest2.testmod()   # automatically validate the embedded tests
