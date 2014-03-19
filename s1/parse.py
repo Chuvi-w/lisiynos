@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+import psyco
+psyco.full()
+
 import sys
 
 sys.path.append('../common')
