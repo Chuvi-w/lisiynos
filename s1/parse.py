@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-import psyco
-psyco.full()
+#import psyco
+#psyco.full()
 
 import sys
 
