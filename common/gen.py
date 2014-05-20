@@ -16,7 +16,7 @@ def check_files(curFile):
     allFiles = set(f for f in listdir(thisDir) if isfile(join(thisDir, f)) and f.endswith(".html"))
     #allFiles.remove('index_template.html')
     allFiles.remove('index.html')
-    print allFiles
+    print(allFiles)
 
 
 def ReadTemplate(template_fn):
@@ -33,7 +33,7 @@ def GenFile(template, params, fn, overwrite=False):
     """
     if not overwrite and os.path.isfile(fn):
         return
-    print 'Generating "%s"...' % fn
+    print('Generating "%s"...' % fn)
     f = open(fn, 'w')
     f.write(Template(template).safe_substitute(params))
     f.close()
@@ -96,9 +96,9 @@ def go(arg):
     #print parsed_html.body.find('h1').text
 
     ul_tags = parsed_html.body.findAll(True, {'class': 'tags'})
-    print ul_tags
+    print(ul_tags)
     if len(ul_tags) == 0:
-      print filename
+      print(filename)
 
     for item in ul_tags[0].findAll('a'):
         tags.add(item.text)
@@ -109,8 +109,8 @@ def go(arg):
         practic = int(parsed_html.body.find('span', attrs={'class': 'practic'}).text)
         theory_dist = int(parsed_html.body.find('span', attrs={'class': 'theory_dist'}).text)
         practic_dist = int(parsed_html.body.find('span', attrs={'class': 'practic_dist'}).text)
-        print 'theory = ', theory, theory_dist
-        print 'practic = ', practic, practic_dist
+        print('theory = ' + theory + ' ' + theory_dist)
+        print('practic = ' + practic + ' ' + practic_dist)
 
 
     # Выводить в index.html и генерировать описание
@@ -143,9 +143,9 @@ def Check(expected, actual, message):
         default_colors = cons.get_text_attr()
         default_bg = default_colors & 0x0070
         cons.set_text_attr(cons.FOREGROUND_RED | default_bg | cons.FOREGROUND_INTENSITY)
-        print 'ERROR:',
+        print ('ERROR:',)
         cons.set_text_attr(default_colors)
-        print message % (expected, actual)
+        print (message % (expected, actual))
 
 
 # Генеририрование index.html для конкретной сессии
@@ -158,7 +158,7 @@ def GenerateIndex(title):
     themes = list(tags)
     themes.sort()
     # print (', '.join(themes)).encode("utf-8")
-    print 'Themes:',len(themes)
+    print ('Themes: ' + len(themes))
 
     GenFile(ReadTemplate("index_template.html"),
             {
