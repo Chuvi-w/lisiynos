@@ -37,7 +37,10 @@ def GenFile(template, params, fn, overwrite=False):
     if not overwrite and os.path.isfile(fn):
         return
     print('Generating "%s"...' % fn)
-    f = open(fn, 'w', encoding = 'UTF-8')
+    if sys.version < '3':
+       f = open(fn, 'w')
+    else:
+       f = open(fn, 'w', encoding = 'UTF-8')
     f.write(Template(template).safe_substitute(params))
     f.close()
 
@@ -150,7 +153,7 @@ def go(arg):
 
     res = Template(line_template).safe_substitute(d)
     if sys.version < '3':
-       body += "\n" + res.encode('utf-8')
+       body += "\n" + res #.encode('utf-8')
     else:
        body += "\n" + res
 
