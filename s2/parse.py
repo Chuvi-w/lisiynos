@@ -7,8 +7,9 @@ from gen import go, GenerateIndex, Theme
 
 # Все темы в порядке их следования в курсе
 for fn in [
-    Theme('Логика + Алгоритмы над целыми числами', 'Понедельник - 7'),
-    ("logic1.html", 1, 1, 0, 2),
+    Theme('Python + Логика + Алгоритмы над целыми числами', 'Понедельник - 7'),
+    ("python.html", 1, 0, 0, 2),
+    ("logic1.html", 0, 1, 0, 2),
     ("logic2.html", 1, 0, 0, 2),
     ("../s1/integers.html", 3, 1, 0, 2),
 
