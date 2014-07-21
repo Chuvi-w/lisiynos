@@ -4,11 +4,14 @@ from string import Template
 from os import listdir
 from os.path import isfile, join, dirname, realpath
 
-from BeautifulSoup import BeautifulSoup
+#from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 
 import sys
-reload(sys)  # Reload does the trick!
-sys.setdefaultencoding('UTF-8')
+
+if sys.version < '3':
+    reload(sys)  # Reload does the trick!
+    sys.setdefaultencoding('UTF-8')
 
 # Filter *.html files
 def check_files(curFile):
@@ -34,7 +37,7 @@ def GenFile(template, params, fn, overwrite=False):
     if not overwrite and os.path.isfile(fn):
         return
     print('Generating "%s"...' % fn)
-    f = open(fn, 'w')
+    f = open(fn, 'w', encoding = 'UTF-8')
     f.write(Template(template).safe_substitute(params))
     f.close()
 
@@ -70,12 +73,19 @@ class Theme():
         self.theme = theme
         self.title = title
 
+# Строка? Для Python2 и Python3
+def isString(arg):
+   if sys.version < '3':
+     return isinstance(arg, basestring)
+   else:
+     return isinstance(arg, str)
 
 # Read from file
 def go(arg):
     global body, session, session_dist, tags
-    if isinstance(arg, basestring):
-        filename = arg
+
+    if isString(arg):
+        filename = arg  
     elif isinstance(arg, Theme):
         d = {
             'theme': arg.theme,
@@ -87,7 +97,10 @@ def go(arg):
     else:
         filename, theory, practic, theory_dist, practic_dist = arg
 
-    f = open(filename, "r")
+    if sys.version < '3':
+       f = open(filename, "r")
+    else:
+       f = open(filename, "r", encoding = 'UTF-8')
     html = f.read()
     f.close()
 
@@ -104,7 +117,7 @@ def go(arg):
         tags.add(item.text)
         #print u"Тема: ".encode('cp866'), item.text
 
-    if isinstance(arg, basestring):
+    if isString(arg):
         theory = int(parsed_html.body.find('span', attrs={'class': 'theory'}).text)
         practic = int(parsed_html.body.find('span', attrs={'class': 'practic'}).text)
         theory_dist = int(parsed_html.body.find('span', attrs={'class': 'theory_dist'}).text)
@@ -126,11 +139,20 @@ def go(arg):
     session.theme(theory, practic)
     session_dist.theme(theory_dist, practic_dist)
     # Заменяем все нули на &nbsp;
-    for k, v in d.iteritems():   # use items in Python 3
+    if sys.version < '3':
+      for k, v in d.iteritems():
         if v == 0:
             d[k] = '&nbsp;'
+    else:
+      for k, v in d.items(): 
+        if v == 0:
+            d[k] = '&nbsp;'
+
     res = Template(line_template).safe_substitute(d)
-    body += "\n" + res.encode('utf-8')
+    if sys.version < '3':
+       body += "\n" + res.encode('utf-8')
+    else:
+       body += "\n" + res
 
 
 #print parsed_html.body.find('div', attrs={'class':'container'}).text
@@ -158,7 +180,7 @@ def GenerateIndex(title):
     themes = list(tags)
     themes.sort()
     # print (', '.join(themes)).encode("utf-8")
-    print ('Themes: ' + len(themes))
+    print ('Themes: %d' % len(themes))
 
     GenFile(ReadTemplate("index_template.html"),
             {
@@ -170,7 +192,7 @@ def GenerateIndex(title):
                 'all_theory_dist': session_dist.all_theory,
                 'all_practic_dist': session_dist.all_practice,
                 'all_session_dist': session_dist.all_time(),
-                'themes': (', '.join(themes)).encode("utf-8"),
+                'themes': (', '.join(themes)),
             },
             "index.html", True)
 
