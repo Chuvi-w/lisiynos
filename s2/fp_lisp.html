@@ -400,21 +400,55 @@ quickSort ([h : t]) = quickSort ([n | n &isin; t, n &lt;= h) + [h] + quickSort (
 <h3>Скобки</h3>
 <pre class="lisp">
 #lang racket
-(define (R L)
-  (if (null? L) ;; Если список пустой,
-      L  ;; то возвращаем его же
-      (append (R (cdr L)) ;; переворачиваем конец
-              (list (car L))
-              )
+
+;; Открывающая скобка
+(define (openBracket x)
+  (or (eq? x #\() (eq? x #\[) (eq? x #\{)))
+
+;; Закрывающая скобка
+(define (closeBracket x)
+  (or (eq? x #\)) (eq? x #\]) (eq? x #\})))
+
+
+;; Правильная закрывающая скобка
+(define (match open close)
+  (or (and (eq? open #\() (eq? close #\)))
+      (and (eq? open #\[) (eq? close #\]))
+      (and (eq? open #\{) (eq? close #\}))
       )
   )
 
+
+
+(define (check L s)
+  (if (null? L)
+      (null? s)
+      (if (openBracket (car L)) ;; Открывающая скобка
+          (check (cdr L) (cons (car L) s))
+          (if (closeBracket (car L))
+              (if (null? s)
+                  #f ;; Пустой стек
+                  (and (match (car s) (car L)) ;; На вершине стека должна быть нужная скобка => продолжаем
+                      (check (cdr L) (cdr s)) ;; И дальше всё в порядке
+                      )
+                  )
+              #f ;; Неверный символ
+              )
+          )
+      )
+  )
+
+(define (checkStr s)
+  (check (string->list s) '()))
+
 ;; Тесты
-(R '())
-(R '(1))
-(R '(1 2)) ;; '(2 1)
-(R '(1 2 3))
-(R '(234 34 2 3))
+(checkStr "")
+(checkStr "()")
+(checkStr "(())")
+(checkStr "([])")
+(checkStr "([{}])")
+(checkStr "(]")
+(checkStr "(()")
 </pre>
 
 <h3>Быстрое возведение в степень</h3>
