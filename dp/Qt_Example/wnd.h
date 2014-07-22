@@ -12,34 +12,33 @@
 
 #include "datetime.h"
 
-class TWindow : public QMainWindow
-{
-Q_OBJECT
+class TWindow : public QMainWindow {
+  Q_OBJECT
 
-    TDateTime* datetime;
+  TDateTime* datetime;
 
-    QMenuBar* menuBar;
-    QLineEdit* e1;
-    QLabel*   l1;
-    QLabel*   l2;
-    QLabel*   l3;
+  QMenuBar* menuBar;
+  QLineEdit* e1;
+  QLabel*   l1;
+  QLabel*   l2;
+  QLabel*   l3;
 
-    void createMenu();
+  void createMenu();
 
 public:
 
-    TWindow();
-    ~TWindow();
+  TWindow();
+  ~TWindow();
 
 public slots:
 
-    void dt1();
-    void dt2();
-    void dt3();
-    void dt4();
-    void dt5();
-    void op1();
-    void op2();
+  void dt1();
+  void dt2();
+  void dt3();
+  void dt4();
+  void dt5();
+  void op1();
+  void op2();
 
 };
 

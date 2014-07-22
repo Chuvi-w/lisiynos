@@ -4,21 +4,20 @@
 #include <QObject>
 #include <QDateTime>
 
-class TDateTime : QDateTime
-{
+class TDateTime : QDateTime {
 
-    friend class TWindow;
+  friend class TWindow;
 
 public:
 
-    TDateTime();
-    TDateTime(uint);
-    TDateTime(QDate);
-    TDateTime(QTime);
-    TDateTime(QString);
+  TDateTime();
+  TDateTime(uint);
+  TDateTime(QDate);
+  TDateTime(QTime);
+  TDateTime(QString);
 
-    TDateTime operator+ (uint);
-    TDateTime operator+= (uint);
+  TDateTime operator+ (uint);
+  TDateTime operator+= (uint);
 
 };
 
