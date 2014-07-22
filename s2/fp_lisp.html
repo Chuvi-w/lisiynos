@@ -135,28 +135,28 @@ quickSort ([h : t]) = quickSort ([n | n &isin; t, n &lt;= h) + [h] + quickSort (
     <p>Скачать Racket: <a href="http://download.racket-lang.org">http://racket-lang.org</a></p>
 
 
-    <p>Программы и данные неотличимы друг от друга - всё есть списки.</p>
+    <p>Программы и данные неотличимы друг от друга &mdash; всё есть списки.</p>
 
-    <p>Программа на языке LISP - список. Первый элемент списка - имя функции которую надо вызвать, остальные - аргументы.</p>
+    <p>Программа на языке LISP &mdash; список. Первый элемент списка &mdash; имя функции которую надо вызвать, остальные &mdash; аргументы.</p>
 
     <pre>
-       (действие аргумент1 аргумент2 ...)   
+       (действие аргумент1 аргумент2 ...)
     </pre>
 
     <p>Сначала вычисляются аргументы.</p>
 
-    <p>Функция <b>list</b> конструирует список</p>
+    <p>Функция <b>list</b> конструирует список:</p>
 
     <pre>
       (list 1 2 3)
     </pre>
 
-    <p>Условный оператор</p>
+    <p>Условный оператор (больше похож на тернарный)</p>
     <pre>
       (if условия если_верно если_нет)
     </pre>
 
-        <p>Объявление функции</p>
+    <p>Объявление функции</p>
     <pre>
       (define (имя_функции арг1 арг2) (код))
     </pre>
@@ -166,37 +166,37 @@ quickSort ([h : t]) = quickSort ([n | n &isin; t, n &lt;= h) + [h] + quickSort (
       (define pi 3.14)
     </pre>
 
-    <p></p>
-
+    <p>Литералы списков:</p>
 
     <pre>
     '()  
-    </pre>
     '(2 3 4)
+    </pre>
 
-    <p>Голова и конец</p>
+    <p>Конструирование списка из головы и конца:</p>
+    <pre>
     (cons head tail)
+    </pre>
 
-    Голова списка
+    <p>Голова списка</p>
 
     <pre>
-    (car L)  
+    (car L)
     </pre>
 
-
-    Хвост списка
+    <p>Хвост списка</p>
     <pre>
     (cdr L)
     </pre>
 
+    <p>Разберем и построим снова список <code>L</code>:</p>
     <pre>
-    L = (cons (car L) (cdr L))
+    (cons (car L) (cdr L))
     </pre>
 
     <p>Арифметические функции: + - * /</p>
 
-
-    <p><b>null?</b> - пуст ли список?</p>
+    <p><b>null?</b> &mdash; пуст ли список?</p>
 
     <h3>Вычисление длины списка</h3>
     <pre>
@@ -216,7 +216,7 @@ quickSort ([h : t]) = quickSort ([n | n &isin; t, n &lt;= h) + [h] + quickSort (
 
     <pre>
     (define (get L n)
-      (if (eq n 0)
+      (if (= n 0)
           (car L)
           (get (cdr L) (- n 1))
       )
@@ -227,7 +227,7 @@ quickSort ([h : t]) = quickSort ([n | n &isin; t, n &lt;= h) + [h] + quickSort (
 
     <pre>
     (define (fact n)
-      (if (eq n 0)
+      (if (= n 0)
           1
           (* n (fact (- n 1)))
       )
@@ -237,18 +237,17 @@ quickSort ([h : t]) = quickSort ([n | n &isin; t, n &lt;= h) + [h] + quickSort (
     <b>Применить одну операцию ко всем элементам списка</b>
 
     <pre>
-      (define (map F L)
-        (if (null? ()
-            '()
-            (cons (F (car L) (map F (cdr ())))
-        )
+    (define (map F L)
+      (if (null? ()
+          '()
+          (cons (F (car L) (map F (cdr ())))
       )
+    )
     </pre>
 
-
-    (display ... out) - вывод на экран
-    (read in) - чтение
-    (close-output-port out)
+    <p><code>(display ... out)</code> &mdash; вывод на экран</p>
+    <p><code>(read in)</code> &mdash; чтение</p>
+    <p><code>(close-output-port out)</code> &mdash; закрытие файла (нужно при работе в среде разработки)</p>
 
 
     <p>Тексты программ на функциональных языках программирования <em>описывают</em> «как решить задачу», но не <em>предписывают</em> последовательность
