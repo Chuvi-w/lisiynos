@@ -377,6 +377,71 @@ quickSort ([h : t]) = quickSort ([n | n &isin; t, n &lt;= h) + [h] + quickSort (
 (flush-output out)
 </pre>
 
+<h3>Разворот списка</h3>
+<pre class="lisp">
+#lang racket
+(define (R L)
+  (if (null? L) ;; Если список пустой,
+      L  ;; то возвращаем его же
+      (append (R (cdr L)) ;; переворачиваем конец
+              (list (car L))
+              )
+      )
+  )
+
+;; Тесты
+(R '())
+(R '(1))
+(R '(1 2)) ;; '(2 1)
+(R '(1 2 3))
+(R '(234 34 2 3))
+</pre>
+
+<h3>Скобки</h3>
+<pre class="lisp">
+#lang racket
+(define (R L)
+  (if (null? L) ;; Если список пустой,
+      L  ;; то возвращаем его же
+      (append (R (cdr L)) ;; переворачиваем конец
+              (list (car L))
+              )
+      )
+  )
+
+;; Тесты
+(R '())
+(R '(1))
+(R '(1 2)) ;; '(2 1)
+(R '(1 2 3))
+(R '(234 34 2 3))
+</pre>
+
+<h3>Быстрое возведение в степень</h3>
+
+<pre class="lisp">
+#lang racket
+
+;; a в степени b
+(define (pow a b)
+  (if (eq? b 0)
+      1  ;; a^0 = 1
+      (if(eq? (remainder b 2) 0) ;; Если b - чётная
+         (* (pow a (/ b 2)) ;; то делим степень на 2
+            (pow a (/ b 2))
+            )
+         (* a (pow a (- b 1)))
+         )
+      )
+  )
+
+(pow 2 0)
+(pow 2 1)
+(pow 2 2)
+(pow 2 3)
+</pre>
+
+
 <h3>Обратная польская нотация</h3>
 
 <pre class="lisp">
