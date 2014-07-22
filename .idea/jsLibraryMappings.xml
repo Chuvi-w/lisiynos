@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="4" />
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/s2/fp_lisp.html" libraries="{jquery-1.11.0, jquery-migrate-1.2.1}" />
+  </component>
+</project>
 
