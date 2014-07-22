@@ -9,10 +9,6 @@
     <link type="text/css" rel="stylesheet" href="../style/sh_nedit.css">
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-
-
-
-
     </script>
     <script type="text/javascript"
             src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -97,10 +93,9 @@ print(fact2(3))
 
 # Использование reduce вычисление факториала
 from functools import reduce
+
 def fact3(n):
     return reduce(lambda x, y: x * y, range(2, n + 1))
-
-
 
 print(fact3(6))
 </pre>
