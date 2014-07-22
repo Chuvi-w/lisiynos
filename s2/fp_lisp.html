@@ -13,10 +13,27 @@
     <link rel="stylesheet" href="../highlight/styles/sunburst.css">
     <script src="../highlight/highlight.pack.js"></script>
     <script>
+        //        hljs.configure({
+        //            tabReplace: '    ', // 4 spaces
+        //          classPrefix: ''     // don't append class prefix
+        // … other options aren't changed
+        //languages: ['lisp']
+        //    });
+        /*$(document).ready(function () {
+         //hljs.configure({
+         //  languages: 'lisp'
+         //tabReplace: '    ', // 4 spaces
+         //classPrefix: ''     // don't append class prefix
+         // … other options aren't changed
+         //});
+         $('pre').each(function (i, block) {
+         hljs.highlightBlock(block);
+         });
+         }); */
+        //        hljs.initHighlightingOnLoad();
         $(document).ready(function () {
-            $('pre').each(function (i, block) {
-                hljs.highlightBlock(block);
-            });
+            $('pre.lisp').contents().unwrap().wrap('<pre><code class="lisp">');
+            hljs.initHighlightingOnLoad();
         });
     </script>
 </head>
@@ -163,50 +180,50 @@ quickSort ([h : t]) = quickSort ([n | n &isin; t, n &lt;= h) + [h] + quickSort (
 
 <p>Функция <b>list</b> конструирует список:</p>
 
-    <pre>
-      (list 1 2 3)
-    </pre>
+    <pre><code class="lisp">
+        (list 1 2 3)
+    </code></pre>
 
 <p>Условный оператор (больше похож на тернарный)</p>
-    <pre>
+    <pre class="lisp">
       (if условия если_верно если_нет)
     </pre>
 
 <p>Объявление функции</p>
-    <pre>
+    <pre class="lisp">
       (define (имя_функции арг1 арг2) (код))
     </pre>
 
 <p>Объявление константы</p>
-    <pre>
+    <pre class="lisp">
       (define pi 3.14)
     </pre>
 
 <p>Литералы списков:</p>
 
-    <pre>
+    <pre class="lisp">
     '()  
     '(2 3 4)
     </pre>
 
 <p>Конструирование списка из головы и конца:</p>
-    <pre>
+    <pre class="lisp">
     (cons head tail)
     </pre>
 
 <p>Голова списка</p>
 
-    <pre>
+    <pre class="lisp">
     (car L)
     </pre>
 
 <p>Хвост списка</p>
-    <pre>
+    <pre class="lisp">
     (cdr L)
     </pre>
 
 <p>Разберем и построим снова список <code>L</code>:</p>
-    <pre>
+    <pre class="lisp">
     (cons (car L) (cdr L))
     </pre>
 
@@ -215,7 +232,7 @@ quickSort ([h : t]) = quickSort ([n | n &isin; t, n &lt;= h) + [h] + quickSort (
 <p><b>null?</b> &mdash; пуст ли список?</p>
 
 <h3>Вычисление длины списка</h3>
-    <pre>
+    <pre class="lisp">
     (define (length L)
       (if (null? L)
          0
@@ -230,7 +247,7 @@ quickSort ([h : t]) = quickSort ([n | n &isin; t, n &lt;= h) + [h] + quickSort (
     <b>Получить элемент списка L с номером n</b>
 </p>
 
-    <pre class="sh_lisp">
+    <pre class="lisp">
     (define (get L n)
       (if (= n 0)
           (car L)
@@ -241,7 +258,7 @@ quickSort ([h : t]) = quickSort ([n | n &isin; t, n &lt;= h) + [h] + quickSort (
 
 <b>Факториал</b>
 
-    <pre>
+    <pre class="lisp">
     (define (fact n)
       (if (= n 0)
           1
@@ -252,7 +269,7 @@ quickSort ([h : t]) = quickSort ([n | n &isin; t, n &lt;= h) + [h] + quickSort (
 
 <b>Применить одну операцию ко всем элементам списка</b>
 
-    <pre>
+    <pre class="lisp">
     (define (map F L)
       (if (null? ()
           '()
@@ -345,46 +362,52 @@ quickSort ([h : t]) = quickSort ([n | n &isin; t, n &lt;= h) + [h] + quickSort (
 
 <h3>Наибольший общий делитель</h3>
 
-<pre style='color:#000000;background:#ffffff;'><html>
-<body style='color:#000000; background:#ffffff; '>
-<pre>
+<pre class="lisp">
 #lang racket
-<span style='color:#696969; '>; Открываем входной файл как in</span>
-<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>define</span> in <span
-        style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>open-input-file</span> <span
-        style='color:#0000e6; '>"gcd.in"</span><span style='color:#808030; '>)</span><span
-        style='color:#808030; '>)</span>
-<span style='color:#696969; '>; Открываем выходной файл как out, перезаписываем его если он уже есть</span>
-<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>define</span> out <span
-        style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>open-output-file</span> <span
-        style='color:#0000e6; '>"gcd.out"</span> #<span style='color:#400000; '>:exists</span> <span
-        style='color:#800080; '>'replace</span><span style='color:#808030; '>)</span><span
-        style='color:#808030; '>)</span>
-<span style='color:#696969; '>; Функция gcd, если y равен нулю, то возвращает x, </span>
-<span style='color:#696969; '>; иначе вызывает саму себя с параметрами y и остаток от деления x на y</span>
-<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>define</span> <span
-        style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>gcd</span> x y<span
-        style='color:#808030; '>)</span> <span style='color:#808030; '>(</span><span
-        style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span
-        style='color:#800000; font-weight:bold; '>zero?</span> y<span style='color:#808030; '>)</span> x <span
-        style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>gcd</span> y <span
-        style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>remainder</span> x y<span
-        style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span
-        style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
-<span style='color:#696969; '>; Считываем два числа из входного файла, передаём их на вход функции gcd и выводим в выходной файл ответ</span>
-<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>display</span> <span
-        style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>gcd</span> <span
-        style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>read</span> in<span
-        style='color:#808030; '>)</span> <span style='color:#808030; '>(</span><span
-        style='color:#800000; font-weight:bold; '>read</span> in<span style='color:#808030; '>)</span><span
-        style='color:#808030; '>)</span> out<span style='color:#808030; '>)</span>
-<span style='color:#696969; '>; Сбрасываем буфер вывода</span>
-<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>flush-output</span> out<span
-        style='color:#808030; '>)</span>
+; Открываем входной файл как in
+(define in (open-input-file "gcd.in"))
+; Открываем выходной файл как out, перезаписываем его если он уже есть
+(define out (open-output-file "gcd.out" #:exists 'replace))
+; Функция gcd, если y равен нулю, то возвращает x,
+; иначе вызывает саму себя с параметрами y и остаток от деления x на y
+(define (gcd x y) (if (zero? y) x (gcd y (remainder x y))))
+; Считываем два числа из входного файла, передаём их на вход функции gcd и выводим в выходной файл ответ
+(display (gcd (read in) (read in)) out)
+; Сбрасываем буфер вывода
+(flush-output out)
 </pre>
 
+<h3>Обратная польская нотация</h3>
 
-<h3></h3>
+<pre class="lisp">
+#lang racket
+; Открываем входной файл как in
+(define in(open-input-file"rpn.in"))
+; Открываем выходной файл как out, перезаписываем его если он уже есть
+(define out(open-output-file"rpn.out"#:exists 'replace))
+
+; Выполнение операции
+(define (do f e s operation)
+  (f
+   (cdr e)
+   (cons (operation (car (cdr s)) (car s)) (cdr (cdr s)))))
+
+; Функция f: e - оставшаяся часть выражения, s - стек
+(define (f e s)
+  (if(null? e)
+     (car s)
+     (if(eq? (car e) '+) (do f e s +)
+        (if(eq? (car e) '-) (do f e s -)
+           (if(eq? (car e) '*) (do f e s *)
+              (if(eq? (car e) '/) (do f e s /)
+                 (f (cdr e) (cons (car e) s)))
+              )))))
+
+; Считываем из входного файла, подаём на вход функции f и выводим результат в выходной файл
+(display (f (read in) '()) out)
+; Сбрасываем буфер вывода
+(flush-output out)
+</pre>
 
 <pre style='color:#000000;background:#ffffff;'><html>
 <body style='color:#000000; background:#ffffff; '>
