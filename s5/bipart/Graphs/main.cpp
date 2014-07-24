@@ -43,9 +43,11 @@ int dfs(int n, int c){
   return 1;
 }
 
-#define DEBUG 1
+// Для отладки можно использовать
+#define DEBUG
 
 int main() {
+// Отладочный вывод
 #ifdef DEBUG
 
 #endif
