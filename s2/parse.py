@@ -17,12 +17,13 @@ for fn in [
     ("fp_lisp.html", 3, 3, 0, 1),
 
     Theme('Рекурсия и переборные алгоритмы', 'Среда - 6'),
-    ("comb.html", 1, 1, 0, 1),
-    ("backtracking.html", 1, 1, 0, 2),
-    ("monte_carlo.html", 1, 1, 0, 2),
+    ("comb.html", 1, 0, 0, 1),
+    ("backtracking.html", 1, 1, 0, 1),
+    ("monte_carlo.html", 1, 1, 0, 1),
+    ("dynamic2.html", 0, 1, 0, 1),
 
     Theme('Сортировки', "Четверг - 6"),
-    ("../s1/sort.html", 3, 3, 0, 4),
+    ("../s1/sort.html", 3, 3, 0, 3),
 
     Theme('Алгоритмы на графах', "Пятница - 7"),
     ("graphs.html", 4, 3, 0, 2),
