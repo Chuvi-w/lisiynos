@@ -28,15 +28,40 @@ base[0] = 1
 for i in range(1, len(s)):
     base[i] = (base[i - 1] * b) % P
 
-# Прямое вычисление хеша
-def hash_slow(s):
+
+def hash_slow(s):  # Прямое вычисление хеша
     res = 0  # Здесь будет хеш строки s
     # Пробегаем по всем символам
     for i in range(len(s)):
-        res += ord(s[i])
+        res = (res + ord(s[i]) * base[i]) % P
+    return res
 
 
-import sys
+# Прямое вычисление хеша
+def hash_prefix(s):
+    h = [0] * len(s)
+    res = 0  # Здесь будет хеш строки s
+    # Пробегаем по всем символам
+    for i in range(len(s)):
+        res = (res + ord(s[i]) * base[i]) % P
+        h[i] = res
+    return h
 
-sys.stdin = open('partition.in')
-sys.stdout = open('partition.out', "w")
+
+h = []
+
+
+def hash(s, i, j):
+    # Вычисляем Prefix
+    res = 0
+    h = [0] * len(s)
+    for i in range(len(s)):
+        res = (res + ord(s[i]) * base[i]) % P
+
+    h = [ord(s[i])]
+
+
+    # import sys
+
+    # sys.stdin = open('partition.in')
+    # sys.stdout = open('partition.out', "w")

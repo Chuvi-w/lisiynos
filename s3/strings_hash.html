@@ -15,6 +15,7 @@
 
 
 
+
     </script>
     <script type="text/javascript"
             src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -79,7 +80,7 @@ from math import *
 
 def is_prime(a):
     """ Простое ли число a? """
-    return all(a % i for i in range(2, int(sqrt(a) + 0.1) + 1))
+    return all(a % i for i in range(2, int(a**0.5 + 0.1) + 1))
     # all возвращает True только если все элементы множества не 0
 
 # Генерируем все простые числа < 100
