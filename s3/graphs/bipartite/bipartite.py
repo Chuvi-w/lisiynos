@@ -1,3 +1,6 @@
+# -*- utf-8 -*-
+# Проверка графа на двудольность (использование DFS)
+
 import sys
 
 sys.stdin = open("bipartite.in")
