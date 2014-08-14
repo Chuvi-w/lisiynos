@@ -1,10 +1,12 @@
-import sys
+# -*- utf-8 -*-
+#import sys
 
-# sys.stdin = open("brackets.in")
+#sys.stdin = open("brackets.in")
 #sys.stdout = open("brackets.out", "w")
-
-n = 4
 #n = int(input())
+
+# Количество пар скобок
+n = 4
 
 
 def gen(index=0, br_open=0, br_close=0, ans=['_'] * (2 * n)):

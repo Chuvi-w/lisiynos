@@ -1,20 +1,15 @@
 <html>
 <head>
     <meta http-equiv=Content-Type content="text/html; charset=utf-8">
-    <title>Правильные скобочные последовательности</title>
+    <title>DFS - поиск в глубину</title>
     <link rel="stylesheet" type="text/css" href="../style/style.css">
     <script type="text/javascript" src="../syntax/sh_main.min.js"></script>
     <script type="text/javascript" src="../syntax/sh_pascal.min.js"></script>
     <script type="text/javascript" src="../syntax/sh_cpp.min.js"></script>
-    <script type="text/javascript" src="../syntax/sh_python.js"></script>
-
+    <script type="text/javascript" src="../syntax/sh_basic.js"></script>
     <link type="text/css" rel="stylesheet" href="../style/sh_nedit.css">
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-
-
-
-
 
 
 
@@ -45,74 +40,22 @@
 </div>
 
 <div id="content">
-    <h1>Правильные скобочные последовательности</h1>
+    <h1>DFS - Поиск в глубину</h1>
 
-    <h3>Генерация правильных скобочных</h3>
-
-
-    <p>
-
-    </p>
+    <h2>Постановка задачи, рекурсивная реализация, отличия от BFS (поиска в ширину)</h2>
 
 <pre class="sh_python">
-# -*- utf-8 -*-
-import sys
 
-sys.stdin = open("brackets.in")
-sys.stdout = open("brackets.out", "w")
-n = int(input())
-
-# Количество пар скобок
-n = 4
-
-
-def gen(index=0, br_open=0, br_close=0, ans=['_'] * (2 * n)):
-    if index == 2 * n:
-        print("".join(ans))
-        return
-    # Если можем поставить открывающую скобку => ставим её
-    if br_open < n:
-        ans[index] = '('
-        gen(index + 1, br_open + 1, br_close, ans)  # Рекурсия
-    # Если можем поставить закрывающую скобку => ставим её
-    if br_close < br_open:
-        ans[index] = ')'
-        gen(index + 1, br_open, br_close + 1, ans)  # Рекурсия
-
-
-gen()
 </pre>
 
-<pre>
-(())
-()()
-</pre>
 
-<pre>
-((()))
-(()())
-(())()
-()(())
-()()()
-</pre>
+    <h2>Анализ времени работы для различных способов задания графа</h2>
 
-    <p>$n = 4$</p>
-<pre>
-(((())))
-((()()))
-((())())
-((()))()
-(()(()))
-(()()())
-(()())()
-(())(())
-(())()()
-()((()))
-()(()())
-()(())()
-()()(())
-()()()()
-</pre>
+    <h3>Матрица смежности</h3>
+
+
+    <h3>Списки смежности</h3>
+
 
 </div>
 
