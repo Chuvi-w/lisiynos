@@ -30,3 +30,13 @@ for i in range(1, len(s)):
 
 # Прямое вычисление хеша
 def hash_slow(s):
+    res = 0  # Здесь будет хеш строки s
+    # Пробегаем по всем символам
+    for i in range(len(s)):
+        res += ord(s[i])
+
+
+import sys
+
+sys.stdin = open('partition.in')
+sys.stdout = open('partition.out', "w")
