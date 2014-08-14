@@ -3,11 +3,12 @@
     <meta http-equiv=Content-Type content="text/html; charset=utf-8">
     <title>Полиномиальное хеширование строк</title>
     <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <script type="text/javascript" src="../syntax/sh_main.min.js"></script>
+    <script type="text/javascript" src="../syntax/sh_cpp.min.js"></script>
+    <script type="text/javascript" src="../syntax/sh_python.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../style/sh_nedit.css">
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-
-
-
 
 
 
@@ -19,7 +20,7 @@
             src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 </head>
-<body>
+<body onLoad="sh_highlightDocument();">
 <div style="width:80%;">
     <div style="float:right;">
         <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
@@ -58,11 +59,14 @@
     <p>
         Чтобы не происходило переполнения надо считать этот хеш по модулю большого простого числа $P$
         (или, хотя бы числа взаимно простого с $b$).
-        $h(S) = (S_0 + S_1 b + S_2 b^2 + S_3 b^3 + ... + S_N) mod P b^N$
+        $h(S) = (S_0 + S_1 b + S_2 b^2 + S_3 b^3 + ... + S_N b^N) \mod P$
     </p>
 
 
     <p>В качестве $P$ удобно использовать, например, простое число: $10^9+7$</p>
+
+    <p>Как найти подходяшие простые числа? Можно просто запомнить несколько подходящих. Или поискать с помощью
+        программы.</p>
 
 
     <p>Для поиска простых чисел можно использовать следующий код:</p>
