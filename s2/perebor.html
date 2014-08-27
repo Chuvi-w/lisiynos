@@ -6,6 +6,21 @@
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
     <script type="text/javascript"
             src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -91,208 +106,70 @@ def area(p1, p2, p3):
 assert area((0, 0), (0, 1), (1, 0)) == 0.5
 assert area((1, 1), (1, 2), (3, 1)) == 1.0
 
-max_area = 0
+S_max = 0
+triangle = []  # Номера вершин треугольника с максимальной площадью
 
-# Перебираем тройки точек
+# Начинаем перебор: перебираем тройки точек
 for i in range(N):
     for j in range(i + 1, N):
         for k in range(j + 1, N):
             S = area(points[i], points[j], points[k])
-            if S > max_area:
-                max_area = S
+            if S > S_max:
+                S_max = S
+                # Запоминаем номера точек
+                triangle = [i + 1, j + 1, k + 1]
 
-print(max_area)
+print("Площадь =", S_max)
+if S_max > 0:
+    print("Номера точек:", *triangle)
 </pre>
 
-<p>&nbsp;</p>
-
-<p style='text-indent:18pt'><cite>Программа (</cite><cite><span>QBa<span>te>:</p>
-
-<p style='text-indent:18pt'><span>INPUT</span>
-    &quot;введите количество точек $N$&gt;2 &quot;, $N$<span>t-indent:18pt'><span>DIM x(1 TO n),
-y(1 TO n)</span></p>
-
-<p style='text-indent:18pt'><span>SCREEN</span>
-    12</p>
-
-<p style='text-indent:18pt'>
-    <span>RANDOMIZE</span><span> </span><span>TIMER</span<span>='text-indent:18pt'><span>FOR</span><span> </span><span>i</span> = 1 <span>T<span>       > </span>$N$                     <span>    экранных координат точек случайным образом
-</p>
-
-<p style='margin-left:18.0pt;text-indent:17.4pt'><span>x(i) = INT(RND * 640)</span></p>
-
-<p style='margin-l<span>-indent:17.4pt'><span>y(i) = INT(RND * 480)</span></p>
-
-<p style='margin-left:18.0p<span>7.4pt'><span>CIRCLE (x(i), y(i)), 2                        '</span>Рисуем<span
-    <span>очки<span>”</span></p>
-
-<p><span>NEXT i</s<span>yle='margin-left:18.0pt'><span>&nbsp;</span></p>
-
-<p><span>‘</span>Начинаем
-    перебор</p>
-
-<p><span>FOR i = 1 TO n</span></p>
-
-<p style='margin-left:18.0pt;text-indent:17.4pt'><span>FOR j = 1 TO n</span></p>
-
-<p style='margin-left:53.4pt;text-indent:17.4pt'><span> n</span></p>
-
-<p style='margin-left:106.2pt'><span>a = SQR((x(i) -
-x(j)) ^ 2 + (y(i)<span>  '</span>Длины сторон</p>
-
-<p style='margin-left:106.2pt'><span>b = SQR((x(i) -
-x(k)) ^ 2 + (y(i) - y(k)) ^ 2)</span></p>
-
-<p style='margin-left:106.2pt'><span>c = SQR((x(k) -
-x(j)) ^ 2 + (y(k) - y(j)) ^ 2)</span></p>
-
-<p style='margin-left:106.2pt'><span>p = (a + b + c)
-/ 2                                                      '</span>Полупериметр</p>
-
-<p style='margin-left:106.2pt'><span>s = SQR(p * (p
-- a) * (p - b) * (p - c))           '</span>Формула Герона</p>
-
-<p style='margin-left:106.2pt'><span>IF s &gt; smax
-THEN smax = s: im = i: jm = j: km = k</span></p>
-
-<p style='text-indent:18pt'><span>NEXT</span><span> </span><span>k</span>, <span>j</span>, <span>i</span></p>
-
-<p style='text-indent:18pt'>'Рисуем т<span>  максимальной площадью</p>
-
-<p style='text-inden<span>INE (x(im),
-y(im))-(x(jm), y(jm)), 2</span></p>
-
-<p style=' text-indent:18pt'><span>LINE (x(im),
-y(im))-(x(km), y(km)), 2</span></p>
-
-<p style='text-indent:18pt'><span>LINE (x(km),
-y(km))-(x(jm), y(jm)), 2</span></p>
-
-<p style='text-indent:18pt'><span>PRINT &quot;</span>Площадь<span> = &quot;; smax</span></p>
-
-<p style='text-indent:18pt'><span>PRINT &quot;</span>Номера
-    точек<span> &quot;; im; jm; km</<span>nbsp;</p>
-
-<p style='text-indent:18pt'>Однако этот перебор можно
-    существенно сократить, если не повторять лишних проходов по циклам.</p>
-
-<p style='text-indent:18pt'><span>FOR i=1 TO n-2</span></p>
-
-<p style='margin-left:18.0pt;text-indent:10.35pt'><span>FOR j=i+1 TO n-1</span></p>
-
-<p style='margin-left:46.35pt;text-indent:10.35pt'><span>FOR k=j+1 TO n</span></p>
-
-<p style='t<span>'><span>………………………..</span></p>
-
-<p style='text-indent:18pt'><span>NEXT k, j, i</span></p><span>t-indent:18pt'>В последующих
+<p>В последующих
     задачах будет показано, как ограничить число вариантов перебора, используя
     условия задачи, различные приемы и методы программирования.</p>
 
-<h2>2.3.1. Перебор с отсечениями</h2>
+<h2>Перебор с отсечениями</h2>
 
-<p style='text-indent:18pt'><cite>Пример 6.2</cite>.<strong>
-</strong>Решить уравнение в целых числах: $x_1$ <sup>4</sup>
-    + $x_2$ <sup>4</sup> + … <span>+ x<sub>15</sub><sup>4</sup>
-= 2000</span></p>
+<p>Решить уравнение в целых числах:
+    $x_1^4 + x_2^4 + ... + x_{15}^4 = 2000</p>
 
-<p class=Normal style='margin: 0cm 0cm .0001pt;text-indent:18pt'><span>&nbsp;</span></p>
+<p>Чтобы ответ был единственным, добавим условие: $x_i \ge \x_{i-1}$</p>
 
-<p style='text-indent:18pt'><cite>Программа</cite><cite><span> (QBasic)</span></cite><span>:</span></p>
+<pre class="sh_python">
+x = [0] * 16  # значения переменных x, x[0] всегда равно 0
 
-<p class=Normal st<span>m 0cm .0001pt;text-indent:18pt'><span>DEFINT A-Z</span></p>
 
-<p style='text<span>span>DIM</span><span> </span><span>SHARED</span> <span>p</span>4(1 <span>TO</span> 6)      ‘массив <span>тепеней</p>
+def rec(i, s):  # рекурсивная процедура
+    """ i - индекс икса, s - оставшаяся сумма """
+    if i == 16:  # Получили набор x
+        if s == 0:  # набрана нужная сумма
+            # Выводим ответ
+            print(*x[1:])
+            # Для проверки вычисляем сумму
+            print(sum([v ** 4 for v in x]))
+        return
+    if s < 0:  # Если сумма отрицательна => на выход
+        return
+    # Перебираем значение x от значения предыдущего икса до
+    # корня четвёртой степени из оставшейся суммы
+    for value in range(x[i - 1], int(s ** 0.25) + 1):
+        x[i] = value  # фиксируем значение x[i]
+        rec(i + 1, s - value ** 4)
 
-<p style=' text-indent:18pt'><span>DIM</span><span> </s<span>D</span> <span>x</span>(1 <s<span>5)      ‘значения переменных  $x_1$  , …,  $x_15$  </p>
+# Запускаем перебор
+rec(1, 2000)
+# Получаем: 2 2 2 2 2 2 2 2 2 2 2 2 4 4 6
+</pre>
 
-<p style='text-indent:1<span>/span><span> </span><span>SH<span>an
-        >n</span>‘номер переменной, значения которой перебирают<span>    <span>Find</span></p>
-
-<p>&nbsp;</p>
-
-<p style='
-   text-indent:18pt'><span>FOR</span><span> </span><s<span>1 <span>TO</span> 6: <span>p<span>i</span>) = <span>i</span> ^
-    4: <span>NEXT</span> ‘высчитываем один раз четвертые степени</p>
-
-<p style='text-indent:18pt'>   <span>PRINT</span>
-    &quot;Поиск<span>    ‘запускаем поиск решения</p>
-
-<p style='text-indent<span>>CALL</span><span> </span><span>Find</span>(2000, 6)    ‘набираем сумму
-    2000, начиная с <span>x</span>1=6</p>
-
-<p>&nbsp;</p>
-
-<p style=' text-indent:18pt'>‘--------------------------
-    рекурсивная процедура ---------------------------------------------</p>
-
-<p style='text<span>span>SUB</span><span> </span><span>Find</span> (<span>sum</span>, <span>start</span>)               ‘основная процедура поиска решения</p>
-
-<p style=' text-indent:18pt'>   ‘<span>sum</span>
-    – сумма, которую осталось набрать</p>
-
-<p style='text-indent:18pt'>   ‘<span>start</spa<span>ие, с которого начинать перебор</p>
-
-<p style='text-in<span>span>IF</span><span> </span>$N$ = 15 <span>THEN</span>                     ‘если
-    значения всех 15 переменных заданы, то</p>
-
-<p style=' text-indent:18pt'>             <span>IF</span><span> </span><span>sum</span> = 0 <span>THEN</span>         ‘если
-    набрана нужная сумма,</p>
-
-<p <span>ent:18pt'>                      <span>FOR i = 1 TO 15: PRINT x(i); : NEXT    ‘</span>печатаем решение</p>
-
-<p style='text-indent:18pt'>
-    <span>                      PRINT</span><<span>text-indent:18pt'>             <span>ELSE</span></p>
-
-<p style='text-indent:18pt'>                      <span>EXIT</span> <span>SUB</span>    <span>  возвращаемся к предыдущему шагу
-</p>
-
-<p style='text-indent:18pt'>             <span>END
-IF</span></p>
-
-<p style='text-indent:18pt'><span>   END IF</span></p>
-
-<p>&nbsp;</p>
-
-<p style='text-indent:18pt'><span>   IF sum &gt;
-0 THEN                  ‘</span>если сумм<span>an>степеней предыдущих</p>
-
-<p style='text-indent:18pt'><span>                                                  </span>‘переменных
-    не превосходит 2000,</p>
-
-<p style='text-indent:18pt'>             $N$
-    = $N$ + 1</p>
-
-<p style='text-indent:18pt'>             <span>FOR</span><span> </span><span>i</span> = <span>start</span><span> </span><span>TO</span>
-    1 <span>STEP</span> –1  ‘перебираем
-    значения очередной переменной</p>
-
-<p style='text-indent:18pt'>                      <span>x</span>($N$) = <span>I</span>                         
-    ‘фиксируем
-    значение <span>n</<span>нной и</p>
-
-<p style='text-indent:18pt'>            <span>
-        >CALL</span> <span>Find</span>(<span>sum</span> - <span>p</span>4(<span>i</span>), <span>i</span>)    
-    ‘переходим к перебору значен<span>n>+1-ой</p>
-
-<p style='text-indent:18pt'>             <span>NEXT</span></p>
-
-<p style='text-indent:18pt'><span>             n
-= n - 1</span></p>
-
-<p style='text-indent:18pt'><span>   END<span>
-<p style='text-indent:18pt'><span>END <span>
-<p style='text-indent:18.0pt'><span>&nbsp;</s<span>yle='text-indent:18pt'>Приведенная
-    программа ищет решения уравнения  $x_1$  <sup>4</sup>
-    +  $x_2$  <sup>4</sup> + … +  $x_15$  <sup>4</sup><sub>
-    </sub>= 2000 в натуральных числах методом перебора. Перебор является, пожалуй,
-    одним из самых простых (по реализации), но, вместе с тем, <span>м (по
+<p>Приведенная программа ищет решения уравнения
+    $x_1^4 + x_2^4 + ... + x_{15}^4 = 2000$ в натуральных числах методом перебора. Перебор является, пожалуй,
+    одним из самых простых (по реализации), но, вместе с тем, самым медленным (по
     времени выполнения) из всех алгоритмов, поэтому при решении каждой конкретной
     задачи перебором возникает другая задача – сократить и оптимизировать перебор,
     иными словами, максимально уменьшить время, затрачиваемое компьютером на поиск
     решения.</p>
 
-<p style='text-indent:18.0pt'>Познакомимся с
-    некоторыми возможными приемами сокращения перебора на данной конкретной задаче.</p>
+<p>Познакомимся с некоторыми возможными приемами сокращения перебора на данной конкретной задаче.</p>
 
 <p style='text-indent:18.0pt'>1) В первую
     очередь, надо правильно выбрать границы значений перебираемых величин. По
