@@ -7,6 +7,7 @@
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 
 
+
     </script>
     <script type="text/javascript"
             src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -55,9 +56,9 @@
 </ul>
 
 <p style='text-indent:18pt'><cite>Пример 6.1</cite>.<strong>
-</strong>На плоскости разбросаны <span>N</span> точек с координатами (<span
-        >x</span><sub>1</sub>, <span>y</span><sub>1</sub>), (<span
-        >x</span><sub>2</sub>, <span>y</span><sub>2</sub>), …, <br>
+</strong>На плоскости разбросаны <span>N</span> точек с координатами (<span>x</span><sub>1</sub>,
+    <span>y</span><sub>1</sub>), (<span
+   <span>sub>2</sub>, <span>y</span><sub>2</sub>), …, <br>
     (<span>x</span><sub>N</sub>, <span>y</span><sub>N</sub>).
     Найти тройку точек, которые образуют треугольник с максимальной площадью.</p>
 
@@ -73,39 +74,32 @@
 <p>&nbsp;</p>
 
 <p style='text-indent:18pt'><cite>Программа (</cite><cite><span
-        >QBasic</span>)</cite>:</p>
+        >QBa<span>te>:</p>
 
 <p style='text-indent:18pt'><span>INPUT</span>
     &quot;введите количество точек <span>N</span>&gt;2 &quot;, <span
-            >n</span></p>
-
-<p style='text-indent:18pt'><span>DIM x(1 TO n),
+            >n</span><span>t-indent:18pt'><span>DIM x(1 TO n),
 y(1 TO n)</span></p>
 
 <p style='text-indent:18pt'><span>SCREEN</span>
     12</p>
 
 <p style='text-indent:18pt'><span>RANDOMIZE</span><span
-        > </span><span>TIMER</span></p>
-
-<p style='text-indent:18pt'><span>FOR</span><span
-        > </span><span>i</span> = 1 <span>TO</span><span
-        > </span><span>n</span>                           'Задание
-    экранных координат точек случайным образом</p>
+        > </span><span>TIMER</span<span>='text-indent:18pt'><span>FOR</span><span
+        > </span><span>i</span> = 1 <span>T<span>       > </span><span>n</span>                     <span>    экранных координат точек случайным образом
+</p>
 
 <p style='margin-left:18.0pt;text-indent:17.4pt'><span
         >x(i) = INT(RND * 640)</span></p>
 
-<p style='margin-left:18.0pt;text-indent:17.4pt'><span
+<p style='margin-l<span>-indent:17.4pt'><span
         >y(i) = INT(RND * 480)</span></p>
 
-<p style='margin-left:18.0pt;text-indent:17.4pt'><span
+<p style='margin-left:18.0p<span>7.4pt'><span
         >CIRCLE (x(i), y(i)), 2                        '</span>Рисуем<span
-        > “</span>точки<span>”</span></p>
+    <span>очки<span>”</span></p>
 
-<p style='margin-left:18.0pt'><span>NEXT i</span></p>
-
-<p style='margin-left:18.0pt'><span>&nbsp;</span></p>
+<p style='margin-left:18.0pt'><span>NEXT i</s<span>yle='margin-left:18.0pt'><span>&nbsp;</span></p>
 
 <p style='margin-left:18.0pt'><span>‘</span>Начинаем
     перебор</p>
@@ -116,10 +110,10 @@ y(1 TO n)</span></p>
         >FOR j = 1 TO n</span></p>
 
 <p style='margin-left:53.4pt;text-indent:17.4pt'><span
-        >FOR k = 1 TO n</span></p>
+    <span> n</span></p>
 
 <p style='margin-left:106.2pt'><span>a = SQR((x(i) -
-x(j)) ^ 2 + (y(i) - y(j)) ^ 2)    '</span>Длины сторон</p>
+x(j)) ^ 2 + (y(i)<span>  '</span>Длины сторон</p>
 
 <p style='margin-left:106.2pt'><span>b = SQR((x(i) -
 x(k)) ^ 2 + (y(i) - y(k)) ^ 2)</span></p>
@@ -140,13 +134,12 @@ THEN smax = s: im = i: jm = j: km = k</span></p>
         > </span><span>k</span>, <span>j</span>, <span
         >i</span></p>
 
-<p style='text-indent:18pt'>'Рисуем треугольник с
-    максимальной площадью</p>
+<p style='text-indent:18pt'>'Рисуем т<span>  максимальной площадью</p>
 
-<p style='text-indent:18pt'><span>LINE (x(im),
+<p style='text-inden<span>INE (x(im),
 y(im))-(x(jm), y(jm)), 2</span></p>
 
-<p style='text-indent:18pt'><span>LINE (x(im),
+<p style=' text-indent:18pt'><span>LINE (x(im),
 y(im))-(x(km), y(km)), 2</span></p>
 
 <p style='text-indent:18pt'><span>LINE (x(km),
@@ -156,9 +149,7 @@ y(km))-(x(jm), y(jm)), 2</span></p>
         > = &quot;; smax</span></p>
 
 <p style='text-indent:18pt'><span>PRINT &quot;</span>Номера
-    точек<span> &quot;; im; jm; km</span></p>
-
-<p>&nbsp;</p>
+    точек<span> &quot;; im; jm; km</<span>nbsp;</p>
 
 <p style='text-indent:18pt'>Однако этот перебор можно
     существенно сократить, если не повторять лишних проходов по циклам.</p>
@@ -171,11 +162,9 @@ y(km))-(x(jm), y(jm)), 2</span></p>
 <p style='margin-left:46.35pt;text-indent:10.35pt'><span
         >FOR k=j+1 TO n</span></p>
 
-<p style='text-indent:18pt'><span>………………………..</span></p>
+<p style='t<span>'><span>………………………..</span></p>
 
-<p style='text-indent:18pt'><span>NEXT k, j, i</span></p>
-
-<p style='text-indent:18pt'>В последующих
+<p style='text-indent:18pt'><span>NEXT k, j, i</span></p><span>t-indent:18pt'>В последующих
     задачах будет показано, как ограничить число вариантов перебора, используя
     условия задачи, различные приемы и методы программирования.</p>
 
@@ -192,71 +181,66 @@ y(km))-(x(jm), y(jm)), 2</span></p>
 <p style='text-indent:18pt'><cite>Программа</cite><cite><span
         > (QBasic)</span></cite><span>:</span></p>
 
-<p class=Normal style='margin: 0cm 0cm .0001pt;text-indent:18pt'><span
+<p class=Normal st<span>m 0cm .0001pt;text-indent:18pt'><span
         >DEFINT A-Z</span></p>
 
-<p style='text-indent:18pt'><span>DIM</span><span
+<p style='text<span>span>DIM</span><span
         > </span><span>SHARED</span> <span
-        >p</span>4(1 <span>TO</span> 6)      ‘массив четвертых
-    степеней</p>
+        >p</span>4(1 <span>TO</span> 6)      ‘массив <span>тепеней</p>
 
-<p style='text-indent:18pt'><span>DIM</span><span
-        > </span><span>SHARED</span> <span
-        >x</span>(1 <span>TO</span> 15)      ‘значения переменных <span
+<p style=' text-indent:18pt'><span>DIM</span><span
+        > </s<span>D</span> <span
+        >x</span>(1 <s<span>5)      ‘значения переменных <span
         >x</span><sub>1</sub>, …, <span>x</span><sub>15</sub></p>
 
-<p style='text-indent:18pt'><span>DIM</span><span
-        > </span><span>SHARED</span> <span
-        >n</span>‘номер переменной, значения которой перебираются в процедуре
-    <span>Find</span></p>
+<p style='text-indent:1<span>/span><span
+        > </span><span>SH<span>an
+        >n</span>‘номер переменной, значения которой перебирают<span>    <span>Find</span></p>
 
 <p>&nbsp;</p>
 
-<p style='text-indent:18pt'><span>FOR</span><span
-        > </span><span>i</span> = 1 <span>TO</span> 6: <span
-        >p</span>4(<span>i</span>) = <span>i</span> ^
+<p style=' text-indent:18pt'><span>FOR</span><span
+        > </span><s<span>1 <span>TO</span> 6: <span
+        >p<span>i</span>) = <span>i</span> ^
     4: <span>NEXT</span> ‘высчитываем один раз четвертые степени</p>
 
 <p style='text-indent:18pt'>   <span>PRINT</span>
-    &quot;Поиск решения:&quot;    ‘запускаем поиск решения</p>
+    &quot;Поиск<span>    ‘запускаем поиск решения</p>
 
-<p style='text-indent:18pt'>   <span>CALL</span><span
+<p style='text-indent<span>>CALL</span><span
         > </span><span>Find</span>(2000, 6)    ‘набираем сумму
     2000, начиная с <span>x</span>1=6</p>
 
 <p>&nbsp;</p>
 
-<p style='text-indent:18pt'>‘--------------------------
+<p style=' text-indent:18pt'>‘--------------------------
     рекурсивная процедура ---------------------------------------------</p>
 
-<p style='text-indent:18pt'><span>SUB</span><span
+<p style='text<span>span>SUB</span><span
         > </span><span>Find</span> (<span>sum</span>, <span
         >start</span>)               ‘основная процедура поиска решения</p>
 
-<p style='text-indent:18pt'>   ‘<span>sum</span>
+<p style=' text-indent:18pt'>   ‘<span>sum</span>
     – сумма, которую осталось набрать</p>
 
-<p style='text-indent:18pt'>   ‘<span>start</span>
-    – значение, с которого начинать перебор</p>
+<p style='text-indent:18pt'>   ‘<span>start</spa<span>ие, с которого начинать перебор</p>
 
-<p style='text-indent:18pt'>   <span>IF</span><span
+<p style='text-in<span>span>IF</span><span
         > </span><span>n</span> = 15 <span>THEN</span>                     ‘если
     значения всех 15 переменных заданы, то</p>
 
-<p style='text-indent:18pt'>             <span>IF</span><span
+<p style=' text-indent:18pt'>             <span>IF</span><span
         > </span><span>sum</span> = 0 <span>THEN</span>         ‘если
     набрана нужная сумма,</p>
 
-<p style='text-indent:18pt'>                      <span
+<p <span>ent:18pt'>                      <span
         >FOR i = 1 TO 15: PRINT x(i); : NEXT    ‘</span>печатаем решение</p>
 
-<p style='text-indent:18pt'><span>                      PRINT</span></p>
-
-<p style='text-indent:18pt'>             <span>ELSE</span></p>
+<p style='text-indent:18pt'>
+    <span>                      PRINT</span><<span>text-indent:18pt'>             <span>ELSE</span></p>
 
 <p style='text-indent:18pt'>                      <span
-        >EXIT</span> <span>SUB</span>          ‘иначе
-    возвращаемся к предыдущему шагу</p>
+        >EXIT</span> <span>SUB</span>    <span>  возвращаемся к предыдущему шагу</p>
 
 <p style='text-indent:18pt'>             <span>END
 IF</span></p>
@@ -266,7 +250,7 @@ IF</span></p>
 <p>&nbsp;</p>
 
 <p style='text-indent:18pt'><span>   IF sum &gt;
-0 THEN                  ‘</span>если сумма<span> 4x </span>степеней предыдущих</p>
+0 THEN                  ‘</span>если сумм<span>an>степеней предыдущих</p>
 
 <p style='text-indent:18pt'><span>                                                  </span>‘переменных
     не превосходит 2000,</p>
@@ -281,30 +265,26 @@ IF</span></p>
 
 <p style='text-indent:18pt'>                      <span
         >x</span>(<span>n</span>) = <span>I</span>                          ‘фиксируем
-    значение <span>n</span>-ой переменной и</p>
+    значение <span>n</<span>нной и</p>
 
-<p style='text-indent:18pt'>                      <span
+<p style='text-indent:18pt'>            <span>
         >CALL</span> <span>Find</span>(<span
         >sum</span> - <span>p</span>4(<span>i</span>), <span
-        >i</span>)     ‘переходим к перебору значений <span>n</span>+1-ой</p>
+        >i</span>)     ‘переходим к перебору значен<span>n>+1-ой</p>
 
 <p style='text-indent:18pt'>             <span>NEXT</span></p>
 
 <p style='text-indent:18pt'><span>             n
 = n - 1</span></p>
 
-<p style='text-indent:18pt'><span>   END IF</span></p>
-
-<p style='text-indent:18pt'><span>END SUB</span></p>
-
+<p style='text-indent:18pt'><span>   END<span>
+<p style='text-indent:18pt'><span>END <span>
 <p style='text-indent:18.0pt'><span
-        >&nbsp;</span></p>
-
-<p style='text-indent:18pt'>Приведенная
+        >&nbsp;</s<span>yle='text-indent:18pt'>Приведенная
     программа ищет решения уравнения <span>x</span><sub>1</sub><sup>4</sup>
     + <span>x</span><sub>2</sub><sup>4</sup> + … + <span>x</span><sub>15</sub><sup>4</sup><sub>
     </sub>= 2000 в натуральных числах методом перебора. Перебор является, пожалуй,
-    одним из самых простых (по реализации), но, вместе с тем, самым трудоемким (по
+    одним из самых простых (по реализации), но, вместе с тем, <span>м (по
     времени выполнения) из всех алгоритмов, поэтому при решении каждой конкретной
     задачи перебором возникает другая задача – сократить и оптимизировать перебор,
     иными словами, максимально уменьшить время, затрачиваемое компьютером на поиск
@@ -328,20 +308,20 @@ IF</span></p>
     важным моментом при оптимизации является отсечение заведомо неверных ветвей
     перебора. Например, в данном примере, не имеет смысла продолжать поиск, если на
     некотором шаге сумма <span>x</span><sub>1</sub><sup>4</sup> + … + <span
-            >x<sub>n</sub></span><sup>4</sup> уже превысила 2000. В приведенной
-    программе это условие проверяется в строке <strong><span>if</span><span
+            >x<sub>n</sub></span><sup>4</sup> уже превысила
+    2000<span> программе это условие проверяется в строке <strong><span>if</span><span
             > </span></strong><strong><span>sum</span>&gt;0 </strong><strong><span
             >then</span></strong>, т.е. дальнейший перебор осуществляется лишь в том
-    случае, когда разность 2000 и ранее полученной суммы <span>x</span><sub>1</sub><sup>4</sup>&nbsp;+&nbsp;…
+    случае, когда разность 2000 и ранее полученной суммы <span>x</span><sub>1</sub><span>&nbsp;…
     &nbsp;+&nbsp;<span
-            >x<sub>n</sub></span><sup>4</sup> положительна.</p>
+                    >x<sub>n</sub></span><sup>4</sup> положительна.</p>
 
 <p style='text-indent:18.0pt'>3) Следует избегать
-    многократного выполнения одних и тех же операций в циклах и рекурсивных
-    процедурах, если данные, используемые в этих циклах, могут быть подготовлены
+    <span>нения одних и тех же операций в циклах и рекурсивных
+    процедурах, если дан<span> этих циклах, могут быть подготовлены
     заранее. Так, в приведенном примере значения четвертых степеней чисел 1, 2, …,
     6 вычислены один раз и занесены в массив констант: <strong><span>p</span>4
-        = (1, 16, 81, 256, 625, 1296)</strong>. Подобный прием часто помогает избавиться от
+                = (1<span> 1296)</strong>. Подобный прием часто помогает избавиться от
     лишних вычислений, например, в алгоритмах, работающих с простыми числами,
     полезно бывает включить заранее найденные простые числа в текст программы, так
     же, в виде массива констант.</p>
@@ -378,26 +358,24 @@ IF</span></p>
 <p>&nbsp;</p>
 
 <p style='text-indent:18pt'><cite>Пример</cite><cite><span
-        >&nbsp;</span>6.3</cite>.<span>&nbsp;</span>Найти все решения
+        >&n<span>e>.<span>&nbsp;</span>Найти все решения
     уравнения в целых числах <br>
-    МУХА+МУХА+МУХА=СЛОН</p>
-
-<p>&nbsp;</p>
+    МУХА+МУХА+<span>nbsp;</p>
 
 <p style='text-indent:18pt'>Используем
     факт, что C <span style='font-family:Symbol'>&pound;</span> 9 и число не
     начинается с 0, тогда 1 <span style='font-family:Symbol'>&pound;</span> <span
             >M</span> <span style='font-family:Symbol'>&pound;</span>
-    3.  Если М&nbsp;=&nbsp;3, то У&nbsp;<span style='font-family:Symbol'>&pound;</span>&nbsp;2
+    3.  Если М&nbsp;=&nbsp;3, то У&nbsp;<span style='font-family:Symb<span>an>&nbsp;2
     (иначе имели бы справа от знака равенства четырехзначное число). Следовательно,
     число МУХА возможно из диапазона [1023, 3210]. Начинаем перебор.</p>
 
 <p>&nbsp;</p>
 
-<p style='text-indent:18pt'><cite>Программа
-    (</cite><cite><span>QBasic</span>)</cite>:</p>
+<p style=' text-indent:18pt'><cite>Программа
+        (</cite><cite><span>QBasic</span>)</cite>:</p>
 
-<p style='text-indent:18pt'><span>DIM</span> <span>SHARED</span> <span>n</span><span
+<p style='text-indent:18pt'><span>DIM</span> <span>SHARED</s<span><span
         >(1 </span><span>TO</span><span
         > 4)                      'цифры
 для слова &quot;МУХА&quot;</span></p>
@@ -413,26 +391,24 @@ IF</span></p>
 
 <p style='text-indent:18pt'><span>DO</span></p>
 
-<p style='text-indent:1.0cm'><span>Add</span><span
+<p style='text-indent:1.0<span>span><span
         >1</span></p>
 
-<p style='text-indent:1.0cm'><span>i</span><span
+<span>indent:1.0cm'><span>i</span><span
         > = </span><span>Test</span><span
         >%                                              'число,
-соответствующее набору цифр слова &quot;МУХА&quot;</span></p>
+соответствующее набору цифр слов<span>ot;</span></p>
 
-<p style='text-indent:18pt'><span style='font-size:12.0pt;
-font-family:"","serif"'>LOOP UNTIL i &gt;= 3210            'максимально
-возможный набор</span></p>
+<p style='text-indent:1<span>e=' font-size:12.0pt;
+font-family:"","se<span>L i &gt;= 3210            'максимально
+<span></span></p>
 
 <p style='text-indent:18pt'><span style='font-size:12.0pt;
 font-family:"","serif"'>&nbsp;</span></p>
 
 <p style='text-indent:18pt'><span style='font-size:12.0pt;
-font-family:"","serif"'>SUB Add1                                              'увеличить
-число на единицу (поразрядное сложение)</span></p>
-
-<p style='text-indent:1.0cm'><span>n(4) = n(4) + 1</span></p>
+<span>"serif"'>SUB Add1                                              'ув<span>а единицу (поразрядное сложение)</sp<span>le='text-indent:1.0cm'><span>n(4) = n(4) + 1</span>
+</p>
 
 <p style='text-indent:1.0cm'><span>FOR i = 4 TO 2
 STEP -1</span></p>
@@ -498,25 +474,20 @@ MOD 10 'цифры соответствуют слову &quot;СЛОН&quot;</s
         > </span><span
         >цифры</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>FOR j
+<p style='margin-left:1.0cm;text-ind<span>n>FOR j
 = i + 1 TO 4</span></p>
 
-<p style='margin-left:2.0cm;text-indent:1.0cm'><span>IF
+<p style=' margin-left:2.0cm;text-indent:1.0cm'><span>IF
 (L(i) = L(j)) OR (n(i) = n(j)) THEN EXIT FUNCTION</span></p>
 
 <p style='text-indent:1.0cm'><span>NEXT j, i</span></p>
 
 <p style='text-indent:1.0cm'><span>FOR i = 1 TO 4</span></p>
 
-<p style='text-indent:1.0cm'><span>FOR j = 1 TO 4</span></p>
+<p style='text-indent:1.0cm'><span>FOR j = 1 TO 4</span></<span>argin-left:1.0cm;text-indent:1.0cm'><sp<span>j) THEN EXIT FUNCTION<<span>style='text-inden<span>NEXT</span> <span>j</span><span
+      <span>an>i</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>IF
-L(i) = n(j) THEN EXIT FUNCTION</span></p>
-
-<p style='text-indent:1.0cm'><span>NEXT</span> <span>j</span><span
-        >, </span><span>i</span></p>
-
-<p style='text-indent:1.0cm'><span style='font-size:12.0pt;
+<p st<span>t:1.0cm'><span st<span>12.0pt;
 font-family:"","serif"'>PRINT k; &quot;&#8729; 3 =&quot;; k * 3                        'печать,
 если комбинация цифр - удачная</span></p>
 
@@ -534,7 +505,8 @@ font-family:"","serif"'>END FUNCTION</span></p>
 
 <p>&nbsp;</p>
 
-<p style='text-indent:18pt'><cite>Пример 6.4</cite>.<span
+<p style='text-indent:18pt'>
+    <ci<span>cite>.<span
         >&nbsp;</span>В языке государства Икнатсо всего семь букв А, И, К, Н,
     О, С, Т. Составлен полный словарь семибуквенных слов (все буквы в словах
     различны), и первым словом в словаре является слово ИКНАТСО. По заданному слову
@@ -550,7 +522,7 @@ font-family:"","serif"'>END FUNCTION</span></p>
 
 <p style='text-indent:1.0cm'><span>First</span><span
         >$ =
-&quot;ИКНАТСО&quot; ‘Первое слово в словаре</span></p>
+&quot;ИКНАТСО&quot;<span>в словаре</span></p>
 
 <p style='text-indent:1.0cm'><span style='font-size:12.0pt;
 font-family:"","serif"'>&nbsp;</span></p>
@@ -565,12 +537,11 @@ font-family:"","serif"'>&nbsp;</span></p>
         >            ‘Представляем
 исходное слово в виде</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>A(i)
+<p s<span>ft:1.0cm;text-indent:1.0cm'><span>A(i)
 = INSTR(First$, MID$(s$, i, 1))    ‘массива из семи чисел</span></p>
 
 <p style='text-indent:1.0cm'><span>NEXT</span></p>
-
-<p style='text-indent:1.0cm'><span style='font-size:12.0pt;
+<span>-indent:1.0cm'><span style='font-size:12.0pt;
 font-family:"","serif"'>&nbsp;</span></p>
 
 <p style='text-indent:1.0cm'><span>FOR</span> <span>i</span><span
@@ -580,39 +551,34 @@ font-family:"","serif"'>&nbsp;</span></p>
         > –1   ‘Ищем
 первую с конца пару элементов,</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>IF</span> <span>A</span><span
-        >(</span><span>i</span><span
+<p style='margin-left:1.0cm;text-i<span>pan>IF</span> <span>A</span><span
+        >(</span><span>span
         >) &lt; </span><span>A</span><span
         >(</span><span>i</span><span
         > + 1) </span><span>THEN</span><span
         >            ‘упорядоченную
 по возрастанию</span></p>
 
-<p style='margin-left:2.0cm;text-indent:1.0cm'><span>FOR</span> <span>j</span><span
+<p style=' margin-left:2.0cm;text-indent:1.0cm'><span>FOR</span> <span>j</span><span
         > = </span><span>n</span> <span>TO</span> <span>i</span><span
         > + 1 </span><span>STEP</span><span
-        > –1        ‘Среди
-ранее рассмотренных элементов</span></p>
+        > –1        ‘<span>смотренных элементов</span></p>
 
-<p style='margin-left:3.0cm;text-indent:1.0cm'><span>IF
-A(j) &gt; A(i) THEN           ‘ищем наименьший, который больше A(i)</span></p>
+<span>n-left:3.0cm;text-indent:1.0cm'><spa<span>A(i) THEN           ‘ищем наименьший<span>е A(i)</span></p>
 
 <p style='margin-left:4.0cm;text-indent:1.0cm'><span>t =
-A(i): A(i) = A(j): A(j) = t  ‘Ставим его на i ое место</span></p>
-
-<p style='margin-left:4.0cm;text-indent:1.0cm'><span>FOR</span> <span>k</span><span
-        > = </span><span>i</span><span
-        > + 1 </span><span>TO</span> <span>n</span><span
-        > – 1         ‘Оставшиеся
+A(i): A(i) = A(j): A(j) = t  ‘Ставим его на i ое место</span>
+</p><span>gin-left:4.0cm;text-indent:1.0c<span>pan> <span>k</span><span
+        > = <span>/span><span
+        > + 1 </spa<span>n> <span>n</span><span
+        > – 1   <span>ся
 элементы упорядочиваем</span></p>
 
 <p style='margin-left:5.0cm;text-indent:1.0cm'><span>min</span><span
-        > = </span><span>k</span><span
-        >  ‘по
+        > = </span><span>k</span><<span> ‘по
 возрастанию методом поиска</span></p>
 
-<p style='margin-left:5.0cm;text-indent:1.0cm'><span>FOR</span> <span>l</span><span
-        > = </span><span>k</span><span
+<p style='margin-lef<span>dent:1.0cm'><span>FOR</span> <span>l</<span>    > = </span><span>k</span><span
         > + 1 </span><span>TO</span> <span>n</span><span
         >      ‘последовательных
 минимумов</span></p>
@@ -623,23 +589,22 @@ A(l) &lt; A(min) THEN min = l</span></p>
 <p style='margin-left:5.0cm;text-indent:1.0cm'><span>NEXT</span></p>
 
 <p style='margin-left:5.0cm;text-indent:1.0cm'><span>t =
-A(k): A(k) = A(min): A(min) = t</span></p>
+A(k): A(k) = A(min): A(min) = t</sp<span>le='margin-left:4.0cm;text-indent<span>EXT</span></p>
 
-<p style='margin-left:4.0cm;text-indent:1.0cm'><span>NEXT</span></p>
-
-<p style='margin-left:4.0cm;text-indent:1.0cm'><span>FOR</span> <span>i</span><span
+<p style='margin-left:4.0cm;text-in<span>an>FOR</span> <span>i</span><span
         > = 1 </span><span>TO</span> <span>n</span><span
         >          ‘Переводим
-массив чисел обратно в слово</span></p>
+массив чисе<span>во</span></p>
 
-<p style='margin-left:5.0cm;text-indent:1.0cm'><span>PRINT
+<p style=' margin-l<span>indent:1.0cm'><span>PRINT
 MID$(First$, A(i), 1); ‘из алфавита Икнатсо</span></p>
 
-<p style='margin-left:4.0cm;text-indent:1.0cm'><span>NEXT</span></p>
+<p style='margin-left:4.0cm;text-indent:1.0cm'>
+    <sp<span>/p>
 
-<p style='margin-left:4.0cm;text-indent:1.0cm'><span>PRINT</span></p>
+<p style='margin-left:4.0cm;<span>cm'><span>PRINT</span></p>
 
-<p style='margin-left:4.0cm;text-indent:1.0cm'><span>END</span><span
+<p style='margin-left:4<span>t:1.0cm'><span>END</span><span
         >   ‘Печатаем
 ответ и завершаем программу</span></p>
 
@@ -656,9 +621,8 @@ IF</span></p>
 <p style='text-indent:27.0pt'>'Если же все пары соседних
     элементов были упорядочены по убыванию, то</p>
 
-<p style='text-indent:1.0cm'><span>PRINT</span><span
-        > &quot;Это слово
-было в словаре последним&quot;     </span></p>
+<p s<span>nt:1.0cm'><span>PRINT</span><span
+            > &quot;Э<span> словаре последним&quot;     </span></p>
 
 <p>&nbsp;</p>
 
@@ -666,7 +630,7 @@ IF</span></p>
     на математический язык можно перефразировать так: по заданной перестановке из
     семи элементов требуется сгенерировать следующую за ней в лексикографическом
     порядке. Так как порядок букв в алфавите Икнатсо отличен от обычного, лучше
-    оперировать не с буквами, а с числами от 1 до 7. Сопоставим буквам
+    оперировать не с буквами, а с числами от 1 д<span> буквам
     И,&nbsp;К,&nbsp;Н,&nbsp;А,&nbsp;Т,&nbsp;С,&nbsp;О их порядок в алфавите: букву
     «И» обозначим единицей, «К» - двойкой, и т. д., таким образом, исходное слово
     представим в виде массива из семи чисел. Далее вместо слова из алфавита Икнатсо
@@ -674,7 +638,7 @@ IF</span></p>
 
 <p style='text-indent:18pt'>Проще всего
     получить следующую по порядку перестановку, когда последний (седьмой) элемент
-    массива больше предпоследнего. В этом случае, чтобы получить ответ, достаточно
+    массива больше предпоследнего. В этом случае, чтобы получить<span>чно
     поменять местами эти два последних элемента. В противном случае, надо
     рассмотреть два предпоследних элемента (пятый и шестой). Если пятый оказался
     меньше, на его место нужно поставить тот из двух последних, который должен
@@ -725,13 +689,12 @@ IF</span></p>
     «К», и т.д. Полученное слово – искомое.</p>
 
 <p style='text-indent:18pt'><cite>Пример 6.5</cite>.<strong>
-</strong>Образовать все перестановки из <i><span>n</span></i> элементов,
-    каждая из которых содержит все эти элементы по одному разу, и которые
+</strong>Образовать все перестановки из <i><span>n</span></i> элем<span>з которых содержит все эти элементы по одному разу, и которые
     отличаются друг от друга лишь порядком элементов.</p>
 
 <p>&nbsp;</p>
 
-<p style='text-indent:18pt'>Число таких
+<<span>t:18pt'>Число таких
     перестановок будет <i><span>n</span></i>!&nbsp;(факториал).
     Сопоставим каждому элементу натуральное число от 1 до  <i><span>n</span></i>
     и запускаем перебор.</p>
@@ -766,41 +729,34 @@ IF</span></p>
         > (1-да, 0-нет)</span></p>
 
 <p style='text-indent:18pt'><span style='font-size:12.0pt;
-font-family:"","serif"'>CALL Permute(1)                                  
-           'начинаем перестановки с первого элемента</span></p>
+font-family:"","serif"'>CA<span>                                
+           'начинаем перестановки с первого э<span>/p>
 
 <p style='margin-left:7.0cm;text-indent:-178.6pt'><span
         >SUB Permute (k%)
-                                'перебирает все числа, которые можно поставить
+    <span>             'перебирает все числа, к<span>ставить
 в ‘k-ую позицию</span></p>
 
-<p style='text-indent:1.0cm'><span style='font-size:12.0pt;
-font-family:"","serif"'>IF k% &gt; n THEN                                 'если
-все n чисел уже расставлены,</span></p>
+<p st<span>t:1.0cm'><span style='font-size:12.0pt;
+font-family:"","serif"'>IF k% &<span>                            'ес<span>уже расставлены,</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span
+<p style='marg<span>ext-indent:1.0cm'><span
         >FOR i = 1 TO n              'выводим
 результат очередной перестановки</span></p>
 
-<p style='margin-left:2.0cm;text-indent:1.0cm'><span>PRINT
-num(i);</span></p>
+<p style='ma<span>;text-indent:1.0cm'><span>PRINT<span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>NEXT</span></p>
+<p style='margin-left:1.0cm;te<span>'><span>NEXT</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>PRINT</span></p>
-
-<p style='text-indent:1.0cm'><span>ELSE</span></p>
-
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span
-        >FOR i = 1 TO n                          'иначе
+<p sty<span>:1.0cm;text-indent:1.0cm'><span>PRINT</span></p<span>xt-indent:1.0cm'><span>ELSE</sp<span>le='margin-left:1.0cm;text-indent:1.0cm'><span
+        ><span>                         'иначе
 просматриваем по порядку числа от 1 до n</span></p>
 
 <p style='margin-left:2.0cm;text-indent:1.0cm'><span
         >IF used(i) = 0
 THEN         'и, если очередное число i еще не использовано,</span></p>
 
-<p style='margin-left:3.0cm;text-indent:1.0cm'><span
-        >used(i) = 1                'помечаем
+<p style='margin-left:3.0cm;text-indent:1.0cm'><s<span>ed(i) = 1                'помечаем
 его как использованное,</span></p>
 
 <p style='margin-left:3.0cm;text-indent:1.0cm'><span
@@ -811,7 +767,7 @@ THEN         'и, если очередное число i еще не и
         >'продолжаем
 построение перестановки с k+1 позиции</span></p>
 
-<p style='margin-left:3.0cm;text-indent:1.0cm'><span>CALL</span> <span>Permute</span><span
+<p style='margin-left:3.0cm;text-indent:1.0cm'><span>CAL<span>Permute</span><span
         >(</span><span>k</span><span
         >% + 1) </span></p>
 
@@ -824,41 +780,38 @@ IF</span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span>NEXT</span></p>
 
-<p style='text-indent:1.0cm'><span>END IF</span></p>
+<p style='text-indent:1.0cm'>
+    <sp
+    <span>></p>
 
 <p style='text-indent:18pt'><span>END SUB</span></p>
 
 <p class=Normal style='margin: 0cm 0cm .0001pt;text-indent:18pt'><span
-        >&nbsp;</span></p>
-
-<p style='text-indent:18pt'>Идея данного
+        >&nbsp;</span></<span>ext-indent:18pt'>Идея данного
     алгоритма в том, что используется дополнительный массив (<span>used</span>),
-    в котором хранится информация о том, какие целые числа из интервала 1..<i><span
-            >n</span></i> мы уже использовали при рекурсивном построении
-    перестановки. Рекурсия состоит в том, что для построения цепочки длины <span
-            >k</span>+1 из <i><span>n</span></i> чисел сначала строим
-    цепочку длины <span>k</span>.</p>
+    в котором хранится информация<span>елые числа из интервала 1..<i><span
+        >n</span></i> мы уже использовали при рекурсивном построении
+    перестановки. Ре<span>в том, что для построения цепочки длины <span
+        >k</span>+1 из <i><span>n</span></i> чисел сна<span> цепочку длины <span>k</span>.</p>
 
 <p style='text-indent:18pt'>Данная идея
     успешно используется в следующем разделе, когда в задаче число вариантов
-    перебора очень велико и требуется их систематизировать.</p>
-
+   <span> велико и требуется их системат<span>
 <h2>2.3.2. Перебор с возвратом (backtracking)</h2>
 
 
-<p style='text-indent:18pt'>Любая задача,
+<p style='text-indent:<span>ача,
     к которой применим алгоритм перебора с возвратом (бектрекинг), может быть
     описана в общем случае следующим образом: требуется построить к данной задаче
     вектор решения (<span>a</span><sub>1</sub>, <span>a</span><sub>2</sub>,
     …, <span>a<sub>n</sub></span>), удовлетворяющий множеству условий и
     ограничений. Такой вектор строится покомпонентно слева направо. Предположим,
-    что уже найдены значения первых <span>k</span>-1 компонент, а выбор
+    что уже найден<span>ых <span>k</span>-1 компонент, а выбор
     следующей компоненты <span>a<sub>k</sub></span><sub><span
             > </span></sub>зависит от некоторых ограничений и условий. Если
-    условия и ограничения выполнимы, то выбираем <span>a<sub>k</sub></span><sub><span
+    условия и ограничения выполнимы, то выбираем <s<span>span><sub><span
             > </span></sub>и переходим к рассмотрению компоненты <span
-            >a<sub>k</sub></span><sub>+1</sub>, затем <sub> </sub><span
-            >a<sub>k</sub></span><sub>+2 </sub>и так далее, если же оказалось
+            >a<sub>k</sub></span><sub>+1</sub>, затем <sub> <<span>    >a<sub>k</sub></span><sub>+2 </sub>и так далее, если же оказалось
     невозможным выбрать компоненту <span>a<sub>k</sub></span>, то
     необходимо вернуться к предыдущему этапу, выбросить (<span>k</span>-1)-й
     элемент и выбрать другой <span>a<sub>k</sub></span><sub>-1</sub>,
@@ -866,7 +819,7 @@ IF</span></p>
     Такой перебор может возвращать назад на несколько шагов,  вплоть до выбора
     самой первой компоненты. </p>
 
-<p style='text-indent:18pt'>Решаемые
+<p style=' text-indent:18pt'>Решаемые
     бектрекингом задачи, как правило, принадлежат одному из трех классов –
     требуется найти либо произвольное из решений, либо перечислить все возможные
     решения, либо найти решение оптимальное по заданному критерию [2].</p>
@@ -876,14 +829,13 @@ IF</span></p>
 
 <p>&nbsp;</p>
 
-<p style='text-indent:18pt'><cite>Пример 6.6</cite>.<strong>
-</strong>«<strong>Рюкзак».</strong></p>
+<p style='text-indent:18pt'><cite>Пример 6.6</ci<span>ng>«<strong>Рюкзак».</strong></p>
 
 <p style='text-indent:18pt'>Имеется <i><span
         >m</span></i> различных предметов, известны веса предметов <i><span
-        >p</span></i><sub>1</sub>, …, <i><span>p<sub>m</sub></span></i>
-    и их стоимости - <i><span>c</span></i><sub>1</sub>, …, <i><span
-            >c<sub>m</sub></span></i>. Определить, какие предметы надо положить в
+<span>i><sub>1</sub>, …, <i><span>p<sub>m</sub></span></i>
+    и их сто<span></span></i><sub>1</sub>, …, <i><span
+        >c<sub>m</sub></s<span>ь, какие предметы надо положить в
     рюкзак, чтобы общий вес не превышал <i><span>P</span></i>, а общая
     стоимость была максимальна.</p>
 
@@ -909,24 +861,17 @@ IF</span></p>
         > (QBasic)</span></cite><span>:</span></p>
 
 <p style='text-indent:18pt'><span>DIM SHARED
-Items, BagSize, TotalCost, TotalWeight, MaxCost, MaxWeight</span></p>
-
-<p style='text-indent:18pt'><span>OPEN
-&quot;bag.dat&quot; FOR INPUT AS #1</span></p>
-
-<p style='text-indent:18pt'><span>INPUT</span>
-    #1, <span>Items</span>                                                            'Количество
-    предметов</p>
+Items, BagSize, TotalCost, TotalWeight, MaxCost, MaxWeight</spa<span>e='text-indent:18pt'><span>OPEN
+&quot;bag.dat&quot; FOR INPUT AS #1</s<span>yle='text-indent:18pt'><span>INPUT</span>
+    #1, <span>Items</span>                                                            'Колич<span></p>
 
 <p class=Normal style='margin: 0cm 0cm .0001pt;text-indent:18pt'>INPUT
     #1, BagSize                                                       'Вместимость
     рюкзака</p>
 
 <p style='text-indent:18pt'><span>DIM SHARED
-Weight(1 TO Items), Cost(1 TO Items)          '</span>Вес и стоимость предметов</p>
-
-<p style='text-indent:18pt'><span>DIM SHARED
-Used(1 TO Items), MaxUsed(1 TO Items)     </span></p>
+Weight(1 TO Items), Cost(1 TO Items)          '</span>Вес и стоимость предмето<span>xt-indent:18pt'><span>DIM SHARED
+Used(1 TO Items), MaxUsed(1 TO Items<span>p>
 
 <p style='text-indent:18pt'>'<span>Used</span>(<span
         >i</span>)=1, если предмет <span>i</span> использован и 0
@@ -934,17 +879,15 @@ Used(1 TO Items), MaxUsed(1 TO Items)     </span></p>
 
 <p>&nbsp;</p>
 
-<p class=Preformatted style='text-indent:18pt'><span>FOR</span> <span>i</span><span
-        > = 1 </span><span>TO</span> <span>Items</span><span
-        >                                         'Считываем
-из файла характеристики предметов</span></p>
+<p class=Preformatte<span>ndent:18pt'><span>FOR</span> <span>i</span><span
+  <span>pan><span>TO</span> <span>Items</span><span
+          >                                         'Считываем
+из файла характеристик<span>/p>
 
 <p style='text-indent:1.0cm'><span>INPUT #1,
 Weight(i), Cost(i)</span></p>
 
-<p style='text-indent:18pt'><span>NEXT</span></p>
-
-<p style='text-indent:18pt'><span>CLOSE #1</span></p>
+<p style='text-indent:18pt'><span>NEXT</sp<span>le='text-indent:18pt'><span>CLOSE #1</span></p>
 
 <p>&nbsp;</p>
 
@@ -975,17 +918,15 @@ THEN PRINT i;</span></p>
 <p style='text-indent:18pt'><span style='font-size:10.0pt'>&nbsp;</span></p>
 
 <p class=Normal style='margin: 0cm 0cm .0001pt;text-indent:18pt'>SUB
-    AddNew (Last)                  'Добавление в рюкзак очередного предмета</p>
+    AddNew (Last)              <span> в рюкзак очередного предмета</p>
 
 <p style='text-indent:1.0cm'>'Last - номер последнего предмета,
     положенного в рюкзак</p>
 
 <p>&nbsp;</p>
 
-<p style='text-indent:1.0cm'>FOR i = Last+1 TO Items        'Пробуем
-    добавить преметы с номерами больше Last</p>
-
-<p style='text-indent:1.0cm'>'Если предмет i еще не в рюкзаке и
+<p style='text-indent:1.0cm'>FOR i = Last+1<span>  'Пробуем
+    добавить преметы с номерами больше Last<<span>text-indent:1.0cm'>'Если предмет i еще не в рюкзаке и
     общий вес предметов не превысит вместимость</p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span
@@ -1022,7 +963,7 @@ Weight(i)</span></p>
 <p style='margin-left:2.0cm;text-indent:1.0cm'><span
         >END IF</span></p>
 
-<p style='margin-left:2.0cm;text-indent:1.0cm'>CALL AddNew(i)                        'Рассматриваем
+<p style='margin-left:2.0cm;text-indent:1.0cm'>CALL AddNew(i)              <span>матриваем
     рюкзак с новым предметом</p>
 
 <p style='margin-left:4.0cm;text-indent:1.0cm'>            'Затем
@@ -1032,11 +973,10 @@ Weight(i)</span></p>
         >TotalCost = TotalCost - Cost(i): TotalWeight = TotalWeight -
 Weight(i)</span></p>
 
-<p style='margin-left:2.0cm;text-indent:1.0cm'><span
-        >Used(i) = 0</span></p>
+<p styl<span>2.0cm;text-indent:1.0cm'><span
+                  >Used(i) = 0</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span
-        >END IF</span></p>
+<p style='margin-left:1.0cm;text-indent:1.0cm'<span>>END IF</span></p>
 
 <p style='text-indent:1.0cm'><span>NEXT</span></p>
 
@@ -1046,25 +986,23 @@ Weight(i)</span></p>
 
 <p style='text-indent:18pt'>Программная
     реализация метода перебора с возвратом заключается в том, что на каждом шаге,
-    перед рассмотрением очередного варианта, запоминается текущее состояние
-    перебора, а после анализа этого варианта – сохраненные значения
-    восстанавливаются и используются при рассмотрении следующего. По окончании
+    перед рассмотрением очередного варианта, запоминается текущее<span>перебора, а после анализа этого варианта – сохраненные значения
+    восстанавливаются и<span>ри рассмотрении следующего. По окончании
     анализа некоторого варианта, данные, записанные последними, восстанавливаются в
     первую очередь, поэтому для хранения состояний удобно использовать структуры
     данных на основе стека. По этой же причине перебор с возвратом часто
-    организуется в виде рекурсивной процедуры.</p>
+    орган<span>рекурсивной процедуры.</p>
 
 <p style='text-indent:18pt'>В данной
-    задаче под «состоянием перебора» подразумевается множество собранных в рюкзак
+    задаче под «состоянием перебора» подразумева<span>собранных в рюкзак
     предметов (<span>Used</span>), их суммарная стоимость (<span
-            >TotalCost</span>) и общий вес (<span>TotalWeight</span>).
+                >TotalCost</span>) и общий вес (<span>TotalWeight</span>).
     Алгоритм перебора представлен рекурсивной процедурой, в которую в качестве
     параметра (<span>Last</span>) передается порядковый номер последнего
-    добавленного в рюкзак предмета (либо 0 в самом начале, пока рюкзак пустой). 
+    добавленного в рюкзак пре<span> самом начале, пока рюкзак пустой). 
     Процедура перебирает предметы с номерами, большими <span>Last</span>,
-    и, если  <i><span>i</span></i>-ый предмет может поместиться в рюкзак
-    (т.е. его вес <span>Weight</span>(<span>i</span>) вместе
-    с текущим весом рюкзака <span>TotalWeight</span> не превысит
+    и, если  <i><span>i</spa<span>ет может поместиться в рюкзак
+    (т.е. его вес <span>Weight</span>(<span>i</spa<span>с текущим весом рюкзака <span>TotalWeight</span> не превысит
     максимальную вместимость <span>BagSize</span>), то выполняет над ним
     следующие операции:</p>
 
@@ -1081,8 +1019,7 @@ Weight(i)</span></p>
 <p style='text-align:left;text-indent:18pt'>3.<span
         style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>в
     случае, когда общая стоимость оказалась больше ранее найденной максимальной
-    стоимости предметов, текущий вариант заполнения рюкзака запоминается как
-    наилучший;</p>
+    стоимости предметов, текущий вариант заполнения рюкзака зап<span>аилучший;</p>
 
 <p style='text-align:left;text-indent:18pt'>4.<span
         style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>эта
@@ -1099,16 +1036,14 @@ Weight(i)</span></p>
 
 <p style='text-align:left;text-indent:18pt'>6.<span
         style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>продолжается
-    перебор вариантов с рассмотрения следующего, (<i><span>i</span></i>+1)<cite>-го</cite>
+    перебор вариа<span> следующего, (<i><span>i</span></i>+1)<cite>-го</cite>
     предмета.</p>
 
 <p>&nbsp;</p>
 
 <p style='text-indent:18pt'>После
     завершения работы алгоритма перебора достаточно вывести на печать запомненный
-    наилучший вариант заполнения рюкзака – это и будет являться ответом.</p>
-
-<p>&nbsp;</p>
+    наилучший вариант заполнения рюкзака – это и будет являться ответом<span>>
 
 <p style='text-indent:18pt'><cite>Пример 6.7</cite>.<strong>
 </strong>Обойти шахматную доску ходом коня, побывав в каждой клетке по одному разу.</p>
@@ -1126,7 +1061,7 @@ Weight(i)</span></p>
 стандартный размер стека  </span></p>
 
 <p style='text-indent:18pt'><span>DIM</span> <span>SHARED</span> <span>n</span><span
-        >, </span><span>m</span><span
+        >, </s<span>span
         >, </span><span>k</span></p>
 
 <p style='text-indent:18pt'><span>CLS</span></p>
@@ -1158,75 +1093,64 @@ font-family:"","serif"'>&nbsp;</span></p>
 
 <p style='text-indent:18pt'><span>SUB</span> <span>pr</span><span
         > (</span><span>y</span><span
-        >, </span><span>x</span><span
-        >)                               'Возможность
+ <span>n><span>x</span><span
+         >)                               'Возможность
 хода конем в клетку (</span><span style='font-size:12.0pt;
-font-family:"","serif"'>x</span><span style='font-size:12.0pt;
+font-family:"","serif"'>x</span<span>ont-size:12.0pt;
 font-family:"","serif"'>,</span><span>y</span><span
-        >)</span></p>
+         >)</span></p>
 
 <p style='text-indent:1.0cm'><span>IF x &lt; 1 OR x
-&gt; m OR y &lt; 1 OR y &gt; n THEN EXIT SUB   '</span><span style='font-size:
-12.0pt;font-family:"","serif"'>Выход</span><span
-        > </span><span
-        >за</span><span
-        > </span><span
-        >пределы</span><span
-        > </span><span
-        >доски</span></p>
+&gt; m OR y &lt; 1 OR y &gt; n THEN EXI<span>><span style='font-size:
+12.0pt;<span>"serif"'>Выход</span><span
+            > </span><span
+            >за</span><span
+            > </span><span
+            >пределы</span><span
+        <span>        >доски</span></p>
 
-<p style='text-indent:1.0cm'><span>IF</span> <span>k</span><span
-        > = </span><span>n</span><span
-        > * </span><span>m</span> <span>THEN</span><span
-        >                  'Удачный
+<p style='<span>cm'><span>IF</span> <span>k</sp<span>  > = </span><span>n</span><span
+      <span>pan>m</span> <span>THEN</span><s<span>                'Удачный
 обход всех клеток, печать результата обхода</span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span>FOR i
-= 1 TO n</span></p>
-
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>FOR j
+= 1 TO n</span><<span>margin-left:1.0cm;text-indent:1.0cm'><span>FOR j
 = 1 TO m</span></p>
 
-<p style='margin-left:2.0cm;text-indent:1.0cm'><span>PRINT</span> <span>USING</span><span
-        >
-&quot;####&quot;; </span><span style='font-size:12.0pt;font-family:
+<p style='margin-left:2.0cm;text-indent:1.0cm'><span>PRINT</span>
+    <span>USING</span><<span>&quot;####&quot;; </span><span style='font-size:12.0pt;font-family:
 "","serif"'>a</span><span style='font-size:12.0pt;font-family:
-"","serif"'>(</span><span style='font-size:12.0pt;
-font-family:"","serif"'>i</span><span style='font-size:12.0pt;
+<span>span><span style=' font-size:12.0pt;
+    fo<span>erif"'>i</span><span style='font-size:12.0pt;
 font-family:"","serif"'>, </span><span>j</span><span
-        >);     'каждой
+            >);     'каждой
 клетке сопоставлен номер шага</span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span>NEXT
 j</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>PRINT</span></p>
+<p style='margin-left:1.0cm;text-indent:1.<span>T</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>NEXT
-i</span></p>
-
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>END</span></p>
+<p style=' margin-l<span>indent:1.0cm'><span>NEXT
+i</span<span>='margin-left:1.0cm;text-indent:1.0cm'><span>END</span></p>
 
 <p style='text-indent:1.0cm'><span>END</span> <span>IF</span></p>
 
 <p style='text-indent:1.0cm'><span>IF</span> <span>a</span><span
-        >(</span><span>y</span><span
-        >, </span><span>x</span><span
+        >(</span><span>y</spa<span> >, </span><span>x</span><span
         >) = 0 </span><span>THEN</span><span
         >                'на
 данном поле еще не были</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>k</span><span
-        > = </span><span>k</span><span
-        > + 1                         'очередной
-номер шага</span></p>
+<p style='margin-left:1.0cm;text-indent:1.0cm'><span>k</<span>    > = </span><s<span>an
+        > + 1  <span>        'очередно<span>pan></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>a</span><span
+<p style='mar<span>text-indent:1.0cm<span>><span
         >(</span><span>y</span><span
         >, </span><span>x</span><span
-        >) = </span><span>k</span><span
-        >                                   'сопоставим
-пройденной клетке номер шага</span></p>
+    <span>><span>k</span><span
+        >   <span>                 ' сопоставим
+   пройденной клетке номе<span>p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span
         >'попытаемся,
@@ -1237,7 +1161,7 @@ i</span></p>
 то в следующую по порядку </span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span>CALL
-pr(y + 2, x - 1)</span></p>
+pr(y + 2<span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span>CALL
 pr(y - 1, x + 2)</span></p>
@@ -1248,10 +1172,10 @@ pr(y + 1, x - 2)</span></p>
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span>CALL
 pr(y - 1, x - 2)</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>CALL
+<p style='margin-left:1.0cm;text-in<span>an>CALL
 pr(y + 1, x + 2)</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>CALL
+<p style=' margin-left:1.0cm;text-indent:1.0cm'><span>CALL
 pr(y - 2, x + 1)</span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span>CALL
@@ -1263,61 +1187,59 @@ pr(y - 2, x - 1)</span></p>
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span
         >'Если все
 попытки шагнуть из клетки(</span><span style='font-size:12.0pt;
-font-family:"","serif"'>x</span><span style='font-size:12.0pt;
-font-family:"","serif"'>,</span><span>y</span><span
-        >) в другие –
-неудачны, то</span></p>
+font-family:"","serif"'>x</span><span styl<span>.0pt;
+font-family:"","serif"'>,<span>/span><span
+            >) в другие <span>/span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span
+<p style='margin-left:1.0cm<span>0cm'><span
         >'освобождаем
 клетку и возвращаемся к предыдущему шагу</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>k = k
+<p style='margin-left:1.0cm;text-indent:<span>= k
 - 1</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>a(y,
+<p style=' mar<span>text-indent:1.0cm'><span>a(y,
 x) = 0</span></p>
 
 <p style='text-indent:1.0cm'><span>END IF</span></p>
 
-<p style='text-indent:18pt'><span>END SUB</span></p>
+<p style='text-indent:18pt'><s<span>an></p>
 
 <p>&nbsp;</p>
 
-<p style='text-indent:18pt'>В задачах на
-    бектрекинг обычно используются рекурсивные процедуры для формирования вариантов
+<p styl<span>18pt'>В задачах на
+    бектрекин<span>зуются рекурсивные процедуры для ф<span>иантов
     перебора, поэтому следует позаботиться об увеличении размера стека (с помощью
-    оператора <span>CLEAR</span>), если возможен вариант достаточно
-    длинный (по количеству вложенных вызовов рекурсивной процедуры).</p>
+    оператора <span>CLEAR</span>), если возможен вариан<span>  длинный (по количеству вложенных вызовов рекурсивной процедуры).</p>
 
-<p style='text-indent:18pt'>Отметим, что
-    по быстродействию программа перебора на <span>Qbasic</span>
+        <p style='text-indent:18pt'>Отметим, что
+            по быстродействию програм<span><span>Qbasic</span>
     значительно уступает аналогичной программе, написанной на языке <span
-            >Pascal</span>. В частности, в данной задаче уже для реальной
+                        >Pascal</span>. В частности, в данной задаче уже для реальной
     шахматной доски (8<span style='font-family:Symbol'>&acute;</span>8) перебор
     занимает достаточно много времени, поэтому рекомендуется  ограничивать
     бектрекинг. Можно и даже нужно применять симметрию, зеркальное отображение,
     выполняя задание для половины или меньшей части шахматной доски (переход коня
-    на другую выделенную часть доски учитывается заданием начального поля). </p>
+    на другую выделенную часть доски учитывается заданием начального поля).</p>
 
 <div style="float:left;margin:10px 10px 0 0;"><img src="Info2.3.0/img/img.png" width="231" height="188">
 
     <p class="title">Рис.</p>
 </div>
 <p style='text-indent:18pt'>Разбивая доску (рис. ) на три части: (5<span
-        style='font-size:12.0pt;font-family:Symbol'>&acute;</span><span
+        style='font-size:<span>ily:Symbol'>&acute;</span><span
         >4), (5</span><span
         style='font-size:12.0pt;font-family:Symbol'>&acute;</span><span
         >4), (8</span><span
-        style='font-size:12.0pt;font-family:Symbol'>&acute;</span><span
+        style='font-size:12.0pt;<span>bol'>&acute;</span><span
         >3), решаем
-задачу последовательно для каждой части доски с начальными положениями </span><span>H</span><sub><span
-        >1</span></sub><span
-        >(1,1), </span><span>H</span><sub><span
-        >2</span></sub><span
-        >(3,1), </span><span>H</span><sub><span
-        >3</span></sub><span
-        >(3,1),
+задачу последовательно для каждой части доски с н<span>ениями </span><span>H</span><sub><span
+            >1</span></sub><span
+            >(1,1), </span><span>H</span><sub><span
+            >2</span></sub><span
+            >(3,1), </span><span>H</span><sub><span
+            >3</span></sub><span
+            >(3,1),
 соответственно получим обход коня с конечными полями в К<sub>1</sub>, К<sub>2</sub>,
 К<sub>3</sub>, а в целом – обход всей доски за приемлемое время расчета. Данный
 пример разбиения задачи на ряд подзадач (каждая для своей подобласти данных)
@@ -1330,8 +1252,7 @@ x) = 0</span></p>
 
 <h2>2.3.3. Лабиринты</h2>
 
-<p style='text-indent:18pt'>Практически
-    ни одна олимпиада областного и Российского уровня не обходится без
+<p style='text-indent:18pt'>Практи<span>лимпиада областного и Российского уровня не обходится без
     использования какого-либо алгоритма на графах. Замечательно эта тема
     рассматривается в книге [5], в журнале [6]. Там вводятся понятие графа через
     вершины и ребра, понятие ориентированных или неориентированных графов,
@@ -1344,18 +1265,15 @@ x) = 0</span></p>
     возвратом);</p>
 
 <p style='text-indent:18pt'><span
-        style='font-size:14.0pt;font-family:Symbol'>·<span style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span>поиск в ширину (или метод заливки);</p>
-
-<p style='text-indent:18pt'><span
-        style='font-size:14.0pt;font-family:Symbol'>·<span style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;
+        style='font-size:14.0pt;font-family:S<span>tyle=' font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>поиск в ширину (или метод заливки)<span>='text-indent:18pt'><span
+        style='font-size:14.0pt;font-family:Symbol'>·<span style='fo<span>bsp;&nbsp;&nbsp;&nbsp;
 </span></span>Алгоритм Дейкстры для поиска кратчайших путей в графе из заданной
-    вершины во все остальные;</p>
+    вершины во<span></p>
 
-<p style='text-indent:18pt'><span
-        style='font-size:14.0pt;font-family:Symbol'>·<span style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span>алгоритм Флойда для поиска кратчайших путей в графе между всеми
-    парами вершин.</p>
+<p style=' text-in<span>n
+        style='font-size:14.0pt;font-fam<span>pan style='font:7.0pt "<span>&nbsp;&nbsp;
+</span></span>алгоритм Флойда<span>тчайших путей в графе м<span>парами вершин.</p>
 
 <p>&nbsp;</p>
 
@@ -1419,18 +1337,18 @@ iy</span></p>
         > (</span><span>x</span><span
         >1, </span><span>y</span><span
         >1)-(</span><span>x</span><span
-        >2, </span><span>y</span><span
-        >2), , </span><span>B</span><span
-        >                                'очертим
+    <span>pan>y</span><span
+            >2), , </span><span>B</span><span
+            >                                'очертим
 границы лабиринта</span></p>
 
-<p style='text-indent:18pt'>
+<p styl<span>18pt'>
     <span>h = 20                                                                             '</span><span
-        >шаг</span><span
-        > </span><span
-        >сетки</span></p>
+            >шаг</span><span
+            > </span><span
+            >сетки</span></p>
 
-<p style='text-indent:18pt'><span>DO</span></p>
+    <p style='text-indent:18pt'><span>DO</span></p>
 
 <p style='text-indent:1.0cm'><span>i = INT(RND *
 20): j = INT(RND * 16)</span></p>
@@ -1453,12 +1371,12 @@ font-family:"","serif"'>'        лабиринта, т.о. учитыв�
         >1 + </span><span>j</span><span
         > * </span><span>h</span></p>
 
-<p style='text-indent:1.0cm'><span>IF</span> <span>POINT</span><span
+<p style='text-ind<span>n>IF</span> <span>POINT</span><span
         >(</span><span>x</span><span
         >, </span><span>y</span><span
         >) &lt;&gt; 15 </span><span>THEN</span><span
-        >                         'нашли
-случайную точку не на стене</span></p>
+        >                         ' нашли
+   случайную точку не на стене</span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span>PSET
 (x, y)</span></p>
@@ -1470,23 +1388,18 @@ font-family:"","serif"'>'        лабиринта, т.о. учитыв�
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span style='font-size:
 12.0pt;font-family:"","serif"'>napr = INT(RND * 4 + 1)</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>SELECT
-CASE napr</span></p>
+<p style='margin-left:1.0cm;text-indent:1.0cm'><<span>E napr</span></p>
 
-<p style='margin-left:2.0cm;text-indent:1.0cm'><span>CASE
+<p style='margin-lef<span>dent:1.0cm'><span>CASE
 1</span></p>
 
-<p style='margin-left:3.0cm;text-indent:1.0cm'><span>ix =
+<p style='margin-left:3.0cm;text-inde<span>>ix =
 1: iy = 0</span></p>
 
-<p style='margin-left:2.0cm;text-indent:1.0cm'><span>CASE
-2</span></p>
+<p s<span>ft:2.0cm;text-indent:1.0cm'><span<span>/p>
 
-<p style='margin-left:3.0cm;text-indent:1.0cm'><span>ix =
-0: iy = 1</span></p>
-
-<p style='margin-left:2.0cm;text-indent:1.0cm'><span>CASE
-3</span></p>
+<p style='margin-left:3.0cm;t<span>m'><span>ix =
+0: iy = 1</span></p<span>rgin-left:2.0cm;text-indent:1.0cm'><<span>an></p>
 
 <p style='margin-left:3.0cm;text-indent:1.0cm'><span>ix =
 -1: iy = 0</span></p>
@@ -1494,10 +1407,9 @@ CASE napr</span></p>
 <p style='margin-left:2.0cm;text-indent:1.0cm'><span>CASE
 4</span></p>
 
-<p style='margin-left:3.0cm;text-indent:1.0cm'><span>ix =
-0: iy = -1</span></p>
+<p style='margin-left:3.0cm;text-indent:1.0cm'><<span> = -1</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>END
+<<span>-left:1.0cm;text-<span>span>END
 SELECT</span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span>CALL
@@ -1515,26 +1427,25 @@ UNTIL INKEY$ = CHR$(27)</span></p>
         >)</span></p>
 
 <p style='text-indent:1.0cm'><span style='font-size:12.0pt;
-font-family:"","serif"'>'линия рисуется от текущей точки с
-заданным шагом</span></p>
+font-family:"","serif<span>тся от текущей точки с
+заданным ш<span>
 
-<p style='text-indent:1.0cm'><span style='font-size:12.0pt;
+<p style=' text-indent:1.0cm'>
+    <sp<span>size:12.0pt;
 font-family:"","serif"'>'оператор POINT(X,Y)определяет цвет
-точки, т.е. границу </span></p>
+точки, т.<span>an></p>
 
-<p style='text-indent:1.0cm'><span>DO</span></p>
+<p style='text-indent:1.<span>span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>x = x
+<p style=' margin-left:1<span>t:1.0cm'><span>x = x
 + ix * h</span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span>y = y
-+ iy * h</span></p>
++<span>/p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span>IF
-POINT(x, y) &lt;&gt; 15 THEN LINE -(x, y) ELSE LINE -(x, y): EXIT DO</span></p>
-
-<p style='text-indent:1.0cm'><span
-        >LOOP</span></p>
+<p style='margin-left:1.0c<span>.0cm'><span>IF
+POINT(x, y) &lt;&<span>E -(x, y) ELSE LINE -(x, y): EXIT DO</span></p><span>t-indent:1.0cm'><span
+                >LOOP</span></p>
 
 <p style='text-indent:18pt'><span>END</span> <span>SUB</span></p>
 
@@ -1561,34 +1472,35 @@ font-family:"","serif"'>&nbsp;</span></p>
     другую, если они имеют общую сторону. Путник выходит из лабиринта, когда
     попадает в граничную клетку, то есть клетку [<span>i</span>, <span
             >j</span>], где <span>i</span> и <span>j</span>
-    равны 1 или 20. Выдать путь из лабиринта от выхода до начального положения
+    равны 1 или 20. В<span>абиринта от выхода до начального положения
     путника либо фразу «Выхода нет».</p>
 
-<p style='text-indent:18pt'><cite><span
-        >Указание 1</span></cite><span
-        >: Поиск пути в
-лабиринте осуществляется с помощью алгоритма, известного как перебор с
+<p style='text-indent:18pt'><cite>
+    <sp
+    <span>зание 1</span></cite><span
+     <span>и в
+лабиринте осуществляется с п<span>а, известного как перебор с
 возвратом (см. предыдущий раздел), но при решении задач на лабиринты (в общем
 случае, на графы) он носит название «поиска в глубину». Реализуется данный
 алгоритм чаще всего с помощью рекурсивной процедуры и организации данных в виде
 стека (</span><span>LIFO</span><span
-        > – </span><span>last</span> <span>in</span><span
-        >, </span><span>first</span> <span>out</span><span
-        > – последним
+                 > – </span><span>last</span> <span>in</span><span
+                 >, </span><span>first</span> <span>out</span><span
+                 > – последним
 вошел, первым вышел).</span></p>
 
 <p style='text-indent:18pt'><span style='font-size:12.0pt;
 font-family:"","serif"'>&nbsp;</span></p>
 
 <p style='text-indent:18pt'><cite><span style='font-size:
-12.0pt;font-family:"","serif"'>Программа (</span></cite><cite><span>QBasic</span></cite><cite><span
+12.0pt;font-family:"","serif"'>Программа (</span></cite><cite><span<span>/cite><cite><span
         >)</span></cite><span
         >:</span></p>
 
 <p style='text-indent:18pt'><span style='font-size:12.0pt;
 font-family:"","serif"'>'Поиск в глубину</span></p>
 
-<p style='text-indent:18pt'><span>DEFINT</span> <span>A</span><span
+<p style='text-indent:18pt'><span>DEFINT<span></span><span
         >-</span><span>Z</span></p>
 
 <p style='text-indent:18pt'><span>TYPE TPoint</span></p>
@@ -1600,13 +1512,12 @@ font-family:"","serif"'>'Поиск в глубину</span></p>
 <p style='text-indent:18pt'><span>END TYPE</span></p>
 
 <p style='text-indent:18pt'><span>DIM SHARED a(1
-TO 20, 1 TO 20), Stack(1 TO 400) AS TPoint</span></p>
+TO 20, 1 TO 20), Stack(1 <span>nt</span></p>
 
-<p style='text-indent:18pt'><span style='font-size:12.0pt;
-font-family:"","serif"'>DIM SHARED p                        'Указатель
+<p style='text-indent:18pt'><span style='font-size:12.0<span>:"","serif"'>DIM SHARED p                        'Указатель
 на вершину стека</span></p>
 
-<p style='text-indent:18pt'><span style='font-size:12.0pt;
+<p style='text-indent:18pt'<span>size:12.0pt;
 font-family:"","serif"'>&nbsp;</span></p>
 
 <p style='text-indent:18pt'><span>'</span><span
@@ -1614,7 +1525,7 @@ font-family:"","serif"'>&nbsp;</span></p>
         > </span><span
         >входного</span><span
         > </span><span
-        >файла</span></p>
+     <span>>
 
 <p style='text-indent:18pt'><span>OPEN
 &quot;lab.dat&quot; FOR INPUT AS #1</span></p>
@@ -1623,16 +1534,14 @@ font-family:"","serif"'>&nbsp;</span></p>
 
 <p style='text-indent:35.4pt'><span>FOR j = 1 TO 20</span></p>
 
-<p style='margin-left:35.4pt;text-indent:35.4pt'><span>INPUT
+<p st<span>.4pt;text-indent:35.4pt'><span>INPUT
 #1, a(i, j)</span></p>
 
 <p style='text-indent:35.4pt'><span>NEXT j</span></p>
 
 <p style='text-indent:18pt'><span>NEXT i</span></p>
 
-<p style='text-indent:18pt'><span>INPUT #1, k, m</span></p>
-
-<p style='text-indent:18pt'><span>CLOSE #1</span></p>
+<p style='text-indent:18pt'><span>INPUT #1, k,<span><p style='text-indent:18pt'><span<span>></p>
 
 <p>&nbsp;</p>
 
@@ -1644,14 +1553,11 @@ font-family:"","serif"'>CALL Search(k, m)         'Начинаем
 font-family:"","serif"'>'Если выход не найден, выдаем
 соответствующий результат</span></p>
 
-<p style='text-indent:18pt'><span>PRINT &quot;</span><span
-        >Выхода</span><span
-        > </span><span
-        >нет</span><span>&quot;</span></p>
+<p style='text-i<span>an>PRINT &quot;</span><span
+        >Выхода</span><s<span>/span><span
+        >нет</span><span>&quot;</span></p<span>>
 
-<p>&nbsp;</p>
-
-<p style='text-indent:18pt'><span>SUB Search (k,
+<p style=' text-indent:18pt'><span>SUB Search (k,
 m)</span></p>
 
 <p style='text-indent:1.0cm'><span style='font-size:12.0pt;
@@ -1659,13 +1565,13 @@ font-family:"","serif"'>a(k, m) = 1                       
 текущую клетку как непроходимую </span></p>
 
 <p style='text-indent:1.0cm'><span style='font-size:12.0pt;
-font-family:"","serif"'>p = p + 1                                   '(т.к.
+f<span>serif"'>p = p + 1       <span>             '(т.к.
 здесь уже побывали)</span></p>
 
 <p style='text-indent:1.0cm'><span>Stack</span><span
         >(</span><span>p</span><span
         >).</span><span>x</span><span
-        > = </span><span>k</span><span
+        > = </spa<span>><span
         >               'и
 сохраняем в стеке текущие координаты</span></p>
 
@@ -1683,13 +1589,11 @@ THEN      'Если дошли до граничной клетки,</span><
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span
         >FOR i = p TO 1
-STEP -1                                               'то печатаем результат с
-конца</span></p>
+STEP -1                                               'то печатаем резуль<span>an></p>
 
-<p style='margin-left:2.0cm;text-indent:1.0cm'><span>PRINT
-&quot;(&quot;; Stack(i).x; &quot;,&quot;; Stack(i).y; &quot;) &quot;</span></p>
+<p style='mar<span>text-indent:1.0cm<span>quot;(&quot;; Stack(i).x<span>; Stack(i).y; &qu<span>an></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span
+<p style=' margin-left:1.0cm;text-indent:1.0cm'><span
         >NEXT</span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span
@@ -1712,14 +1616,14 @@ font-family:"","serif"'>THEN</span> <span>CALL</span><span>
         >m</span>)     'Если соседние клетки свободны,</span></p>
 
 <p style='text-indent:1.0cm'><span>IF</span> <span>a</span><span
-        >(</span><span>k</span><span
-        > - 1, <span
-        >m</span>) = 0 </span><span style='font-size:12.0pt;
+    <span>pan>k</span><span
+    <span>n
+        >m</spa<span><span style='font-size:12.0pt;
 font-family:"","serif"'>THEN</span> <span>CALL</span><span>
 </span><span>Search</span><span
-        >(</span><span>k</span><span
-        > - 1, <span
-        >m</span>)       'пробуем продолжить поиск из них</span></p>
+                >(</span><span>k</span><span
+                > - 1, <span
+                >m</span>)       'пробуем продолжить поиск из них</span></p>
 
 <p style='text-indent:1.0cm'><span>IF a(k, m + 1) =
 0 THEN CALL Search(k, m + 1)</span></p>
@@ -1728,125 +1632,112 @@ font-family:"","serif"'>THEN</span> <span>CALL</span><span>
 0 THEN CALL Search(k, m - 1)</span></p>
 
 <p style='text-indent:1.0cm'><span>p</span><span
-        > = </span><span>p</span><span
-        > – 1             
-'Вынимаем из стека сохраненное текущее положение</span></p>
-
-<p style='text-indent:18pt'><span>END SUB</span></p>
-
-<p style='margin-left:18pt;text-indent:
+        > = </span><span>p</span><span> – 1             
+'Вынимаем из <span>ое текущее положение</span></p>
+<span>-indent:18pt'><span>END SUB</span<span>='margin-left:18pt;text-indent:
 -18pt'><span>1)<span
         style='font:7.0pt ""'>&nbsp;&nbsp; </span></span><span
-        >Данные по
-структуре лабиринта считываются из входного файла и заносятся в двумерный
-массив </span><strong><i><span>a</span></i></strong><span
-        > размерности 20
+       <span>уктуре лабиринта считываются из<span> и заносятся в двумерный
+массив <span><i><span>a</span></i></strong><span
+               > размерности 20
 на 20, где проходимые клетки принимают значение 0, а непроходимые – 1. Из файла
 также считываются координаты клетки, задающей начальное положение путника, - </span><span>k</span><span
-        > и </span><span>m</span><span
-        >.</span></p>
+               > и </span><span>m</span><span
+               >.</span></p>
 
-<p style='margin-left:18pt;text-indent:
--18pt'><span>2)<span
-        style='font:7.0pt ""'>&nbsp;&nbsp; </span></span><span
-        >Поиск пути в
+           <p style='margin-left:18pt;text-indent:
+-18pt'><span>2)<sp<span>e='font:7.0pt ""'>&nbsp;&nbsp; </span></span><span
+                   >Поиск пути в
 лабиринте начинается с исходной клетки с координатами [k, m]. Поиск
 осуществляется вызовом рекурсивной процедуры </span><strong><i><span>Search</span></i></strong><strong><i><span>
 </span></i></strong><span
-        >с параметрами -
-координатами данной клетки.</span></p>
+                   >с параметрами -
+коо<span>й клетки.</span></p>
 
 <p style='margin-left:18pt;text-indent:
--18pt'><span>3)<span
-        style='font:7.0pt ""'>&nbsp;&nbsp; </span></span><span
-        >Если выход из
+-18pt'>
+    <spa
+    <span>   style='font:7.0pt ""'>&nbsp;&nbsp; </span></span><span
+               >Если выход из
 лабиринта не найден, то управление из рекурсивной процедуры будет возвращено в
 головную программу, которая выведет соответствующее сообщение.</span></p>
 
-<p style='margin-left:18pt;text-indent:-18pt'><span
-        >4)<span
-        style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
-        >Работа
-рекурсивной процедуры заключается в следующем:</span></p>
+       <p style='margin-left:18pt;text-indent:-18pt'><span
+               >4)<span
+               style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+           <span>рекурсивной процедуры заключает<span></span></p>
 
-<p style='margin-left:36.85pt;text-indent:
+<p<span>left:36.85pt;text-indent:
 -17.0pt'><span style='font-size:12.0pt;font-family:Symbol'>·<span
-        style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Пометить
-текущую клетку как непроходимую, то есть в данной клетке путник уже побывал, а
-это означает присвоить соответствующему элементу массива единицу, </span><strong><i><span>a</span></i></strong><strong><i><span
-        >(</span></i></strong><strong><i><span>k</span></i></strong><strong><i><span
+               style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;&<span>p;</span></span><span>Пометить
+<span>как непроходиму<span>нной клетке путник уже побывал, а
+это означает присвоить соответствующему элементу массива единицу, </span><strong><i><span>a<<span>ong><strong><i><span
+        >(<span>rong><strong><i<span></i></strong><strong><i><span
         >, </span></i></strong><strong><i><span>m</span></i></strong><strong><i><span
-        >) = </span></i></strong><strong><span
-        >1</span></strong><span
-        >.</span></p>
+        >) = </span></i></stron<span>
+        >1</span></strong><spa<span>pan></p>
 
-<p style='margin-left:36.85pt;text-indent:
+    <p st<span>t:36.85pt;text-indent:
 -17.0pt'><span style='font-size:12.0pt;font-family:Symbol'>·<span
-        style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Запомнить
+                style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Запомнить
 текущие координаты и номер клетки в пути. Номер текущей клетки в пути будет
-храниться в переменной </span><strong><i><span style='font-size:12.0pt;
-font-family:"","serif"'>p</span></i></strong><span style='font-size:
+храниться в переменной </span><s<span>style='font-size:12.0pt;
+font-fam<span>>p</span></i></strong><span style='font-size:
 12.0pt;font-family:"","serif"'>, координаты клетки будут
 храниться в стеке. </span><strong><i><span style='font-size:12.0pt;
 font-family:"","serif"'>Stack</span></i></strong><span
         > – это
-специальный массив, в котором будут последовательно запоминаться координаты
+специальный массив<span>ут последовательно запоминаться координаты
 клеток, входящих в путь (размерность данного массива равна максимальной длине
-пути 20х20 = 400). </span></p>
-
-<p style='margin-left:36.85pt;text-indent:
+пути 20х20 = 400). </spa<span>e='margin-left:36.85pt;text-indent:
 -17.0pt'><span style='font-size:12.0pt;font-family:Symbol'>·<span
-        style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Проверить,
-не достигнут ли выход из лабиринта, то есть, не равны ли координаты текущей
+        style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Проверить<span>ли выход из лабиринта, то есть, н<span>динаты текущей
 клетки (граничной клетки) 1 или 20, и при достижении выхода вывести весь путь
-(а именно, координаты клеток) с конечного (значение </span><strong><i><span>p</span></i></strong><span
-        >) до начального
+(а именно, координаты клеток) с конечного (значе<span>ong><i><span>p</span></i></strong><span
+            >) до начального
 положения (значение 1), после чего завершить программу.</span></p>
 
-<p style='margin-left:36.85pt;text-indent:
--17.0pt'><span style='font-size:12.0pt;font-family:Symbol'>·<span
-        style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Если
+        <p style='margin-left:36.85pt;text-indent:
+-17.0pt'><span style='font-size:12.0pt;font-fam<span>pan
+        style=' font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Если
 выход еще пока не достигнут, то проверить, свободны ли соседние клетки, и, если
-свободны, вызвать рекурсивную процедуру с параметрами-координатами этих клеток.</span></p>
+св<span> рекурсивную процедуру с параметрами-координатами этих клеток.</span></p>
 
 <p style='margin-left:36.85pt;text-indent:
 -17.0pt'><span style='font-size:12.0pt;font-family:Symbol'>·<span
-        style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Если
-произошел выход из рекурсивной процедуры, то есть оказалось, что в данном
+        style='font:7.0pt ""'>&nbsp;&nb<span>&nbsp;&nbsp;&nbsp;</span></span><span>Если
+произошел выход из рекурсивной процедуры, то есть<span> в данном
 направлении нет пути, вернуться на шаг назад, уменьшив номер на единицу<br>
 </span><strong><i><span>p</span></i></strong><strong><i><span
-        > = </span></i></strong><strong><i><span>p</span></i></strong><strong><i><span
-        > – </span></i></strong><strong><span
-        >1</span></strong><span
-        >.</span></p>
+            > = </span></i></strong><strong><i><span>p</span></i></strong><strong><i><span
+            > – </span></i></strong><strong><span
+            >1</span></strong><span
+            >.</span></p>
 
 <p style='margin-left:18pt;text-indent:
 -18pt'><span>5)<span>&nbsp; </span></span><span
         ><span>Дл</span>я того чтобы
-данная программа находила и печатала все возможные пути выхода из лабиринта,
-необходимо не завершать программу оператором END внутри процедуры Search, а
+данная программа находила<span> возможные пути выхода из лабиринта,
+необходимо не завершать программу оператор<span>роцедуры Search, а
 ввести признак того, что какой-либо путь найден. </span></p>
-
-<p>&nbsp;</p>
-
+<span>
 <p style='text-indent:18pt'><cite><span
-        >Указание 2</span></cite><span
-        >: </span><span
-        >В тех случаях,
+    <span>ие 2</span></cite><span
+  <span>><span
+          >В тех случаях,
 когда необходимо найти кратчайший путь, используется другой алгоритм,
 называемый «поиском в ширину» или «волной на графе», или алгоритмом «заливки».
 Этот алгоритм может быть реализован как рекурсивно, так и без рекурсии. Но
 более быстрым, а значит и более предпочтительным, считается не рекурсивный
 алгоритм с использованием организации данных в виде очереди (</span><span>FIFO</span><span
-        > – </span><span>first</span> <span>in</span><span
-        >, </span><span>first</span> <span>out</span><span
-        > – первым вошел,
+          > – </span><span>first</span> <span>in</span><span
+          >, </span><span>first</span> <span>out</span><span
+          > – первым вошел,
 первым вышел).</span></p>
 
 <p>&nbsp;</p>
 
-<p><cite><span>Программа
-(</span></cite><cite><span>QBasic</span></cite><strong><cite><span
+<p><cite><span>Про<span></cite><cite><span>QBasic</span></cite><strong><cite><span
         >)</span></cite></strong><span
         >:</span></p>
 
@@ -1865,9 +1756,7 @@ font-family:"","serif"'>'Поиск в ширину</span></p>
 <p style='text-indent:18pt'><span>END TYPE</span></p>
 
 <p style='text-indent:18pt'><span>DIM SHARED a(0
-TO 21, 0 TO 21), Queue(1 TO 400) AS TPoint</span></p>
-
-<p style='text-indent:18pt'><span style='font-size:12.0pt;
+TO 21, 0 TO 21), Queue(1 TO 400) AS TPoint</<span>tyle='text-indent:18pt'><span style='font-size:12.0pt;
 font-family:"","serif"'>DIM SHARED p, q                    'Указатели
 на начало и конец очереди</span></p>
 
@@ -1895,19 +1784,16 @@ font-family:"","serif"'>&nbsp;</span></p>
 
 <p style='text-indent:18pt'><span>NEXT i</span></p>
 
-<p style='text-indent:18pt'><span>INPUT #1, k, m</span></p>
+<p style='text-indent:18pt'><span<span></span></p>
 
 <p style='text-indent:18pt'><span>CLOSE #1</span></p>
 
-<p>&nbsp;</p>
-
-<p style='text-indent:18pt'><span>CALL</span> <span>Push</span><span
-        >(</span><span>k</span><span
-        >, </span><span>m</span><span
+<p>&nbsp;</p><span>t-indent:18pt'><span>CALL</span> <span>P<span>
+        >(</span><span>k<<span>     >, </span><span>m</span><span
         >, 2)        'Присваиваем
-начальной клетке ранг 2 и начинаем поиск с нее</span></p>
+начальной клетке ранг 2 и начинаем п<span>n></p>
 
-<p style='text-indent:18pt'><span style='font-size:12.0pt;
+    <p style='text-indent:18pt'><span style='font-size:12.0pt;
 font-family:"","serif"'>&nbsp;</span></p>
 
 <p style='text-indent:18pt'><span style='font-size:12.0pt;
@@ -1916,10 +1802,10 @@ font-family:"","serif"'>&nbsp;</span></p>
 <p style='text-indent:18pt'><span>WHILE p &lt;&gt;
 q</span></p>
 
-<p style='text-indent:1.0cm'><span>CALL Pop(k, m,
+<p style='text-indent:1.<span> Pop(k, m,
 r)</span></p>
 
-<p style='text-indent:35.4pt'><span style='font-size:12.0pt;
+<p styl<span>35.4pt'><span styl<span>.0pt;
 font-family:"","serif"'>IF k = 1 OR k = 20 OR m = 1 OR m = 20
 THEN    'Если дошли до граничной клетки,</span></p>
 
@@ -1929,24 +1815,22 @@ THEN    'Если дошли до граничной клетки,</span></p>
 конца</span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span>PRINT</span><span
-        > &quot;(&quot;; </span><span>k</span><span
-        >; &quot;,&quot;;
+        > &quot;(&quot;; </span><span>k</sp<span>  >; &quot;,&quot;;
 </span><span>m</span><span
-        >; &quot;) &quot;</span></p>
+      <span>uot;</span></p>
 
-<p style='margin-left:1.0cm;text-indent:1.0cm'><span
+<p style='margin-left:1.0cm;text-ind<span>n
         >IF a(k, m - 1) =
-i THEN             'Для этого совершаем обратный проход,</span></p>
+i THEN             ' Для этого совершаем обратный проход,</span></p>
 
 <p style='margin-left:2.0cm;text-indent:1.0cm'><span
-        >m = m – 1                                      'т.е.
-ищем соседние клетки</span></p>
+    <span>                                 <span>соседние клетки</span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span
         >ELSEIF a(k, m +
 1) = i THEN   'с последовательно убывающими рангами</span></p>
 
-<p style='margin-left:2.0cm;text-indent:1.0cm'><span>m = m
+<p style='margin-left:2.0c<span>.0cm'><span>m = m
 + 1</span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span>ELSEIF
@@ -1968,14 +1852,10 @@ IF</span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span>END                                                                   '</span><span
         >и</span><span
-        > </span><span
-        >завершаем</span><span
-        > </span><span
-        >программу</span></p>
+        > </spa<span> >завершаем</span><spa<span>pan><span
+       <span>an></p>
 
-<p style='text-indent:35.4pt'><span>END IF</span></p>
-
-<p style='text-indent:1.0cm'><span>IF</span> <span>a</span><span
+<p style='text-<span><span>END IF</spa<span>e=' text-indent:1.0cm'><span>IF</span> <span>a</span><span
         >(</span><span>k</span><span
         > + 1, <span
         >m</span>) = 0 </span><span style='font-size:12.0pt;
@@ -1988,11 +1868,12 @@ font-family:"","serif"'>r</span><span style='font-size:12.0pt;
 font-family:"","serif"'> + 1)   'Если соседние клетки свободны,</span></p>
 
 <p style='text-indent:1.0cm'>
-    <span>IF a(k -  1, m) = 0 THEN CALL Push(k -  1, m, r + 1)   '</span><span>заносим</span><span
+    <span>IF a(k -  1, m) = 0 THEN CALL Push(k -  1, m, r + 1)   '</span>
+    <sp<span>n><span
         > </span><span
-        >их</span><span
+<span>an><span
         > </span><span
-        >в</span><span
+<span>n><span
         > </span><span
         >очередь</span></p>
 
@@ -2007,33 +1888,29 @@ font-family:"","serif"'>дальнейшего</span><span
 <p style='text-indent:1.0cm'><span>IF a(k, m -  1)
 = 0 THEN CALL Push(k, m -  1, r + 1)   '</span><span style='font-size:12.0pt;
 font-family:"","serif"'>с</span><span style='font-size:12.0pt;
-font-family:"","serif"'> </span><span style='font-size:12.0pt;
+font-family:"","serif"'> </span><span sty<span>2.0pt;
 font-family:"","serif"'>рангом</span><span>, </span><span
         >увеличенным</span><span
         > </span><span
         >на</span><span> 1</span></p>
 
-<p style='text-indent:18pt'><span>WEND</span></p>
+<p style='text-indent:18p<span>span></p>
 
-<p style='text-indent:18pt'><span style='font-size:12.0pt;
-font-family:"","serif"'>&nbsp;</span></p>
-
-<p style='text-indent:18pt'><span style='font-size:12.0pt;
-font-family:"","serif"'>'Если выход не найден, выдаем
+<p style=' text-indent:18pt'><span s<span>:12.0pt;
+font-family:"","serif"'>&nbsp;</span><<span>text-indent:18pt'><span style='font-size:12.0pt;
+font-family:"","serif"'>'Если выход <span>ем
 соответствующий результат</span></p>
 
-<p style='text-indent:18pt'><span>PRINT</span><span
-        > &quot;Выхода
+    <p style='text-indent:18pt'><span>PRINT</span><span
+            > &quot;Выхода
 нет&quot;     </span></p>
-
-<p style='text-indent:18pt'><span style='font-size:12.0pt;
+<span>-indent:18pt'><span style='font-size:12.0pt;
 font-family:"","serif"'>&nbsp;</span></p>
 
-<p style='text-indent:18pt'><span>SUB</span> <span>Push</span><span
-        > (</span><span>k</span><span
-        >, </span><span>m</span><span
-        >, </span><span>r</span><span
-        >)</span></p>
+    <p style='text-indent:18pt'><span>SUB</span> <span>Pus<span>       > (</span><span>k</span><span
+            >, </span><span>m</span><span
+            >, </span><span>r</span><span
+            >)</span></p>
 
 <p style='text-indent:35.4pt'><span style='font-size:12.0pt;
 font-family:"","serif"'>a(k, m) = r                   'Присваиваем
@@ -2049,27 +1926,22 @@ font-family:"","serif"'>Queue(q).x = k                     
 
 <p style='text-indent:35.4pt'><span>Queue(q).y = m</span></p>
 
-<p style='text-indent:18pt'><span>END SUB</span></p>
+<p style='text-indent:18pt'><span>END SUB<span>>&nbsp;</p>
 
-<p>&nbsp;</p>
+<p s<span>nt:18pt'><span>SU<span>Pop</span><span
+            ><span>k</span><span
+   <span><span>m</span><span
+           >, </span><span>r</span><span
+           >)</span></p>
 
-<p style='text-indent:18pt'><span>SUB</span> <span>Pop</span><span
-        > (</span><span>k</span><span
-        >, </span><span>m</span><span
-        >, </span><span>r</span><span
-        >)</span></p>
-
-<p style='text-indent:35.4pt'><span>p</span><span
-        > = </span><span>p</span><span
-        > + 1         'Достаем
-координаты очередной рассматриваемой клетки из очереди </span></p>
+       <p style='text-indent:35.4pt'><span>p</span><span
+               > = </<span>pan><span
+               > + 1        <span>инаты очередной<span>й клетки из очереди </span></p>
 
 <p style='text-indent:35.4pt'><span>k = Queue(p).x</span></p>
 
-<p style='text-indent:35.4pt'><span>m = Queue(p).y</span></p>
-
-<p style='text-indent:35.4pt'><span style='font-size:12.0pt;
-font-family:"","serif"'>r = a(k, m)                   'Вычисляем
+<p style='text-indent:35.4pt'><span>m = Queue(p).<span>p style='text-indent:35.4pt'><s<span>-size:12.0pt;
+f<span>serif"'>r = a(k, m)                   'Вычисляем
 ее ранг</span></p>
 
 <p style='text-indent:18pt'><span>END SUB</span></p>
@@ -2080,72 +1952,67 @@ font-family:"","serif"'>r = a(k, m)                   'Выч�
 -17.0pt'><span>1)<span
         style='font:7.0pt ""'>&nbsp;&nbsp; </span></span><span
         >Данные по
-структуре лабиринта считываются из входного файла и заносятся в двумерный
-массив </span><strong><i><span>a</span></i></strong><span
-        > размерности 20
-на 20, где проходимые клетки принимают значение 0, а непроходимые – 1. Из файла
+структуре лабиринта считываются из<span> и заносятся в дв<span></span><strong><i><span>/i></strong><span<span>ерности 20
+на 20,<span> клетки принимают<span>непроходимые – 1. Из файла
 также считываются координаты клетки, задающей начальное положение путника, - </span><span>k</span><span
-        > и </span><span>m</span><span
-        >.</span></p>
+                > и </span><span>m</span><span
+                >.</span></p>
 
 <p style='margin-left:17.0pt;text-indent:
 -17.0pt'><span>2)<span
-        style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp; </span></span><span
-        >Поиск пути в
-лабиринте начинается с исходной клетки с координатами [k, m] с помощью
+        style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp; </span></span><span<span> пути в
+лабиринте<span>сходной клетки с координатами [k, m] с помощью
 процедуры </span><strong><i><span style='font-size:12.0pt;font-family:
 "","serif"'>Push</span></i></strong><span style='font-size:12.0pt;
 font-family:"","serif"'> (поместить)<strong> </strong>с параметрами
 - координатами данной клетки и ее рангом – числом, обозначающим, за сколько
-шагов можно добраться до этой клетки. </span></p>
+шагов мож<span> этой клетки. </span></p>
 
-<p style='margin-left:17.0pt;text-indent:
--17.0pt'><span>3)<span
+<span>n-left:17.0pt;tex<span>pt'><span>3)<span
         style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp; </span></span><span
         >Процедура </span><strong><i><span>Push</span></i></strong><strong><i> </i></strong><span
         >в самом начале
 присваивает исходной клетке ее ранг <strong><i>a(k, m) = </i>2</strong>, увеличивает
 номер очереди на 1: <strong><i>q = q + </i>1</strong>, а затем помещает координаты
-текущей клетки в очередь – массив </span><strong><i><span>Queue</span></i></strong><span
-        > (очередь)
+текущей клет<span>массив </span><strong><i><span>Queue</span></i></strong><span
+            > (очередь)
 размерности 400: <strong><i>Queue(q).x =
-        k </i></strong>и </span><strong><i><span>Queue</span></i></strong><strong><i><span
-        >(</span></i></strong><strong><i><span>q</span></i></strong><strong><i><span
-        >).</span></i></strong><strong><i><span>y</span></i></strong><strong><i><span
-        > = </span></i></strong><strong><i><span>m</span></i></strong><span
-        >.</span></p>
+            k </i></strong>и </span><strong><i><span>Queue</span></i></strong><strong><i><span
+        <span>n></i></strong><strong><i><span><span>trong><strong><i><span
+            ><span>strong><strong><i><span>y</span><span>trong><i><span
+            > = </span></i></strong><strong><i><span>m</span></i></strong><span
+            >.</span></p>
 
-<p style='margin-left:17.0pt;text-indent:
+        <p style='margin-left:17.0pt;text-indent:
 -17.0pt'><span>4)<span
-        style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp; </span></span><span
-        >В цикле, пока
+                style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp; </span></span><span
+                >В цикле, пока
 очередь не пуста, вызывается процедура </span><strong><i><span>Pop</span></i></strong><strong><i> </i></strong><span
-        >(извлечь)<strong> </strong>с
+                >(извлечь)<strong> </strong>с
 такими же параметрами, что и процедура </span><strong><i><span>Push</span></i></strong><span
-        >, которая
+                >, которая
 достает из очереди координаты очередной рассматриваемой клетки и определяет ее
 ранг (первый раз он равен 2):</span></p>
 
 <p style='margin-left:18.0pt'><span style='font-size:12.0pt;
-font-family:"","serif"'> </span><strong><i><span>p = p + </span></i></strong><strong><span>1</span></strong><span><br>
-<strong><i>k = Queue(p).x<br>
-    m = Queue(p).y<br>
-    r = a(k, m)</i></strong></span></p>
+font-family:"","serif"'> </sp<span>span>p = p + </span></i></strong<span>1</span></strong><span><br>
+<str<span>e(p).x<br>
+    m = Queue(p).y<br<span>m)</i></strong></span></p>
 
-<p style='margin-left:17.0pt;text-indent:-17.0pt'><span
+            <p style='margin-left:17.0pt;text-inden<span>n
         >5)<span
-        style='font:7.0pt ""'>&nbsp;&nbsp; </span></span><span
+        style=<span>>&nbsp;&nbsp; </span></span><span
         >Далее в этом же
 цикле проводится проверка, свободны ли соседние клетки, чтобы передать
-управление процедуре </span><strong><i><span style='font-size:12.0pt;
+управление процедуре </span><strong><i><span style=' font-size:12.0pt;
 font-family:"","serif"'>Push</span></i></strong><span
-        > уже для этих
+                > уже для этих
 соседних клеток, чтобы поместить туда ранг 3 и т.д.</span></p>
 
-<p style='margin-left:17.0pt;text-indent:-17.0pt'><span
-        >6)<span
-        style='font:7.0pt ""'>&nbsp;&nbsp; </span></span><span
-        >Это выполняется
+        <p style='margin-left:17.0pt;text-indent:-17.0pt'><span
+                >6)<span
+                style='font:7.0pt ""'>&nbsp;&nbsp; </span></span><span
+                >Это выполняется
 до тех пор, пока не будет достигнута граничная клетка, то есть пока не найдется
 выход, после чего остается распечатать весь путь, начиная с конца, и завершить
 программу.</span></p>
