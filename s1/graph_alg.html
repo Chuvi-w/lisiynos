@@ -240,61 +240,36 @@ begin
     графа. Разработан в 1962 году Робертом Флойдом и Стивеном Уоршеллом.</p>
 
 <p>Пусть вершины графа пронумерованы от 1 до $n$ и введено обозначение $d_{ij}^k$ для длины кратчайшего пути от $i$ до
-    $j$, который кроме самих вершин $i,\;j$&nbsp;</span>
-    <span>проходит только через вершины</span><span>&nbsp;</span><span><img width=49 height=15 id="Рисунок 4"
-                                                                            src="graph_alg/image004.gif"
-                                                                            alt="1 \ldots k"></span><span>.
-        Очевидно, что</span><span>&nbsp;</span><span><img width=27 height=28 id="Рисунок 5"
-                                                          src="graph_alg/image005.gif" alt="d_{i j}^{0}"></span><span>&nbsp;-
-          длина (вес) ребра</span><span>&nbsp;</span><span><img width=48 height=23 id="Рисунок 6"
-                                                                src="graph_alg/image006.gif" alt="(i,\;j)"></span><span>, если
-            таковое существует (в противном случае его длина может быть обозначена как</span><span>&nbsp;</span><span><img
-            width=18 height=10 id="Рисунок 7"
-            src="graph_alg/image007.gif" alt="\infty"></span><span>)</span></p>
+    $j$, который кроме самих вершин $i,\;j$ проходит только через вершины $1 \ldots k$.
+    Очевидно, что $d_{i j}^{0}$ - длина (вес) ребра $(i,\;j)$, если таковое существует (в противном случае его длина
+    может быть обозначена как $\infty$)</p>
 
-<p>Существует два варианта значения <img id="Рисунок 8" src="graph_alg/image008.gif"
-                                         alt="d_{i j}^{k},\;k \in \mathbb (1,\;\ldots,\;n)">:</p>
+<p>Существует два варианта значения $d_{i j}^{k},\;k \in \mathbb (1,\;\ldots,\;n)$:</p>
 
-<p style='margin-bottom:1.2pt;margin-left:38.4pt;text-indent:
--18.0pt;line-height:18.0pt'><span>1.<span style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp; </span></span><span>Кратчайший
-путь между</span><span>&nbsp;</span><span>$i,\;j$&nbsp;</span><span>не
-проходит через вершину</span><span>&nbsp;</span><i><span>k</span></i><span>, тогда</span><span>&nbsp;</span><span><img
-        width=83 height=27 id="Рисунок 10"
-        src="graph_alg/image009.gif" alt="d_{i j}^{k}=d_{i j}^{k-1}"></span></p>
-
-<p style='margin-bottom:1.2pt;margin-left:38.4pt;text-indent:
--18.0pt;line-height:18.0pt'><span>2.<span style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp; </span></span><span>Существует
-более короткий путь между</span><span>&nbsp;</span><span>$i,\;j$,
-проходящий через</span><span>&nbsp;</span><i><span>k</span></i><span>, тогда он сначала идёт от</span><span>&nbsp;</span><i><span>i</span></i><span>&nbsp;</span><span>до</span><span>&nbsp;</span><i><span>k</span></i><span>, а потом
-от</span><span>&nbsp;</span><i><span>k</span></i><span>&nbsp;</span><span>до</span><span>&nbsp;</span><i><span>j</span></i><span>. В этом случае, очевидно,</span><span>&nbsp;</span><span><img
-        width=144 height=27 id="Рисунок 12"
-        src="graph_alg/image010.gif"
-        alt="d_{i j}^{k}=d_{i k}^{k-1} + d_{k j}^{k-1}"></span></p>
-
+<ol>
+    <li>Кратчайший путь между $i,\;j$ не проходит через вершину $k$, тогда $d_{i j}^{k}=d_{i j}^{k-1}$</li>
+    <li>Существует более короткий путь между $i,\;j$, проходящий через $k$, тогда он сначала идёт от $i$ до $k$, а
+        потом от $k$ до $j$. В этом случае, очевидно, $d_{i j}^{k}=d_{i k}^{k-1} + d_{k j}^{k-1}$
+    </li>
+</ol>
 <p>Таким образом, для нахождения значения
     функции достаточно выбрать минимум из двух обозначенных значений.</p>
 
 <p>Тогда <span><a
         href="http://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BA%D1%83%D1%80%D1%81%D0%B8%D1%8F"
-        title=Рекурсия><span style='color:#0645AD'>рекуррентная</span></a></span><span>&nbsp;</span><span>формула
-для</span><span>&nbsp;</span><span><img border=0 width=21 height=27 id="Рисунок 13"
-                                        src="graph_alg/image011.gif" alt="d_{i j}^k"></span><span>&nbsp;</span><span>имеет
-вид:</span></p>
+        title=Рекурсия><span style='color:#0645AD'>рекуррентная</span></a></span> формула
+    для
+    $d_{i j}^k$ имеет вид: </p>
 
-<p>$d_{i j}^0$ <img border=0 width=21 height=26 id="Рисунок 14" src="graph_alg/image012.gif" alt="d_{i j}^0"><span> - длина ребра $(i,\;j)$ <img
-        border=0 width=48 height=23 id="Рисунок 15"
-        src="graph_alg/image006.gif" alt="(i,\;j)"></span></p>
+<p>$d_{i j}^0$ - длина ребра $(i,\;j)$</p>
 
 <p>$d_{i j}^{k} = \min (d_{i j}^{k-1},\; d_{i k}^{k-1} + d_{k j}^{k-1})$
 
 <p>Алгоритм Флойда - Уоршелла последовательно вычисляет все значения
-    $d_{i j}^{k}$,<span>&nbsp;</span><span><img
-            border=0 width=40 height=19 id="Рисунок 18"
-            src="graph_alg/image014.gif"
-            alt="\forall i,\; j"></span><span>&nbsp;</span><span>для</span><span>&nbsp;</span><i><span>k</span></i><span>&nbsp;</span><span>от 1 до</span><span>&nbsp;</span><i><span>n</span></i><span>.
-Полученные значения</span><span>&nbsp;</span><span>
-       $d_{i j}^{n}$ являются
-длинами кратчайших путей между вершинами</span><span>&nbsp; $i,\; j$.</span></p>
+    $d_{i j}^{k}$, $\forall i,\; j$ для $k$ от 1 до $n$.
+    Полученные значения
+    $d_{i j}^{n}$ являются
+    длинами кратчайших путей между вершинами $i,\; j$.</p>
 <pre class="sh_pascal">
 for k := 1 to n do { k - промежуточная вершина } 
   for i := 1 to n do { из i-ой вершины } 
@@ -331,15 +306,15 @@ for k := 1 to n do { k - промежуточная вершина }
 <p><strong>Псевдокод:</strong></p>
 
 <div class="algo">
-    <p> $ T \gets $ {}</p>
+    <p>$T \gets $ {}</p>
 
-    <p> Для каждой вершины $i \in V$: $d_i \gets \infty$, $p_i \gets nil$</p>
+    <p>Для каждой вершины $i \in V$: $d_i \gets \infty$, $p_i \gets nil$</p>
 
-    <p> $d_1 \gets 0$ </p>
+    <p>$d_1 \gets 0$ </p>
 
-    <p> $Q \gets V$ </p>
+    <p>$Q \gets V$ </p>
 
-    <p> $v \gets\ Extract.min(Q) $ </p>
+    <p>$v \gets\ Extract.min(Q) $ </p>
 
     <p> Пока $Q$ не пуста:</p>
 
@@ -349,9 +324,9 @@ for k := 1 to n do { k - промежуточная вершина }
         <div class="alg">
             <p> Если $u \in Q$ и $w(v,u) < d[u]$: $d_u \gets w(v,u)$, $p_u \gets v$</p>
         </div>
-        <p> $ v \gets Extract.Min(Q)$</p>
+        <p>$v \gets Extract.Min(Q)$</p>
 
-        <p> $ T \gets T+(p[v],v)$</p>
+        <p>$T \gets T+(p[v],v)$</p>
     </div>
 </div>
 

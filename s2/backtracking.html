@@ -6,6 +6,7 @@
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 
+    
     </script>
     <script type="text/javascript"
             src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -44,12 +45,12 @@
 <ul>
     <li>Простейшие задачи на перебор – это задачи на поиск решения
         в одномерном массиве (например, найти элемент с заданным свойством).
-        Сложность таких задач пропорциональна количеству элементов в массиве <span>N</span>.
+        Сложность таких задач пропорциональна количеству элементов в массиве $N$.
     </li>
     <li>Следующие задачи на перебор – поиск пар элементов либо из
         одного массива, либо из двух разных массивов. При решении таких задач, как
         правило, используется вложенный цикл, то есть их сложность пропорциональна
-        <span>N</span><sup>2</sup>.
+        $N^2$.
     </li>
     <li>Далее идет перебор троек элементов. Рассмотрим, например,
         следующую задачу.
@@ -57,14 +58,14 @@
 </ul>
 
 <p style='text-indent:18pt'><cite>Пример 6.1</cite>.<strong>
-</strong>На плоскости разбросаны <span>N</span> точек с координатами (<span>x</span><sub>1</sub>,
-    <span>y</span><sub>1</sub>), (<span>x</span><sub>2</sub>, <span>y</span><sub>2</sub>), …, <br>
-    (<span>x</span><sub>N</sub>, <span>y</span><sub>N</sub>).
+</strong>На плоскости разбросаны $N$ точек с координатами ($x^1$,
+    $y^1$), ($x^2$, $y^2$), …, <br>
+    ($x^N$, $y^N$).
     Найти тройку точек, которые образуют треугольник с максимальной площадью.</p>
 
 <p style='text-indent:18pt'>Ясно, что при
     решении этой задачи необходимо использовать три вложенных цикла, таким образом,
-    задача решается за <span>N</span><sup>3</sup> шагов. </p>
+    задача решается за $N^3$ шагов. </p>
 
 <p>&nbsp;</p>
 
@@ -76,7 +77,7 @@
 <p style='text-indent:18pt'><cite>Программа (</cite><cite><span>QBasic</span>)</cite>:</p>
 
 <p style='text-indent:18pt'><span>INPUT</span>
-    &quot;введите количество точек <span>N</span>&gt;2 &quot;, <span>n</span></p>
+    &quot;введите количество точек $N$&gt;2 &quot;, $N$</p>
 
 <p style='text-indent:18pt'><span>DIM x(1 TO n),
 y(1 TO n)</span></p>
@@ -86,7 +87,7 @@ y(1 TO n)</span></p>
 
 <p style='text-indent:18pt'><span>RANDOMIZE</span><span> </span><span>TIMER</span></p>
 
-<p style='text-indent:18pt'><span>FOR</span><span> </span><span>i</span> = 1 <span>TO</span><span> </span><span>n</span>                          
+<p style='text-indent:18pt'><span>FOR</span><span> </span><span>i</span> = 1 <span>TO</span><span> </span>$N$                          
     'Задание
     экранных координат точек случайным образом</p>
 
@@ -167,8 +168,8 @@ y(km))-(x(jm), y(jm)), 2</span></p>
 <h2>2.3.1. Перебор с отсечениями</h2>
 
 <p style='text-indent:18pt'><cite>Пример 6.2</cite>.<strong>
-</strong>Решить уравнение в целых числах: <span>x</span><sub>1</sub><sup>4</sup>
-    + <span>x</span><sub>2</sub><sup>4</sup> + … <span>+ x<sub>15</sub><sup>4</sup>
+</strong>Решить уравнение в целых числах: $x^1$<sup>4</sup>
+    + $x^2$<sup>4</sup> + … <span>+ x<sub>15</sub><sup>4</sup>
 = 2000</span></p>
 
 <p class=Normal style='margin: 0cm 0cm .0001pt;text-indent:18pt'><span>&nbsp;</span></p>
@@ -182,9 +183,9 @@ y(km))-(x(jm), y(jm)), 2</span></p>
     степеней</p>
 
 <p style='text-indent:18pt'><span>DIM</span><span> </span><span>SHARED</span> <span>x</span>(1 <span>TO</span> 15)     
-    ‘значения переменных <span>x</span><sub>1</sub>, …, <span>x</span><sub>15</sub></p>
+    ‘значения переменных $x^1$, …, $x^15$</p>
 
-<p style='text-indent:18pt'><span>DIM</span><span> </span><span>SHARED</span> <span>n</span>‘номер переменной, значения
+<p style='text-indent:18pt'><span>DIM</span><span> </span><span>SHARED</span> $N$‘номер переменной, значения
     которой перебираются в процедуре
     <span>Find</span></p>
 
@@ -214,7 +215,7 @@ y(km))-(x(jm), y(jm)), 2</span></p>
 <p style='text-indent:18pt'>   ‘<span>start</span>
     – значение, с которого начинать перебор</p>
 
-<p style='text-indent:18pt'>   <span>IF</span><span> </span><span>n</span> = 15 <span>THEN</span>                    
+<p style='text-indent:18pt'>   <span>IF</span><span> </span>$N$ = 15 <span>THEN</span>                    
     ‘если
     значения всех 15 переменных заданы, то</p>
 
@@ -245,19 +246,19 @@ IF</span></p>
 <p style='text-indent:18pt'><span>                                                  </span>‘переменных
     не превосходит 2000,</p>
 
-<p style='text-indent:18pt'>             <span>n</span>
-    = <span>n</span> + 1</p>
+<p style='text-indent:18pt'>             $N$
+    = $N$ + 1</p>
 
 <p style='text-indent:18pt'>             <span>FOR</span><span> </span><span>i</span> = <span>start</span><span> </span><span>TO</span>
     1 <span>STEP</span> –1  ‘перебираем
     значения очередной переменной</p>
 
-<p style='text-indent:18pt'>                      <span>x</span>(<span>n</span>) = <span>I</span>                         
+<p style='text-indent:18pt'>                      <span>x</span>($N$) = <span>I</span>                         
     ‘фиксируем
-    значение <span>n</span>-ой переменной и</p>
+    значение $N$-ой переменной и</p>
 
 <p style='text-indent:18pt'>                      <span>CALL</span> <span>Find</span>(<span>sum</span> - <span>p</span>4(<span>i</span>),
-    <span>i</span>)     ‘переходим к перебору значений <span>n</span>+1-ой</p>
+    <span>i</span>)     ‘переходим к перебору значений $N$+1-ой</p>
 
 <p style='text-indent:18pt'>             <span>NEXT</span></p>
 
@@ -271,8 +272,8 @@ IF</span></p>
 <p style='text-indent:18.0pt'><span>&nbsp;</span></p>
 
 <p style='text-indent:18pt'>Приведенная
-    программа ищет решения уравнения <span>x</span><sub>1</sub><sup>4</sup>
-    + <span>x</span><sub>2</sub><sup>4</sup> + … + <span>x</span><sub>15</sub><sup>4</sup><sub>
+    программа ищет решения уравнения $x^1$<sup>4</sup>
+    + $x^2$<sup>4</sup> + … + $x^15$<sup>4</sup><sub>
     </sub>= 2000 в натуральных числах методом перебора. Перебор является, пожалуй,
     одним из самых простых (по реализации), но, вместе с тем, самым трудоемким (по
     времени выполнения) из всех алгоритмов, поэтому при решении каждой конкретной
@@ -287,7 +288,7 @@ IF</span></p>
     очередь, надо правильно выбрать границы значений перебираемых величин. По
     условию задачи все переменные принимают натуральные значения, но ведь
     натуральных чисел бесконечно много! Однако, в данном примере совершенно
-    очевидно, что, если решение уравнения существует, то все <span>x</span><sub>1</sub>,
+    очевидно, что, если решение уравнения существует, то все $x^1$,
     …, <span>x</span><sub>15 </sub>лежат в промежутке от 1 до 6,
     поскольку натуральные числа, большие 6, в четвертой степени дают значение уже
     превосходящее 2000 (7<sup>4</sup> = 2401 &gt; 2000). Итак, в алгоритме все
@@ -297,11 +298,11 @@ IF</span></p>
 <p style='text-indent:18.0pt'>2) Далее,
     важным моментом при оптимизации является отсечение заведомо неверных ветвей
     перебора. Например, в данном примере, не имеет смысла продолжать поиск, если на
-    некотором шаге сумма <span>x</span><sub>1</sub><sup>4</sup> + … + <span>x<sub>n</sub></span><sup>4</sup> уже
+    некотором шаге сумма $x^1$<sup>4</sup> + … + <span>x<sub>n</sub></span><sup>4</sup> уже
     превысила 2000. В приведенной
     программе это условие проверяется в строке <strong><span>if</span><span> </span></strong><strong><span>sum</span>&gt;0
     </strong><strong><span>then</span></strong>, т.е. дальнейший перебор осуществляется лишь в том
-    случае, когда разность 2000 и ранее полученной суммы <span>x</span><sub>1</sub><sup>4</sup>&nbsp;+&nbsp;…
+    случае, когда разность 2000 и ранее полученной суммы $x^1$<sup>4</sup>&nbsp;+&nbsp;…
     &nbsp;+&nbsp;<span>x<sub>n</sub></span><sup>4</sup> положительна.</p>
 
 <p style='text-indent:18.0pt'>3) Следует избегать
@@ -322,12 +323,12 @@ IF</span></p>
     Поэтому, чтобы сократить поиск, не перебирая варианты, отличающиеся только
     перестановкой слагаемых, в процедуру <strong><span>Find</span></strong> был
     введен дополнительный параметр <strong><span>start</span></strong> –
-    максимальное значение, которое может принимать очередная (<span>n</span>-ая)
+    максимальное значение, которое может принимать очередная ($N$-ая)
     переменная. Благодаря этому гарантируется, что алгоритм будет рассматривать
-    только те значения переменных, при которых <span>x</span><sub>1</sub>
-    <span style='font-family:Symbol'>&sup3;</span> <span>x</span><sub>2</sub>
+    только те значения переменных, при которых $x^1$
+    <span style='font-family:Symbol'>&sup3;</span> $x^2$
     <span style='font-family:Symbol'>&sup3;</span> … <span style='font-family:Symbol'>&sup3;</span>
-    <span>x</span><sub>15</sub>.</p>
+    $x^15$.</p>
 
 <p style='text-indent:18.0pt'>5) Наконец,
     если задача предполагает поиск какого-либо одного решения, а не всех, можно
@@ -364,12 +365,12 @@ IF</span></p>
 <p style='text-indent:18pt'><cite>Программа
     (</cite><cite><span>QBasic</span>)</cite>:</p>
 
-<p style='text-indent:18pt'><span>DIM</span> <span>SHARED</span> <span>n</span><span>(1 </span><span>TO</span><span> 4)                      'цифры
+<p style='text-indent:18pt'><span>DIM</span> <span>SHARED</span> $N$<span>(1 </span><span>TO</span><span> 4)                      'цифры
 для слова &quot;МУХА&quot;</span></p>
 
 <p style='text-indent:18pt'><span>CLS</span></p>
 
-<p style='text-indent:18pt'><span>n</span><span>(1) = 1: </span><span>n</span><span>(2) = 0: </span><span>n</span><span>(3) = 2: </span><span>n</span><span>(4) = 3      
+<p style='text-indent:18pt'>$N$<span>(1) = 1: </span>$N$<span>(2) = 0: </span>$N$<span>(3) = 2: </span>$N$<span>(4) = 3      
 'начальный набор цифр слова &quot;МУХА&quot;</span></p>
 
 <p style='text-indent:18pt'><span>DO</span></p>
@@ -481,7 +482,7 @@ font-family:"","serif"'>END FUNCTION</span></p>
 
 <p style='text-indent:18pt'>Следует
     освоить алгоритмы создания лексикографического упорядочения и всевозможных
-    перестановок из <i><span>n</span></i> элементов.</p>
+    перестановок из $n$ элементов.</p>
 
 <p>&nbsp;</p>
 
@@ -509,7 +510,7 @@ font-family:"","serif"'>&nbsp;</span></p>
 
 <p style='text-indent:1.0cm'><span>n = LEN(s$)</span></p>
 
-<p style='text-indent:1.0cm'><span>FOR</span> <span>i</span><span> = 1 </span><span>TO</span> <span>n</span><span>            ‘Представляем
+<p style='text-indent:1.0cm'><span>FOR</span> <span>i</span><span> = 1 </span><span>TO</span> $N$<span>            ‘Представляем
 исходное слово в виде</span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span>A(i)
@@ -521,14 +522,14 @@ font-family:"","serif"'>&nbsp;</span></p>
 font-family:"","serif"'>&nbsp;</span></p>
 
 <p style='text-indent:1.0cm'><span>FOR</span>
-    <span>i</span><span> = </span><span>n</span><span> - 1 </span><span>TO</span><span> 1 </span><span>STEP</span><span> –1   ‘Ищем
+    <span>i</span><span> = </span>$N$<span> - 1 </span><span>TO</span><span> 1 </span><span>STEP</span><span> –1   ‘Ищем
 первую с конца пару элементов,</span></p>
 
 <p style='margin-left:1.0cm;text-indent:1.0cm'><span>IF</span>
     <span>A</span><span>(</span><span>i</span><span>) &lt; </span><span>A</span><span>(</span><span>i</span><span> + 1) </span><span>THEN</span><span>            ‘упорядоченную
 по возрастанию</span></p>
 
-<p style='margin-left:2.0cm;text-indent:1.0cm'><span>FOR</span> <span>j</span><span> = </span><span>n</span>
+<p style='margin-left:2.0cm;text-indent:1.0cm'><span>FOR</span> <span>j</span><span> = </span>$N$
     <span>TO</span> <span>i</span><span> + 1 </span><span>STEP</span><span> –1        ‘Среди
 ранее рассмотренных элементов</span></p>
 
@@ -539,14 +540,14 @@ A(j) &gt; A(i) THEN           ‘ищем наименьший, кот
 A(i): A(i) = A(j): A(j) = t  ‘Ставим его на i ое место</span></p>
 
 <p style='margin-left:4.0cm;text-indent:1.0cm'><span>FOR</span>
-    <span>k</span><span> = </span><span>i</span><span> + 1 </span><span>TO</span> <span>n</span><span> – 1         ‘Оставшиеся
+    <span>k</span><span> = </span><span>i</span><span> + 1 </span><span>TO</span> $N$<span> – 1         ‘Оставшиеся
 элементы упорядочиваем</span></p>
 
 <p style='margin-left:5.0cm;text-indent:1.0cm'><span>min</span><span> = </span><span>k</span><span>  ‘по
 возрастанию методом поиска</span></p>
 
 <p style='margin-left:5.0cm;text-indent:1.0cm'><span>FOR</span>
-    <span>l</span><span> = </span><span>k</span><span> + 1 </span><span>TO</span> <span>n</span><span>      ‘последовательных
+    <span>l</span><span> = </span><span>k</span><span> + 1 </span><span>TO</span> $N$<span>      ‘последовательных
 минимумов</span></p>
 
 <p style='margin-left:6.0cm;text-indent:1.0cm'><span>IF
@@ -560,7 +561,7 @@ A(k): A(k) = A(min): A(min) = t</span></p>
 <p style='margin-left:4.0cm;text-indent:1.0cm'><span>NEXT</span></p>
 
 <p style='margin-left:4.0cm;text-indent:1.0cm'><span>FOR</span> <span>i</span><span> = 1 </span><span>TO</span>
-    <span>n</span><span>          ‘Переводим
+    $N$<span>          ‘Переводим
 массив чисел обратно в слово</span></p>
 
 <p style='margin-left:5.0cm;text-indent:1.0cm'><span>PRINT
@@ -637,7 +638,7 @@ IF</span></p>
         style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Пусть
     оказалось, что <span>A<sub>i</sub></span> &lt; <span>A<sub>i</sub></span><sub>+1</sub>.
     Среди элементов <span>A<sub>i</sub></span><sub>+1</sub>, <span>A<sub>i</sub></span><sub>+2,</sub> …,
-    <span>A</span><sub>7</sub>
+    $A^7$
     найдем наибольшй <span>A<sub>j</sub></span>, такой что <span>A<sub>j</sub></span> &gt; <span>A<sub>i</sub></span>.
     Поменяем элементы <span>A<sub>i</sub></span> и <span>A<sub>j</sub></span>
     местами.</p>
@@ -645,7 +646,7 @@ IF</span></p>
 <p style='text-indent:18pt'>4.<span
         style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Упорядочим
     элементы <span>A<sub>i</sub></span><sub>+1</sub>, <span>A<sub>i</sub></span><sub>+2,</sub>
-    …, <span>A</span><sub>7</sub> по возрастанию.</p>
+    …, $A^7$ по возрастанию.</p>
 
 <p style='text-indent:18pt'>5.<span
         style='font:7.0pt ""'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Полученный
@@ -653,15 +654,15 @@ IF</span></p>
     «К», и т.д. Полученное слово – искомое.</p>
 
 <p style='text-indent:18pt'><cite>Пример 6.5</cite>.<strong>
-</strong>Образовать все перестановки из <i><span>n</span></i> элементов,
+</strong>Образовать все перестановки из $n$ элементов,
     каждая из которых содержит все эти элементы по одному разу, и которые
     отличаются друг от друга лишь порядком элементов.</p>
 
 <p>&nbsp;</p>
 
 <p style='text-indent:18pt'>Число таких
-    перестановок будет <i><span>n</span></i>!&nbsp;(факториал).
-    Сопоставим каждому элементу натуральное число от 1 до  <i><span>n</span></i>
+    перестановок будет $n$!&nbsp;(факториал).
+    Сопоставим каждому элементу натуральное число от 1 до  $n$
     и запускаем перебор.</p>
 
 <p>&nbsp;</p>
@@ -669,15 +670,15 @@ IF</span></p>
 <p style='text-indent:18pt'><cite>Программа
     (</cite><cite><span>QBasic</span>)</cite>:</p>
 
-<p style='text-indent:18pt'><span>DIM</span> <span>SHARED</span> <span>n</span><span>                                               '</span><span>n</span><span> - количество
+<p style='text-indent:18pt'><span>DIM</span> <span>SHARED</span> $N$<span>                                               '</span>$N$<span> - количество
 элементов</span></p>
 
 <p style='text-indent:18pt'>
-    <span>INPUT</span><span> &quot;</span><span>n</span><span> = &quot;, </span><span>n</span><span>                                      '</span><span>num</span><span>(</span><span>k</span><span>) - число на </span><span>k</span><span>-ой позиции</span>
+    <span>INPUT</span><span> &quot;</span>$N$<span> = &quot;, </span>$N$<span>                                      '</span><span>num</span><span>(</span><span>k</span><span>) - число на </span><span>k</span><span>-ой позиции</span>
 </p>
 
 <p style='text-indent:18pt'><span>DIM</span> <span>SHARED</span><span>
-</span><span>num</span><span>(</span><span>n</span><span>), </span><span>used</span><span>(</span><span>n</span><span>)            '</span><span>used</span><span>(</span><span>i</span><span>) - использовано
+</span><span>num</span><span>(</span>$N$<span>), </span><span>used</span><span>(</span>$N$<span>)            '</span><span>used</span><span>(</span><span>i</span><span>) - использовано
 ли число </span><span>i</span><span> (1-да, 0-нет)</span></p>
 
 <p style='text-indent:18pt'><span style='font-size:12.0pt;
@@ -738,9 +739,9 @@ IF</span></p>
 
 <p style='text-indent:18pt'>Идея данного
     алгоритма в том, что используется дополнительный массив (<span>used</span>),
-    в котором хранится информация о том, какие целые числа из интервала 1..<i><span>n</span></i> мы уже использовали при
+    в котором хранится информация о том, какие целые числа из интервала 1..$n$ мы уже использовали при
     рекурсивном построении
-    перестановки. Рекурсия состоит в том, что для построения цепочки длины <span>k</span>+1 из <i><span>n</span></i>
+    перестановки. Рекурсия состоит в том, что для построения цепочки длины <span>k</span>+1 из $n$
     чисел сначала строим
     цепочку длины <span>k</span>.</p>
 
@@ -754,7 +755,7 @@ IF</span></p>
 <p style='text-indent:18pt'>Любая задача,
     к которой применим алгоритм перебора с возвратом (бектрекинг), может быть
     описана в общем случае следующим образом: требуется построить к данной задаче
-    вектор решения (<span>a</span><sub>1</sub>, <span>a</span><sub>2</sub>,
+    вектор решения ($a^1$, $a^2$,
     …, <span>a<sub>n</sub></span>), удовлетворяющий множеству условий и
     ограничений. Такой вектор строится покомпонентно слева направо. Предположим,
     что уже найдены значения первых <span>k</span>-1 компонент, а выбор
@@ -1008,12 +1009,12 @@ Weight(i)</span></p>
 стандартный размер стека  </span></p>
 
 <p style='text-indent:18pt'><span>DIM</span> <span>SHARED</span>
-    <span>n</span><span>, </span><span>m</span><span>, </span><span>k</span></p>
+    $N$<span>, </span><span>m</span><span>, </span><span>k</span></p>
 
 <p style='text-indent:18pt'><span>CLS</span></p>
 
-<p style='text-indent:18pt'><span>INPUT</span><span> &quot;</span><span>n</span><span>,</span><span>m</span><span>=&quot;, </span><span>n</span><span>, </span><span>m</span><span>                   'Задать
-размер доски </span><span>n</span><span
+<p style='text-indent:18pt'><span>INPUT</span><span> &quot;</span>$N$<span>,</span><span>m</span><span>=&quot;, </span>$N$<span>, </span><span>m</span><span>                   'Задать
+размер доски </span>$N$<span
         style='font-size:12.0pt;font-family:Symbol'>&acute;</span><span>m</span><span> клеток</span></p>
 
 <p style='text-indent:18pt'><span>DIM SHARED a(n,
@@ -1039,7 +1040,7 @@ font-family:"","serif"'>,</span><span>y</span><span>)</span></p>
 12.0pt;font-family:"","serif"'>Выход</span><span> </span><span>за</span><span> </span><span>пределы</span><span> </span><span>доски</span>
 </p>
 
-<p style='text-indent:1.0cm'><span>IF</span> <span>k</span><span> = </span><span>n</span><span> * </span><span>m</span>
+<p style='text-indent:1.0cm'><span>IF</span> <span>k</span><span> = </span>$N$<span> * </span><span>m</span>
     <span>THEN</span><span>                  'Удачный
 обход всех клеток, печать результата обхода</span></p>
 
