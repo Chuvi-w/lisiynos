@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta http-equiv=Content-Type content="text/html; charset=utf-8">
-    <title>Системы контроля версий, git. Юнит-тестирование. QtTest. Shell</title>
+    <title>C++ QtTest</title>
     <link rel="stylesheet" type="text/css" href="../style/style.css">
     <script type="text/javascript" src="../syntax/sh_main.min.js"></script>
     <script type="text/javascript" src="../syntax/sh_cpp.min.js"></script>
@@ -12,7 +12,27 @@
 <body onLoad="sh_highlightDocument();">
 <div id="content">
 
-    <h1>Системы контроля версий, git. Юнит-тестирование. QtTest. Shell</h1>
+    <h1>QtTest</h1>
+
+    <h2>Подключение библиотеки тестирования</h2>
+
+    <p>В файл проекта <b>.pro</b> надо добавить:</p>
+<pre>
+    QT       += testlib
+</pre>
+
+    <p>Соответствующие библиотеки: <b>Qt5Test.dll</b> и <b>Qt5Testd.dll</b> (Debug).</p>
+
+    <p>Вызов из основной программы:</p>
+<pre class="sh_cpp">
+#include &lt;QtTest&gt;
+#include "myclasstest.h"
+
+int main(int argc, char *argv[]) {
+  QTest::qExec(new MyClassTest, argc, argv);
+  return 0;
+}
+</pre>
 
     <p><b>SQL (structured query language - «структурированный язык запросов»)</b> - формальный непроцедурный язык
         программирования, применяемый для создания, модификации и управления данными в произвольной реляционной базе
@@ -106,7 +126,7 @@
         подчинённой (detail) — имеются или отсутствуют соответствия между записями таблиц, участвующих в слиянии. Для
         решения этой задачи используются механизмы внутреннего (inner) и внешнего (outer) слияния.</p>
 
-    <p> Один и тот же набор данных может быть получен при выполнении различных запросов. Поиск оптимального плана
+    <p>Один и тот же набор данных может быть получен при выполнении различных запросов. Поиск оптимального плана
         выполнения данного запроса является задачей оптимизатора.</p>
 
     <h2>Соединение с базой данных. Выполнение инструкций SQL</h2>
@@ -127,6 +147,54 @@
 
     <h2>Использование классов-моделей SQL (модель запроса, модель таблицы). Отображение данных в
         таблице-представлении.</h2>
+
+
+    <h2>QFile</h2>
+
+    <h3>Вывод текста в файл</h3>
+
+    <pre class="sh_cpp">
+    // Выводить в текстовый файл с помощью Qt
+    QFile file("qt_output.txt"); // Создали объект
+    // Открываем файл
+    file.open(QIODevice::WriteOnly | QIODevice::Text);
+      // QIODevice::WriteOnly - создаём файл для записи
+      // QIODevice::Text - к выводу применяются правила
+      //   для текстового файла
+
+    QTextStream out(&file); // Поток вывода (работать как с cout)
+    out.setCodec("UTF-8"); // Текст будет в кодировке UTF-8
+    out << QString("Любой текст!") << endl;
+    out << QString("2 * 3 = ") << (2*3) << endl;
+
+    file.close(); // Закрываем файл
+    </pre>
+
+    <h3>Константы QIODevice</h3>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <td>Вариант</td>
+            <td>Что означает</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <h3>Чтение из файла с помощью QFile</h3>
+
+    <pre class="sh_cpp">
+
+    </pre>
+
+
+    <h1>Системы контроля версий, git. Юнит-тестирование. QtTest. Shell</h1>
 
 
 </div>
