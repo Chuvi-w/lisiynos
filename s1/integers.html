@@ -15,6 +15,8 @@
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 
+
+
     </script>
     <script type="text/javascript"
             src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -107,13 +109,13 @@
 <pre class="sh_pascal">
 function GCD( a,b:integer ):integer; { определение НОД двух чисел }
 begin
-  while a <> b do 
+  while a <> b do
     if a > b then a:=a-b else b:=b-a;
   GCD := b;
 end;
- 
+
 begin { Пример использования }
-  writeln(GCD(10,15)); { Выведет 5 } 
+  writeln(GCD(10,15)); { Выведет 5 }
 end.</pre>
 
 <p><cite>Реализация на <a href="../s3/cpp.html">С/C++</a>:</cite></p>
@@ -121,12 +123,12 @@ end.</pre>
 <pre class="sh_cpp">
 #include &lt;stdio.h&gt;
 
-int GCD( int a, int b ){ // определение НОД двух чисел 
-  while(a != b) 
+int GCD( int a, int b ){ // определение НОД двух чисел
+  while(a != b)
     if (a > b) a-=b; else b-=a;
   return b;
 }
- 
+
 int main(){ // Пример использования
   printf("%d",GCD(10,15)); // Выведет 5
   return 0;
@@ -203,7 +205,7 @@ int main(){ // Пример использования
 <pre>
 <cite>Функция</cite> Вычисление_НОД(целое <strong>a</strong>, целое <strong>b</strong>)
   <span style="text-decoration: underline;">Пока</span> (<strong>b</strong> &lt;&gt; 0)
-    <strong>r</strong> := <strong>a</strong> по модулю <strong>b</strong>  (остаток от деления <strong>a</strong> на <strong>b</strong>), <strong>r</strong> - временная переменная (буфер) 
+    <strong>r</strong> := <strong>a</strong> по модулю <strong>b</strong>  (остаток от деления <strong>a</strong> на <strong>b</strong>), <strong>r</strong> - временная переменная (буфер)
     <strong>a</strong> := <strong>b</strong>
     <strong>b</strong> := <strong>r</strong>
   <cite>конец цикла</cite>
@@ -216,14 +218,14 @@ int main(){ // Пример использования
 <pre class="sh_pascal">
 function GCD( a,b:int64 ):int64; { Функция для вычисления НОД при помощи деления }<br>begin<br>  if b = 0 then { Если b = 0 }<br>    GCD := a {  следовательно a=НОД }<br>  else { Пока b &lt;&gt; 0 }<br>    GCD := GCD(b,a mod b); { Вычисляем остаток от деления a на b, а заменяем на b, b заменяем на r }
 end;
- 
+
 begin
   writeln(GCD(264, 192)); { Выведет: 24 }
 end.</pre>
 
 <p><a href="../s2/python.html">Реализация на Python:</a></p>
 <pre class="sh_python">
-def GCD(a,b): # Функция для вычисления НОД при помощи деления   
+def GCD(a,b): # Функция для вычисления НОД при помощи деления
   return a if b == 0 else GCD(b,a%b) # Вычисляем остаток от деления a на b, а заменяем на b, b заменяем на r=a mod b
   # НОД = a если b = 0 иначе НОД=НОД(b,r), r - остаток от деления a на b
 
@@ -237,11 +239,11 @@ print GCD(264, 192) # Выведет: 24 </pre>
 <p> $GCD(a_1,a_2,...,a_n) = GCD(GCD(a_1,a_2,...,a_{n-1}), a_n)$.</p>
 
 <p>Ниже приведена функция нахождения НОД для массива натуральных чисел $a(1..n)$ с использованием цикла.</p>
-  
+
 <pre class="sh_pascal" style="text-align:left;">
 function GCD( ... )...
     ....
-  
+
 function GCDM( a : array of int64 ):int64;
 var d : int64; i : integer;
 begin
@@ -250,7 +252,7 @@ begin
     d := GCD(d, a[i]);
   GCDM := d;
 end;
- 
+
 begin { Пример вызова }
   writeln(GCDM([15,10,25]));
 end.  </pre>
@@ -338,13 +340,13 @@ end.  </pre>
 <p style='margin-bottom:6.0pt;text-align:justify;text-indent:        20pt'>Решение:</p>
 
 <p style='text-align:justify;text-indent:20pt'>258 = 114 &#183; 2
-    + 30; q<sub>1</sub> = 2; </p>
+    + 30; $q_1 = 2$; </p>
 
 <p style='text-align:justify;text-indent:20pt'>114 = 30 &#183; 3
-    + 24; q<sub>2 </sub>= 3; </p>
+    + 24; $q_2 = 3$; </p>
 
 <p style='text-align:justify;text-indent:20pt'> 30 = 24 &#183; 1
-    + 6; q<sub>3 </sub>= 1; </p>
+    + 6; $q_3 = 1$; </p>
 
 <p style='text-align:justify;text-indent:20pt'> 24 = 6 &#183; 4; НОД(258,114) = 6</p>
 
@@ -392,7 +394,7 @@ begin
   while b <> 0 do begin
     q := a div b; { Частное }
     r := a mod b; { Остаток }
-    a := b; 
+    a := b;
     b := r;
     x := x0 - x1 * q; y := y0 - y1 * q;
     x0 := x1; y0 := y1;
@@ -407,7 +409,7 @@ begin
   for test := 1 to 1000000 do begin { Прогоняем тесты }
     a := random(2000)+1; { Генерируем 2 случайных числа }
     b := random(2000)+1;
-    GCD := dioph2(a,b,x0,y0); 
+    GCD := dioph2(a,b,x0,y0);
     assert( a*x0+b*y0 = GCD ); { Проверка что ответ верный! }
   end;
 end.</pre>
@@ -786,7 +788,7 @@ end.</pre>
 <p><cite>Реализация на Pascal:</cite></p>
 
 <pre class="sh_pascal" style="text-align:left;">
-type 
+type
   TVector = array [1..100] of Integer;
 
 var
@@ -835,7 +837,7 @@ begin
 end.
 </pre>
 
-<p style='text-align:justify'><strong>Задача:</strong>
+<p style='text-align:justify'><strong>Задача </strong><strong>(Тренинг).</strong>
     Разменять 14 рублей “трешками” и “пятерками”.</p>
 
 <h2>Задачи переливания</h2>
@@ -899,17 +901,20 @@ end.
 <p>Для закрепления алгоритма при решении тренировочных задач 1.3 и 1.4 воспользуйтесь
     программой <strong> «</strong><a href="http://spill.exe/">Переливай-ка</a><strong>».</strong></p>
 
-<p><strong>Задача 1.3:</strong> Разлить поровну 16 ведер кваса, находящегося в 16-ведерном
+<p><strong>Задача 1.3</strong>.
+    <strong>(Тренинг).</strong> Разлить поровну 16 ведер кваса, находящегося в 16-ведерном
     бочонке, имея два пустых бочонка по 11 и 6 ведер.</p>
 
-<p><strong>Задача 1.4:</strong> Имеются три бочонка вместимостью 6, 3 и 7 ведер. В первом и
+<p><strong>Задача 1.4</strong>.<strong>
+    (Тренинг).</strong> Имеются три бочонка вместимостью 6, 3 и 7 ведер. В первом и
     третьем содержится 4 и 6 ведер кваса соответственно. Требуется разделить квас
     поровну между первым и третьим бочонком (по 5 вёдер).</p>
 
 
-<h2>Простые числа</h2>
+<h2>1.4 Простые числа</h2>
 
-<p>Натуральное число называется <strong>простым,</strong> если оно не имеет делителей кроме единицы и
+<p>Натуральное
+    число называется <strong>простым,</strong> если оно не имеет делителей кроме единицы и
     самого себя.</p>
 
 <p><strong>Основная
@@ -922,26 +927,26 @@ end.
 <div style="float:right;padding:0;"><p><cite>Basic</cite>:</p>
 
 <pre class="sh_basic">
-INPUT n 
-PRINT n; "="; 
-WHILE (n mod 2 = 0) 
-  n = n \ 2 
-  IF n <> 1 THEN 
-    PRINT " 2 * "; 
-  ELSE 
-    PRINT " 2 ": END 
-  END IF 
-WEND 
-i = 3 
-WHILE i <= n 
-  IF n mod i = 0 THEN 
-    PRINT i; 
-    n = n \ i 
-    IF n<>1 THEN PRINT "*"; 
-  ELSE 
-    i = i + 2 
-  END IF 
-WEND 
+INPUT n
+PRINT n; "=";
+WHILE (n mod 2 = 0)
+  n = n \ 2
+  IF n <> 1 THEN
+    PRINT " 2 * ";
+  ELSE
+    PRINT " 2 ": END
+  END IF
+WEND
+i = 3
+WHILE i <= n
+  IF n mod i = 0 THEN
+    PRINT i;
+    n = n \ i
+    IF n<>1 THEN PRINT "*";
+  ELSE
+    i = i + 2
+  END IF
+WEND
 </pre>
 </div>
 
@@ -949,20 +954,20 @@ WEND
     <p><cite>Алгоритм:</cite></p>
 
 <pre class="sh_alg">
-Ввести n 
+Ввести n
 Вывести n " ="
 Пока n делится на 2:
   n разделить на 2
   Если n ≠ 1 то
-    Вывести " 2 * " 
+    Вывести " 2 * "
   иначе
     Вывести " 2"
     Закончить программу
 i = 3
 Пока i ≤ n
   Если n делится на i то
-    Вывести i 
-    n разделить на i 
+    Вывести i
+    n разделить на i
     Если n ≠ 1 то вывести "*"
   иначе
     i = i + 2
@@ -972,7 +977,7 @@ i = 3
 <p><cite>Delphi:</cite></p>
 <pre class="sh_pascal">
 {$APPTYPE CONSOLE}
-var 
+var
   N : int64;
   i : longint;
 begin
@@ -1052,7 +1057,7 @@ NEXT i
 
 <pre class="sh_pascal">
 { Решето Эратосфена }
-var 
+var
   { Индексы элементов массива simple - числа, а элементы массива simple – признаки того, являются ли эти числа простыми }
   simple : array [2..30000000] of Boolean; { Является ли число простым? }
   N,i,j : Integer;
@@ -1060,19 +1065,19 @@ begin
   { Ввод исходных данных: число N до которого искать простые числа }
   Write('Введите N: '); ReadLn(N);
   { Сначала &quot;выписываем&quot; все числа от 2 до N }
-  for i := 2 to N do 
-    simple[i] := true;  
-  { Проходим в цикле все числа от 2 до N и выводим из них только простые }  
-  for i := 2 to N do 
+  for i := 2 to N do
+    simple[i] := true;
+  { Проходим в цикле все числа от 2 до N и выводим из них только простые }
+  for i := 2 to N do
     if simple[i] then begin
-      { Вывод результата - очередного простого числа }  
-      Write(i,' ');    
+      { Вывод результата - очередного простого числа }
+      Write(i,' ');
       { Для простого числа i вычёркиваем все кратные ему }
       j := 2*i; { Первое кратное - удвоенное число i }
       while j &lt;= N do begin { Если оно попадает в допустимый диапазон }
-        simple[j] := false; { то мы его вычёркиваем } 
+        simple[j] := false; { то мы его вычёркиваем }
         j := j + i; { и переходим к следующему кратному i числу }
-      end;  
+      end;
     end;
 end.</pre>
 
