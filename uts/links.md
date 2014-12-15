@@ -1,3 +1,3 @@
-Ссылки на уроки
+РЎСЃС‹Р»РєРё РЅР° СѓСЂРѕРєРё
 ---------------
 * http://lisiynos.googlecode.com/git/uts/uts1.html
