@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main(){
+int main() {
   auto v = 1;
 
   return 0;

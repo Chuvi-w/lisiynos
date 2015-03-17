@@ -24,18 +24,18 @@ int m, n, k;
 int back[maxN];
 
 int main() {
-    freopen("bipart.in","r",stdin);
-    //freopen("bipart.out","w",stdout);
-    // m - вершин в A
-    // n - вершин в B
-    // k - рёбер из A в B
-    cin >> m >> n >> k;
+  freopen("bipart.in", "r", stdin);
+  //freopen("bipart.out","w",stdout);
+  // m - вершин в A
+  // n - вершин в B
+  // k - рёбер из A в B
+  cin >> m >> n >> k;
 
-    // Заполняем массив back -1
-    fill(back, back + maxN, -1);
+  // Заполняем массив back -1
+  fill(back, back + maxN, -1);
 
-    // Вызываем dfs...
-    // ...дописать...
+  // Вызываем dfs...
+  // ...дописать...
 
-    return 0;
+  return 0;
 }
