@@ -136,12 +136,12 @@
 
 <p>Решение задачи "A+B" с вводом из файла <strong>sum.in</strong> и выводом в файл <strong>sum.out</strong>.</p> 
 <pre class="sh_python">
+# ~*~ utf-8 ~*~
 import sys
 sys.stdin = open("sum.in") # Закомментируйте эту строку для ввода с клавиатуры
 sys.stdout = open("sum.out", "w") # Закомментрируйте эту строку для вывода на экран
-A,B = input(), input() # Вводим 2 целых A и B (они в разных строках)
-print A+B
-</pre>
+A, B = int(input()), int(input()) # Вводим 2 целых A и B (они в разных строках)
+print (A + B)</pre>
 
 <h2>Типы данных в языке Python</h2>
 <ul>
