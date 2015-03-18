@@ -1,4 +1,5 @@
-# ~*~ 
+# -*- coding: utf-8 -*-
+
 import os
 import sys
 
@@ -12,10 +13,12 @@ def get_extension(file_name):
 
 def lang(file_name):
     extension = get_extension(file_name)
-    if extension in ['.cpp', '.c', '.h', '.hpp', '.py']:
+    if extension in ['.cpp', '.c', '.h', '.hpp']:
         return 'cpp'
     if extension == '.java':
         return 'java'
+    if extension in ['.py']:
+        return 'py'
     return "TODO: doc.py Сделать обработчик **" + extension + "**";
 
 
@@ -26,6 +29,9 @@ def parse(file_name):
     :return:
     """
     code = False
+    if file_name.endswith('.py'):
+      code = True
+      print('``` ' + lang(file_name))
     with open(file_name, "r", encoding="utf-8-sig") as f:
         for line in f:
             if '//-->' in line:
@@ -43,13 +49,17 @@ def parse(file_name):
             s = line.strip()
             if s.startswith(PREFIX):
                 print(s[len(PREFIX):].strip())
+        if code: 
+            print('```')
+            print()
+            code = False   
 
 
 from os import listdir
 from os.path import isfile, join
 
 mypath = "."
-extensions = [".cpp", ".c", ".h", ".hpp", ".java", ".md"]
+extensions = [".cpp", ".c", ".h", ".hpp", ".java", ".py", ".md"]
 special_files = ["pom.xml"]
 
 all_files = []
@@ -62,7 +72,7 @@ for root, dirs, files in os.walk("."):
             file_name = os.path.join(root, name)
             #if name == "README.md":
             #    continue
-            if file_name == '.\\README.md':
+            if file_name in ['.\\README.md', '.\\doc.py']:
                 continue
             all_files.append(file_name)
 
