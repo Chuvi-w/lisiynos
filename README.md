@@ -22,3 +22,13 @@ http://www.rosatomschool.ru/ra/app/eventshow/237.html
  * [http://lisiynos.googlecode.com/git/s5/index.html Список тем]
 = Сессия 6 =
  * [http://lisiynos.googlecode.com/git/s6/index.html Список тем]
+
+Шаблонизатор должен:
+--------------------
+* Исходники с подсветкой синтаксиса: Python + C/C++ + Java + Pascal/Delphi
+* Формулы в нотации Latex.
+* Вставка картинок / ссылок и т.д.
+
+Варианты
+--------
+* http://jekyllrb.com/ - "-" - Ruby (лучше бы Python), "-" - формулы?
