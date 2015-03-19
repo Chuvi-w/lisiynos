@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
@@ -40,7 +40,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -170,14 +170,14 @@
 <h2>Определения теории графов<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
 <p><strong>Граф</strong> &#8212; конечное множество вершин, природа которых не важна, и конечно множество рёбер, соединяющих между собой какие-либо вершины.</p>
 <p>Графы могут быть ориентированными и неориентированными. Если в рамках задачи по рёбрам можно перемещаться в обоих направлениях, то граф называется <em>неориентированным</em>. Если же по каждому ребру можно пройти только в одну сторону, то граф <em>ориентированный</em>. В таком случае рёбра обычно обозначаются стрелками, а не просто линиями.</p>
-<div class="figure align-center" id="id15">
+<div class="figure align-center">
 <img alt="Граф" src="../_images/img00.gif" />
-<p class="caption"><span class="caption-text">Пример ориентированного графа</span></p>
+<p class="caption">Пример ориентированного графа</p>
 </div>
 <p>Иногда бывает полезно связать с ребрами графа какие-то числа. Это могут быть длины дорог или плата за проезд, если граф моделирует карту какой-то местности. В таком случае граф называется <em>взвешенным</em>, а сами числа &#8212; <em>весами</em>.</p>
-<div class="figure align-center" id="id16">
+<div class="figure align-center">
 <img alt="../_images/graph_6_7.png" src="../_images/graph_6_7.png" />
-<p class="caption"><span class="caption-text">Пример: граф с шестью вершинами и семью рёбрами</span></p>
+<p class="caption">Пример: граф с шестью вершинами и семью рёбрами</p>
 </div>
 <p>Граф, в котором каждая пара вершин соединена ребром, называется <strong>полным</strong>. Обозначение: <span class="math">\(K_n\)</span> &#8212; граф, состоящий из <span class="math">\(n\)</span> вершин и ребер, соединяющих всевозможные пары этих вершин. Такой граф можно представить как <span class="math">\(n\)</span>-угольник, в котором проведены все диагонали.</p>
 <p>Ниже приведены полные графы с числом вершин от 1 до 8 и количества их рёбер.</p>
@@ -309,8 +309,8 @@
 <div class="section" id="dfs">
 <h4>Обход в глубину (DFS)<a class="headerlink" href="#dfs" title="Ссылка на этот заголовок">¶</a></h4>
 <p>Обход в глубину можно описать так: представьте, что вы в лабиринте. Идите всегда прямо, а на всех развилках выбирайте самый левый путь. Упёршись в тупик, возвращайтесь обратно до последней развилки и выбирайте следующий путь слева. Продолжайте, пока не обойдёте весь лабиринт.</p>
-<p>Обычно алгоритм DFS реализуется с помощью списков смежности и рекурсии. Требуется лишь создать функцию <code class="docutils literal"><span class="pre">dfs(v)</span></code>, которая будет просматривать всех соседей вершины <code class="docutils literal"><span class="pre">v</span></code> и запускать себя для каждого из них. Единственное, что требуется, кроме этого &#8212; список уже посещённых вершин, иначе функция может войти в бесконечный цикл.</p>
-<p>Напишем функцию <code class="docutils literal"><span class="pre">dfs</span></code> на языке Python с использованием списков смежности:</p>
+<p>Обычно алгоритм DFS реализуется с помощью списков смежности и рекурсии. Требуется лишь создать функцию <tt class="docutils literal"><span class="pre">dfs(v)</span></tt>, которая будет просматривать всех соседей вершины <tt class="docutils literal"><span class="pre">v</span></tt> и запускать себя для каждого из них. Единственное, что требуется, кроме этого &#8212; список уже посещённых вершин, иначе функция может войти в бесконечный цикл.</p>
+<p>Напишем функцию <tt class="docutils literal"><span class="pre">dfs</span></tt> на языке Python с использованием списков смежности:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># Загрузка графа из файла (пример)</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">load_adjacency_list</span><span class="p">()</span>
 
@@ -337,7 +337,7 @@
         <span class="n">dfs</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Теперь достаточно запустить обход из стартовой вершины. Например, так: <code class="docutils literal"><span class="pre">dfs(0)</span></code>.</p>
+<p>Теперь достаточно запустить обход из стартовой вершины. Например, так: <tt class="docutils literal"><span class="pre">dfs(0)</span></tt>.</p>
 </div>
 <div class="section" id="bfs">
 <h4>Обход в ширину (BFS)<a class="headerlink" href="#bfs" title="Ссылка на этот заголовок">¶</a></h4>
@@ -428,7 +428,7 @@
     </p>
     <p>
         &copy; Copyright 2014, Максим Кольцов, Денис Степулёнок.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
     </p>
   </div>
 </footer>
