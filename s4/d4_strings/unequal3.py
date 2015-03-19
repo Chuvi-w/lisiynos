@@ -3,6 +3,8 @@ sys.stdin = open("unequal3.in", "r")
 sys.stdout = open("unequal3.out", "w")
 
 st = input()
+# В словаре будем хранить пары:
+# строка => количество таких подстрок
 d = dict()
 l = len(st)
 for i in range(l):
