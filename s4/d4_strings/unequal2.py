@@ -1,4 +1,5 @@
 # Модифицируем предыдудщее решение
+# Добавляем сортировку и вывод подстрок
 import sys
 sys.stdin = open("unequal2.in", "r")
 sys.stdout = open("unequal2.out", "w")
